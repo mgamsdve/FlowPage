@@ -1,0 +1,214 @@
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+
+
+:root {
+  --bg-main: #fdfcf8;
+  --bg-secondary: #faf9f6;
+  --text-main: #2a2a2a;
+  --text-secondary: #6b6b6b;
+  --border-soft: #e6e6e2;
+  --accent-primary: #d46a4c;
+  --accent-secondary: #829175;
+  --bg-dark: #2a2a2a;
+  --font-heading: "Clash Grotesk", "Manrope", sans-serif;
+  --font-body: "Manrope", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-body);
+}
+
+header {
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
+  background-color: rgba(253, 252, 248, 0.88) !important;
+  border-color: var(--border-soft) !important;
+}
+
+h1,
+h2,
+h3,
+.font-heading {
+  font-family: var(--font-heading) !important;
+  letter-spacing: -0.018em;
+  font-weight: 600;
+}
+
+p,
+li,
+label,
+input,
+textarea,
+button,
+a {
+  font-family: var(--font-body);
+}
+
+main > section {
+  padding-top: clamp(4.5rem, 7vw, 9rem) !important;
+  padding-bottom: clamp(4.5rem, 7vw, 9rem) !important;
+}
+
+#top {
+  background: var(--bg-main);
+}
+
+#problem,
+#faq,
+section.bg-\[\#1F1F1F\] {
+  background-color: var(--bg-dark) !important;
+}
+
+.bg-\[\#1a1a1a\],
+.bg-\[\#1F1F1F\],
+.bg-\[\#262626\] {
+  background-color: var(--bg-dark) !important;
+}
+
+.hover\:bg-\[\#303030\]:hover {
+  background-color: #343432 !important;
+}
+
+.bg-\[\#8C9D7D\] {
+  background-color: var(--accent-secondary) !important;
+}
+
+.hover\:bg-\[\#7a8b6c\]:hover {
+  background-color: #748465 !important;
+}
+
+#problem .bg-\[\#262626\],
+#faq .bg-\[\#262626\] {
+  background-color: #323230 !important;
+  border-color: rgba(230, 230, 226, 0.16) !important;
+}
+
+#problem .w-16.h-16.border {
+  border-color: #374151 !important;
+}
+
+#problem h2,
+#problem h3,
+#faq h2,
+#faq h3 {
+  color: var(--bg-main) !important;
+}
+
+#problem p,
+#faq p,
+#problem .text-gray-400,
+#faq .text-gray-400 {
+  color: rgba(253, 252, 248, 0.72) !important;
+}
+
+#solution,
+#exemples,
+#qui,
+#final,
+footer {
+  background-color: var(--bg-main) !important;
+}
+
+#etapes,
+#final,
+footer {
+  border-color: var(--border-soft) !important;
+}
+
+.text-brand-orange {
+  color: var(--accent-primary) !important;
+}
+
+.text-brand-green {
+  color: var(--accent-secondary) !important;
+}
+
+.bg-brand-orange {
+  background-color: var(--accent-primary) !important;
+}
+
+.bg-brand-green {
+  background-color: var(--accent-secondary) !important;
+}
+
+.bg-brand-cream {
+  background-color: var(--bg-main) !important;
+}
+
+.text-brand-dark {
+  color: var(--text-main) !important;
+}
+
+.text-gray-400,
+.text-gray-500,
+.text-gray-600 {
+  color: var(--text-secondary) !important;
+}
+
+.text-gray-700,
+.text-gray-800,
+.text-gray-900 {
+  color: var(--text-main) !important;
+}
+
+.border,
+[class*="border-gray-"],
+[class*="border-brand-"] {
+  border-color: var(--border-soft);
+}
+
+[class*="shadow"] {
+  box-shadow: 0 10px 24px rgba(42, 42, 42, 0.05) !important;
+}
+
+a,
+button,
+.group,
+.faq-item {
+  transition-duration: 320ms !important;
+  transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1) !important;
+}
+
+.group:hover .group-hover\:scale-105 {
+  transform: scale(1.02) !important;
+}
+
+.group:hover .group-hover\:translate-x-1 {
+  transform: translateX(2px) !important;
+}
+
+.blur-3xl {
+  opacity: 0.45;
+}
+
+footer .flex.items-center.gap-3.font-extrabold.text-2xl.tracking-tight > div {
+  display: none;
+}
+
+footer .flex.items-center.gap-3.font-extrabold.text-2xl.tracking-tight > span {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.018em;
+  color: var(--text-main);
+}
+
+footer .flex.items-center.gap-3.font-extrabold.text-2xl.tracking-tight > span::after {
+  content: ".";
+  color: var(--accent-primary);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
