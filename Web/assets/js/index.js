@@ -23,3 +23,18 @@ document.querySelectorAll('.faq-toggle').forEach(button => {
     }
   });
 });
+
+const exempleItems = document.querySelectorAll('#exemples .ex-item');
+
+if (exempleItems.length) {
+  const obs = new IntersectionObserver(
+    entries => entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    }),
+    { threshold: 0.15 }
+  );
+
+  exempleItems.forEach(item => obs.observe(item));
+}

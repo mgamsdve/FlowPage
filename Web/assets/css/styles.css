@@ -111,7 +111,6 @@ section.bg-\[\#1F1F1F\] {
 }
 
 #solution,
-#exemples,
 #qui,
 #final,
 footer {
@@ -213,4 +212,33 @@ footer .flex.items-center.gap-3.font-extrabold.text-2xl.tracking-tight > span::a
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+#exemples .ex-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#exemples .ex-item:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+#exemples .ex-item:nth-child(2) {
+  transition-delay: 0.18s;
+}
+
+#exemples .ex-item:nth-child(3) {
+  transition-delay: 0.31s;
+}
+
+#exemples .ex-item__visual {
+  overflow: hidden;
+}
+
+#exemples .ex-item__visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
 }
