@@ -40,3 +40,16 @@ if (exempleItems.length) {
 
   exempleItems.forEach(item => obs.observe(item));
 }
+
+const finalTextarea = document.querySelector('#final textarea');
+
+if (finalTextarea) {
+  const resizeTextarea = () => {
+    finalTextarea.style.height = 'auto';
+    finalTextarea.style.height = `${finalTextarea.scrollHeight}px`;
+  };
+
+  finalTextarea.style.overflowY = 'hidden';
+  resizeTextarea();
+  finalTextarea.addEventListener('input', resizeTextarea);
+}
