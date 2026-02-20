@@ -1,44 +1,32 @@
 @import "tailwindcss";
 @config "../../tailwind.config.mjs";
 
-/* ton CSS custom ici */
-
-
-
-:root {
-  --bg-main: #fdfcf8;
-  --bg-secondary: #faf9f6;
-  --text-main: #2a2a2a;
-  --text-secondary: #6b6b6b;
-  --border-soft: #e6e6e2;
-  --accent-primary: #d46a4c;
-  --accent-secondary: #829175;
-  --bg-dark: #2a2a2a;
-  --font-heading: "Clash Grotesk", "Manrope", sans-serif;
-  --font-body: "Manrope", sans-serif;
-}
-
+/* Base */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--bg-main);
-  color: var(--text-main);
-  font-family: var(--font-body);
+  @apply bg-brand-cream text-brand-dark font-sans;
 }
 
-header {
+header.fixed {
   transition: background-color 0.35s ease, box-shadow 0.35s ease;
-  background-color: rgba(253, 252, 248, 0.88) !important;
-  border-color: var(--border-soft) !important;
+  background-color: rgb(253 252 248 / 88%);
+  border-color: rgb(230 230 226);
 }
 
+main > section[id] {
+  padding-top: clamp(4.5rem, 7vw, 9rem);
+  padding-bottom: clamp(4.5rem, 7vw, 9rem);
+}
+
+/* Typography */
 h1,
 h2,
 h3,
 .font-heading {
-  font-family: var(--font-heading) !important;
+  @apply font-heading;
   letter-spacing: -0.018em;
   font-weight: 600;
 }
@@ -50,161 +38,99 @@ input,
 textarea,
 button,
 a {
-  font-family: var(--font-body);
+  @apply font-sans;
 }
 
-main > section {
-  padding-top: clamp(4.5rem, 7vw, 9rem) !important;
-  padding-bottom: clamp(4.5rem, 7vw, 9rem) !important;
-}
-
-#top {
-  background: var(--bg-main);
-}
-
-#problem,
-#faq,
-section.bg-\[\#1F1F1F\] {
-  background-color: var(--bg-dark) !important;
-}
-
-.bg-\[\#1a1a1a\],
-.bg-\[\#1F1F1F\],
-.bg-\[\#262626\] {
-  background-color: var(--bg-dark) !important;
-}
-
-.hover\:bg-\[\#303030\]:hover {
-  background-color: #343432 !important;
-}
-
-.bg-\[\#8C9D7D\] {
-  background-color: var(--accent-secondary) !important;
-}
-
-.hover\:bg-\[\#7a8b6c\]:hover {
-  background-color: #748465 !important;
-}
-
-#problem .bg-\[\#262626\],
-#faq .bg-\[\#262626\] {
-  background-color: #323230 !important;
-  border-color: rgba(230, 230, 226, 0.16) !important;
-}
-
-#problem .w-16.h-16.border {
-  border-color: #374151 !important;
-}
-
-#problem h2,
-#problem h3,
-#faq h2,
-#faq h3 {
-  color: var(--bg-main) !important;
-}
-
-#problem p,
-#faq p,
-#problem .text-gray-400,
-#faq .text-gray-400 {
-  color: rgba(253, 252, 248, 0.72) !important;
-}
-
-#solution,
-#qui,
-#final,
-footer {
-  background-color: var(--bg-main) !important;
-}
-
-#etapes,
-#final,
-footer {
-  border-color: var(--border-soft) !important;
-}
-
-.text-brand-orange {
-  color: var(--accent-primary) !important;
-}
-
-.text-brand-green {
-  color: var(--accent-secondary) !important;
-}
-
-.bg-brand-orange {
-  background-color: var(--accent-primary) !important;
-}
-
-.bg-brand-green {
-  background-color: var(--accent-secondary) !important;
-}
-
-.bg-brand-cream {
-  background-color: var(--bg-main) !important;
-}
-
-.text-brand-dark {
-  color: var(--text-main) !important;
-}
-
+/* Utility harmonization */
 .text-gray-400,
 .text-gray-500,
 .text-gray-600 {
-  color: var(--text-secondary) !important;
+  @apply text-brand-text-muted;
 }
 
 .text-gray-700,
 .text-gray-800,
 .text-gray-900 {
-  color: var(--text-main) !important;
+  @apply text-brand-dark;
 }
 
-.border,
-[class*="border-gray-"],
-[class*="border-brand-"] {
-  border-color: var(--border-soft);
+/* Scoped border/shadow normalization */
+header [class*="border"],
+main [class*="border"],
+footer [class*="border"] {
+  @apply border-brand-soft-border;
 }
 
-[class*="shadow"] {
-  box-shadow: 0 10px 24px rgba(42, 42, 42, 0.05) !important;
+main [class*="shadow"],
+footer [class*="shadow"] {
+  box-shadow: 0 10px 24px rgb(42 42 42 / 5%);
 }
 
+/* Dark section exceptions */
+#constat .\!bg-\[\#262626\],
+#faq .bg-\[\#262626\] {
+  @apply bg-brand-panel border-brand-soft-border;
+}
+
+#faq .bg-\[\#262626\] {
+  border-color: #e6e6e229;
+}
+
+#constat .hover\:\!bg-\[\#303030\]:hover,
+#faq .hover\:bg-\[\#303030\]:hover {
+  @apply bg-brand-panel-hover;
+}
+
+#constat .w-16.h-16.border {
+  border-color: #374151;
+}
+
+#constat p,
+#faq p,
+#constat .text-gray-400,
+#faq .text-gray-400 {
+  color: rgb(253 252 248 / 72%);
+}
+
+/* Interaction tuning */
 a,
 button,
 .group,
 .faq-item {
-  transition-duration: 320ms !important;
-  transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1) !important;
+  transition-duration: 320ms;
+  transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  cursor: pointer;
 }
 
 .group:hover .group-hover\:scale-105 {
-  transform: scale(1.02) !important;
+  transform: scale(1.02);
 }
 
 .group:hover .group-hover\:translate-x-1 {
-  transform: translateX(2px) !important;
+  transform: translateX(2px);
 }
 
 .blur-3xl {
   opacity: 0.45;
 }
 
+/* Footer branding micro-adjustment */
 footer .flex.items-center.gap-3.font-extrabold.text-2xl.tracking-tight > div {
   display: none;
 }
 
 footer .flex.items-center.gap-3.font-extrabold.text-2xl.tracking-tight > span {
-  font-family: var(--font-heading);
+  @apply font-heading text-brand-dark;
   font-weight: 600;
   letter-spacing: -0.018em;
-  color: var(--text-main);
 }
 
 footer .flex.items-center.gap-3.font-extrabold.text-2xl.tracking-tight > span::after {
   content: ".";
-  color: var(--accent-primary);
+  @apply text-brand-orange;
 }
 
+/* Utilities */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
@@ -214,31 +140,93 @@ footer .flex.items-center.gap-3.font-extrabold.text-2xl.tracking-tight > span::a
   scrollbar-width: none;
 }
 
-#exemples .ex-item.visible {
+#impact .ex-item.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-#exemples .ex-item:nth-child(1) {
+#impact .ex-item:nth-child(1) {
   transition-delay: 0.05s;
 }
 
-#exemples .ex-item:nth-child(2) {
+#impact .ex-item:nth-child(2) {
   transition-delay: 0.18s;
 }
 
-#exemples .ex-item:nth-child(3) {
+#impact .ex-item:nth-child(3) {
   transition-delay: 0.31s;
 }
 
-#exemples .ex-item__visual {
+#impact .ex-item__visual {
   overflow: hidden;
 }
 
-#exemples .ex-item__visual::before {
+#impact .ex-item__visual::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
 }
+
+/* Simple reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.delay-1 {
+  transition-delay: 120ms;
+}
+
+.reveal.delay-2 {
+  transition-delay: 240ms;
+}
+
+.reveal.delay-3 {
+  transition-delay: 360ms;
+}
+
+.reveal.delay-4 {
+  transition-delay: 480ms;
+}
+
+/* Hero on-load reveal (independent from scroll observer) */
+.load-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: load-reveal-in 600ms ease-out forwards;
+}
+
+.load-delay-1 {
+  animation-delay: 120ms;
+}
+
+.load-delay-2 {
+  animation-delay: 240ms;
+}
+
+.load-delay-3 {
+  animation-delay: 360ms;
+}
+
+@keyframes load-reveal-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* @media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+} */

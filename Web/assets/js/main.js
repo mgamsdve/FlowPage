@@ -3,30 +3,73 @@ import '../css/styles.css'
 
 lucide.createIcons();
 
-document.querySelectorAll('.faq-toggle').forEach(button => {
-  button.addEventListener('click', () => {
-    const item = button.closest('.faq-item');
-    const content = item.querySelector('.faq-content');
-    const icon = item.querySelector('.faq-icon');
+const closeAllFaqItems = () => {
+  document.querySelectorAll('.faq-content').forEach(content => {
+    content.style.maxHeight = null;
+  });
 
-    const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+  document.querySelectorAll('.faq-icon').forEach(icon => {
+    icon.textContent = '+';
+  });
+};
 
-    // Ferme toutes les autres
-    document.querySelectorAll('.faq-content').forEach(c => {
-      c.style.maxHeight = null;
-    });
-    document.querySelectorAll('.faq-icon').forEach(i => {
-      i.textContent = '+';
-    });
+const toggleFaqItem = item => {
+  const content = item.querySelector('.faq-content');
+  const icon = item.querySelector('.faq-icon');
 
-    if (!isOpen) {
-      content.style.maxHeight = content.scrollHeight + 'px';
-      icon.textContent = '−';
+  if (!content || !icon) {
+    return;
+  }
+
+  const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+  closeAllFaqItems();
+
+  if (!isOpen) {
+    content.style.maxHeight = `${content.scrollHeight}px`;
+    icon.textContent = '−';
+  }
+};
+
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', event => {
+    const interactiveTarget = event.target.closest('a, input, textarea, select, label');
+
+    if (interactiveTarget) {
+      return;
     }
+
+    toggleFaqItem(item);
   });
 });
 
-const exempleItems = document.querySelectorAll('#exemples .ex-item');
+const revealItems = document.querySelectorAll('.reveal');
+
+if (revealItems.length) {
+  const revealObserver = new IntersectionObserver(
+    entries => entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      // Ensure hidden state is painted before reveal, especially for above-the-fold hero content.
+      window.setTimeout(() => {
+        entry.target.classList.add('is-visible');
+      }, 30);
+      revealObserver.unobserve(entry.target);
+    }),
+    {
+      threshold: 0.12,
+      rootMargin: '0px 0px -10% 0px',
+    }
+  );
+
+  window.requestAnimationFrame(() => {
+    revealItems.forEach(item => revealObserver.observe(item));
+  });
+}
+
+const exempleItems = document.querySelectorAll('#impact .ex-item');
 
 if (exempleItems.length) {
   const obs = new IntersectionObserver(
@@ -41,7 +84,7 @@ if (exempleItems.length) {
   exempleItems.forEach(item => obs.observe(item));
 }
 
-const finalTextarea = document.querySelector('#final textarea');
+const finalTextarea = document.querySelector('#contact textarea');
 
 if (finalTextarea) {
   const resizeTextarea = () => {
