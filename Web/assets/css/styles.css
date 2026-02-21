@@ -10,12 +10,6 @@ body {
   @apply bg-brand-cream text-brand-dark font-sans;
 }
 
-header.fixed {
-  transition: background-color 0.35s ease, box-shadow 0.35s ease;
-  background-color: rgb(253 252 248 / 88%);
-  border-color: rgb(230 230 226);
-}
-
 main > section[id] {
   padding-top: clamp(4.5rem, 7vw, 9rem);
   padding-bottom: clamp(4.5rem, 7vw, 9rem);
@@ -125,7 +119,9 @@ footer .flex.items-center.gap-3.font-extrabold.text-2xl.tracking-tight > span {
   letter-spacing: -0.018em;
 }
 
-footer .flex.items-center.gap-3.font-extrabold.text-2xl.tracking-tight > span::after {
+footer
+  .flex.items-center.gap-3.font-extrabold.text-2xl.tracking-tight
+  > span::after {
   content: ".";
   @apply text-brand-orange;
 }
@@ -173,7 +169,9 @@ footer .flex.items-center.gap-3.font-extrabold.text-2xl.tracking-tight > span::a
 .reveal {
   opacity: 0;
   transform: translateY(12px);
-  transition: opacity 600ms ease-out, transform 600ms ease-out;
+  transition:
+    opacity 600ms ease-out,
+    transform 600ms ease-out;
 }
 
 .reveal.is-visible {
