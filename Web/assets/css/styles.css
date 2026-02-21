@@ -220,6 +220,20 @@ footer
   }
 }
 
+/* Constat load animation */
+.animate-constat-up {
+  opacity: 0;
+  transform: translateY(180px); /* Start lower */
+  animation: slide-up-constat 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+@keyframes slide-up-constat {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
