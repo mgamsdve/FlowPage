@@ -1,708 +1,1118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Flowpage - Votre page web efficace</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Flowpage - Votre page web efficace</title>
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@600,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-</head>
+  <body>
+    <div
+      class="min-h-screen flex flex-col font-sans antialiased text-gray-900 overflow-x-hidden"
+    >
+      <header
+        id="main-nav"
+        class="fixed top-0 left-0 right-0 z-[100] flex justify-center w-full pointer-events-none py-6 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
+      >
+        <nav
+          class="pointer-events-auto flex items-center justify-between px-8 py-4 w-full max-w-7xl mx-auto rounded-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] bg-transparent text-brand-dark border border-transparent"
+        >
+          <!-- Logo Area -->
+          <a
+            class="font-heading font-semibold text-2xl tracking-tight text-brand-dark"
+            href="#hero"
+          >
+            Flowpage<span class="text-brand-orange">.</span>
+          </a>
 
-<body>
-<div class="min-h-screen flex flex-col font-sans antialiased text-gray-900 overflow-x-hidden">
-  <header class="fixed top-0 inset-x-0 z-[100] bg-brand-cream/80 backdrop-blur-md border-b border-brand-dark/5 px-12">
-    <div class="max-w-7xl mx-auto h-20 flex items-center justify-between">
-
-      <div class="flex items-center gap-12">
-        <a class="font-heading font-semibold text-2xl tracking-tight text-brand-dark" href="#hero">
-          Flowpage<span class="text-brand-orange">.</span>
-        </a>
-
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
-          <a class="hover:text-brand-dark transition-colors" href="#approche">Notre approche</a>
-          <a class="hover:text-brand-dark transition-colors" href="#methode">Méthode</a>
-          <a class="hover:text-brand-dark transition-colors" href="#impact">Impact</a>
-          <a class="hover:text-brand-dark transition-colors" href="#apropos">À propos</a>
-        </nav>
-      </div>
-
-      <a class="bg-brand-dark text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-black transition-colors"
-         href="#contact">
-        Me contacter
-      </a>
-
-    </div>
-  </header>
-
-  <main class="flex-grow pt-24">
-    <section class="relative pt-24 pb-32 md:pt-32 md:pb-40 px-6 md:px-12 max-w-8xl mx-auto overflow-hidden" id="hero">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        <div class="max-w-2xl z-10">
-          <h1 class="load-reveal max-w-[90%] md:max-w-[28rem] lg:max-w-[34rem] text-balance
-                               text-6xl md:text-7xl lg:text-[5rem]
-                               font-extrabold leading-[1.05] mb-8 tracking-tight text-brand-dark"> Une présence web
-            claire pour votre <span class="text-brand-orange relative inline-block">
-                activité.
-                <svg class="absolute w-full h-3 -bottom-1 left-0 text-brand-orange opacity-30" preserveAspectRatio="none"
-                     viewBox="0 0 100 10">
-                  <path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" stroke-width="3" />
-                </svg>
-              </span>
-          </h1>
-          <p class="load-reveal load-delay-1 text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-lg">
-            J’aide les indépendants et petits business à structurer des pages et sites web simples, lisibles et
-            crédibles.
-          </p>
-          <div class="load-reveal load-delay-2 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <button
-                    class="bg-brand-orange text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-[#c56045] transition-colors shadow-lg shadow-brand-orange/10">
-              Discuter de votre projet
-            </button>
-            <div class="flex flex-col">
-              <span class="text-sm font-semibold text-brand-dark">Échange simple,</span>
-              <span class="text-sm text-gray-400">sans engagement.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="load-reveal load-delay-3 relative flex justify-center lg:justify-end mt-16 lg:mt-0 perspective-1000">
+          <!-- Links Area -->
           <div
-                  class="relative z-10 bg-white p-3 md:p-4 rounded-[2.5rem] shadow-xl max-w-[340px] md:max-w-[460px] border border-gray-100/50">
+            class="hidden md:flex items-center gap-10 font-medium text-sm text-gray-600"
+          >
+            <a class="hover:text-brand-dark transition-colors" href="#approche"
+              >Notre approche</a
+            >
+            <a class="hover:text-brand-dark transition-colors" href="#methode"
+              >Méthode</a
+            >
+            <a class="hover:text-brand-dark transition-colors" href="#impact"
+              >Impact</a
+            >
+            <a class="hover:text-brand-dark transition-colors" href="#apropos"
+              >À propos</a
+            >
+          </div>
 
-            <div class="bg-gray-50 rounded-[2rem] overflow-hidden aspect-[4/3] relative mb-2 shadow-inner">
-              <img alt="Exemple de site" class="w-full h-full object-cover opacity-95"
-                   src="https://picsum.photos/seed/yoga/800/600" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+          <!-- CTA Area -->
+          <a
+            class="flex items-center gap-2 text-sm font-semibold text-brand-dark hover:text-brand-orange transition-colors"
+            href="#contact"
+          >
+            Me contacter
+          </a>
+        </nav>
+      </header>
+
+      <main class="flex-grow pt-24">
+        <section
+          class="relative pt-24 pb-32 md:pt-32 md:pb-40 px-6 md:px-12 max-w-8xl mx-auto overflow-hidden"
+          id="hero"
+        >
+          <div
+            class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center"
+          >
+            <div class="max-w-2xl z-10">
+              <h1
+                class="load-reveal max-w-[90%] md:max-w-[28rem] lg:max-w-[34rem] text-balance text-6xl md:text-7xl lg:text-[5rem] font-extrabold leading-[1.05] mb-8 tracking-tight text-brand-dark"
+              >
+                Une présence web claire pour votre
+                <span class="text-brand-orange relative inline-block">
+                  activité.
+                  <svg
+                    class="absolute w-full h-3 -bottom-1 left-0 text-brand-orange opacity-30"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 100 10"
+                  >
+                    <path
+                      d="M0 5 Q 50 10 100 5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    />
+                  </svg>
+                </span>
+              </h1>
+              <p
+                class="load-reveal load-delay-1 text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-lg"
+              >
+                J’aide les indépendants et petits business à structurer des
+                pages et sites web simples, lisibles et crédibles.
+              </p>
+              <div
+                class="load-reveal load-delay-2 flex flex-col sm:flex-row items-start sm:items-center gap-6"
+              >
+                <button
+                  class="bg-brand-orange text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-[#c56045] transition-colors shadow-lg shadow-brand-orange/10"
+                >
+                  Discuter de votre projet
+                </button>
+                <div class="flex flex-col">
+                  <span class="text-sm font-semibold text-brand-dark"
+                    >Échange simple,</span
+                  >
+                  <span class="text-sm text-gray-400">sans engagement.</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="load-reveal load-delay-3 relative flex justify-center lg:justify-end mt-16 lg:mt-0 perspective-1000"
+            >
+              <div
+                class="relative z-10 bg-white p-3 md:p-4 rounded-[2.5rem] shadow-xl max-w-[340px] md:max-w-[460px] border border-gray-100/50"
+              >
+                <div
+                  class="bg-gray-50 rounded-[2rem] overflow-hidden aspect-[4/3] relative mb-2 shadow-inner"
+                >
+                  <img
+                    alt="Exemple de site"
+                    class="w-full h-full object-cover opacity-95"
+                    src="https://picsum.photos/seed/yoga/800/600"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+                  ></div>
+
+                  <div
+                    class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm p-5 rounded-2xl shadow-lg border border-white/40"
+                  >
+                    <div class="flex gap-3 mb-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-brand-orange/10 flex items-center justify-center text-brand-orange"
+                      >
+                        <i
+                          data-lucide="arrow-right"
+                          style="width: 16px; height: 16px"
+                        ></i>
+                      </div>
+                      <div>
+                        <div
+                          class="h-2 w-24 bg-brand-dark rounded-full mb-1.5 opacity-80"
+                        ></div>
+                        <div class="h-2 w-16 bg-gray-300 rounded-full"></div>
+                      </div>
+                    </div>
+                    <div
+                      class="h-10 w-full bg-brand-dark rounded-xl flex items-center justify-center text-white text-xs font-bold"
+                    >
+                      Prendre rendez-vous
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="absolute -right-12 -bottom-16 w-[140px] md:w-[160px] bg-brand-dark rounded-[2.5rem] p-2 shadow-xl border-4 border-gray-800"
+                >
+                  <div
+                    class="bg-white rounded-[2rem] overflow-hidden aspect-[9/19.5]"
+                  >
+                    <img
+                      alt="Mobile"
+                      class="w-full h-full object-cover"
+                      src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=400"
+                    />
+                  </div>
+                </div>
+              </div>
 
               <div
-                      class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm p-5 rounded-2xl shadow-lg border border-white/40">
-                <div class="flex gap-3 mb-3">
-                  <div
-                          class="w-10 h-10 rounded-full bg-brand-orange/10 flex items-center justify-center text-brand-orange">
-                    <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
-                  </div>
-                  <div>
-                    <div class="h-2 w-24 bg-brand-dark rounded-full mb-1.5 opacity-80"></div>
-                    <div class="h-2 w-16 bg-gray-300 rounded-full"></div>
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-orange/5 rounded-full blur-3xl -z-10"
+              ></div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="bg-brand-dark text-white py-32 md:py-40 px-6 md:px-12 rounded-t-[3rem] md:rounded-t-[5rem] -mt-12 relative z-20"
+          id="constat"
+        >
+          <div class="max-w-7xl mx-auto">
+            <div class="reveal text-center max-w-4xl mx-auto mb-24 md:mb-32">
+              <span
+                class="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/10 text-xs font-semibold tracking-wider uppercase mb-6 text-gray-300"
+                >Le constat</span
+              >
+              <h2 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+                Beaucoup de sites existent.<br />
+                <span class="text-brand-orange">Peu sont vraiment clairs.</span>
+              </h2>
+              <p
+                class="text-gray-400 text-xl md:text-2xl leading-relaxed font-light"
+              >
+                Beaucoup de professionnels compétents peinent à expliquer
+                clairement ce qu’ils font sur leur site, malgré une vraie
+                expertise.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div
+                class="!bg-[#262626] p-8 rounded-3xl hover:!bg-[#303030] transition-all duration-300 group border !border-white/5 hover:!border-white/10"
+              >
+                <div
+                  class="w-16 h-16 rounded-2xl bg-brand-dark border !border-[#374151] flex items-center justify-center text-brand-orange mb-8 group-hover:scale-105 transition-transform shadow-lg shadow-black/20"
+                >
+                  <i
+                    data-lucide="message-circle-question"
+                    style="width: 32px; height: 32px"
+                  ></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-white">
+                  Un discours trop flou
+                </h3>
+                <p class="text-gray-400 text-base leading-relaxed">
+                  Le visiteur ne comprend pas immédiatement ce que vous
+                  proposez.
+                </p>
+              </div>
+              <div
+                class="!bg-[#262626] p-8 rounded-3xl hover:!bg-[#303030] transition-all duration-300 group border !border-white/5 hover:!border-white/10"
+              >
+                <div
+                  class="w-16 h-16 rounded-2xl bg-brand-dark border !border-[#374151] flex items-center justify-center text-brand-orange mb-8 group-hover:scale-105 transition-transform shadow-lg shadow-black/20"
+                >
+                  <i data-lucide="layers" style="width: 32px; height: 32px"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-white">
+                  Une hiérarchie peu lisible
+                </h3>
+                <p class="text-gray-400 text-base leading-relaxed">
+                  L’essentiel se perd dans le détail, faute de structure claire.
+                </p>
+              </div>
+              <div
+                class="!bg-[#262626] p-8 rounded-3xl hover:!bg-[#303030] transition-all duration-300 group border !border-white/5 hover:!border-white/10"
+              >
+                <div
+                  class="w-16 h-16 rounded-2xl bg-brand-dark border !border-[#374151] flex items-center justify-center text-brand-orange mb-8 group-hover:scale-105 transition-transform shadow-lg shadow-black/20"
+                >
+                  <i
+                    data-lucide="shield-off"
+                    style="width: 32px; height: 32px"
+                  ></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-white">
+                  Un site qui ne rassure pas
+                </h3>
+                <p class="text-gray-400 text-base leading-relaxed">
+                  Même avec de bonnes informations, la crédibilité ne passe pas.
+                </p>
+              </div>
+              <div
+                class="!bg-[#262626] p-8 rounded-3xl hover:!bg-[#303030] transition-all duration-300 group border !border-white/5 hover:!border-white/10"
+              >
+                <div
+                  class="w-16 h-16 rounded-2xl bg-brand-dark border !border-[#374151] flex items-center justify-center text-brand-orange mb-8 group-hover:scale-105 transition-transform shadow-lg shadow-black/20"
+                >
+                  <i
+                    data-lucide="smartphone"
+                    style="width: 32px; height: 32px"
+                  ></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-white">
+                  Une expérience mobile négligée
+                </h3>
+                <p class="text-gray-400 text-base leading-relaxed">
+                  Sur téléphone, la lecture devient difficile et décourageante.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="bg-brand-cream py-24 md:py-32 px-6 md:px-12"
+          id="approche"
+        >
+          <div class="max-w-7xl mx-auto">
+            <div
+              class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+            >
+              <div class="reveal">
+                <span
+                  class="inline-block text-brand-green text-sm font-medium uppercase tracking-[0.05em] mb-6"
+                  >Notre approche</span
+                >
+                <h2
+                  class="text-4xl md:text-5xl font-semibold leading-tight text-brand-dark mb-8"
+                >
+                  Une approche volontairement simple.
+                </h2>
+                <p class="text-lg text-gray-600 leading-relaxed mb-6 max-w-xl">
+                  Flowpage conçoit des pages et sites web avec une intention
+                  claire : rendre votre activité compréhensible, crédible et
+                  facile à parcourir.
+                </p>
+                <p class="text-lg text-gray-600 leading-relaxed max-w-xl">
+                  Je ne cherche pas à impressionner avec des effets inutiles.
+                  Chaque choix de structure, de texte et de design sert la
+                  lisibilité.
+                </p>
+              </div>
+
+              <div class="reveal delay-1 flex flex-col">
+                <div class="py-8 border-t border-gray-200">
+                  <span
+                    class="block text-xs font-semibold uppercase tracking-[0.05em] text-brand-orange mb-3"
+                    >Pilier 01</span
+                  >
+                  <h3 class="text-2xl font-semibold text-brand-dark mb-3">
+                    Une structure pensée avant le design
+                  </h3>
+                  <p class="text-base text-gray-600 leading-relaxed">
+                    Avant de parler couleurs ou animations, le message est
+                    clarifié et organisé.
+                  </p>
+                </div>
+                <div class="py-8 border-t border-gray-200">
+                  <span
+                    class="block text-xs font-semibold uppercase tracking-[0.05em] text-brand-orange mb-3"
+                    >Pilier 02</span
+                  >
+                  <h3 class="text-2xl font-semibold text-brand-dark mb-3">
+                    Un ton professionnel et rassurant
+                  </h3>
+                  <p class="text-base text-gray-600 leading-relaxed">
+                    Un site doit inspirer confiance. La simplicité et la
+                    cohérence priment.
+                  </p>
+                </div>
+                <div class="py-8 border-t border-b border-gray-200">
+                  <span
+                    class="block text-xs font-semibold uppercase tracking-[0.05em] text-brand-orange mb-3"
+                    >Pilier 03</span
+                  >
+                  <h3 class="text-2xl font-semibold text-brand-dark mb-3">
+                    Une expérience fluide sur tous les écrans
+                  </h3>
+                  <p class="text-base text-gray-600 leading-relaxed">
+                    Lisible, rapide et confortable, sans surcharge inutile.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="bg-brand-lightdark py-24 md:py-32 px-6 md:px-12 border-t border-brand-dark/5"
+          id="methode"
+        >
+          <div class="max-w-5xl mx-auto">
+            <h2
+              class="reveal text-4xl md:text-5xl font-bold text-center mb-24 md:mb-32"
+            >
+              Comment ça se passe,
+              <span class="text-brand-orange">concrètement ?</span>
+            </h2>
+            <div class="relative space-y-20 md:space-y-24">
+              <div
+                class="absolute left-[34px] top-8 bottom-8 w-0.5 bg-gray-200 hidden md:block"
+              ></div>
+              <div
+                class="reveal delay-1 relative flex flex-col md:flex-row gap-10 md:gap-16 items-start group"
+              >
+                <div
+                  class="flex-shrink-0 w-[72px] h-[72px] rounded-full flex items-center justify-center text-2xl font-bold z-10 border-[6px] border-brand-cream transition-transform duration-300 group-hover:scale-105 bg-white text-brand-orange shadow-md"
+                >
+                  01
+                </div>
+                <div class="pt-2 max-w-2xl">
+                  <h3 class="text-3xl font-bold mb-4 text-brand-dark">
+                    Vous m'expliquez votre activité
+                  </h3>
+                  <p class="text-gray-600 text-lg leading-relaxed">
+                    Vous me présentez votre activité, vos objectifs et vos
+                    contraintes. À travers quelques échanges simples ou un
+                    questionnaire clair, je comprends ce qui doit être expliqué
+                    — et surtout comment.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="reveal delay-2 relative flex flex-col md:flex-row gap-10 md:gap-16 items-start group"
+              >
+                <div
+                  class="flex-shrink-0 w-[72px] h-[72px] rounded-full flex items-center justify-center text-2xl font-bold z-10 border-[6px] border-brand-cream transition-transform duration-300 group-hover:scale-105 bg-white text-brand-orange shadow-md"
+                >
+                  02
+                </div>
+                <div class="pt-2 max-w-2xl">
+                  <h3 class="text-3xl font-bold mb-4 text-brand-dark">
+                    Je structure et conçois votre site
+                  </h3>
+                  <p class="text-gray-600 text-lg leading-relaxed">
+                    Je conçois la structure, les contenus et le design de votre
+                    site. Chaque choix vise la clarté, la crédibilité et une
+                    lecture fluide, sans surcharge inutile.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="reveal delay-3 relative flex flex-col md:flex-row gap-10 md:gap-16 items-start group"
+              >
+                <div
+                  class="flex-shrink-0 w-[72px] h-[72px] rounded-full flex items-center justify-center text-2xl font-bold z-10 border-[6px] border-brand-cream transition-transform duration-300 group-hover:scale-105 bg-brand-orange text-white shadow-xl shadow-brand-orange/30"
+                >
+                  03
+                </div>
+                <div class="pt-2 max-w-2xl">
+                  <h3 class="text-3xl font-bold mb-4 text-brand-dark">
+                    Votre site est en ligne, prêt à servir
+                  </h3>
+                  <p class="text-gray-600 text-lg leading-relaxed">
+                    Votre site est mis en ligne, clair et professionnel. Il
+                    devient une base saine pour présenter votre activité,
+                    rassurer vos visiteurs et faciliter les prises de contact.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="bg-[#F3F1EC] border-y border-brand-dark/[0.08] py-24 md:py-32 px-6 md:px-12"
+          id="impact"
+        >
+          <div
+            aria-label="Ce que ça change pour vous"
+            class="max-w-7xl mx-auto"
+          >
+            <div class="reveal text-center mb-24">
+              <span
+                class="inline-block mb-6 text-xs font-semibold tracking-[0.18em] uppercase text-brand-orange font-sans"
+                >Votre présence en ligne</span
+              >
+              <h2
+                class="font-heading text-4xl md:text-5xl font-bold tracking-tight leading-tight text-brand-dark mb-6"
+              >
+                Ce que ça change pour vous.
+              </h2>
+              <p
+                class="font-sans text-lg leading-relaxed text-gray-600 max-w-2xl mx-auto"
+              >
+                Une présence web claire ne promet pas des miracles. Elle vous
+                aide à être compris, pris au sérieux et contacté plus
+                facilement.
+              </p>
+            </div>
+
+            <div
+              class="flex flex-col border border-brand-dark/10 rounded-[6px] overflow-hidden"
+            >
+              <div
+                class="ex-item grid grid-cols-2 max-md:grid-cols-1 items-center min-h-[340px] border-b border-brand-dark/10 bg-brand-cream opacity-0 translate-y-8 transition-all duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+              >
+                <div
+                  class="ex-item__visual relative h-full min-h-[340px] max-md:min-h-[220px] flex items-center justify-center bg-brand-beige rounded"
+                >
+                  <div class="flex flex-col gap-3 w-[180px]">
+                    <div
+                      class="flex flex-col gap-1.5 pb-[14px] border-b border-brand-dark/10"
+                    >
+                      <div
+                        class="h-2.5 w-3/4 rounded-[3px] bg-brand-orange/85"
+                      ></div>
+                      <div
+                        class="h-2.5 w-1/2 rounded-[3px] bg-brand-orange/25"
+                      ></div>
+                    </div>
+                    <div class="flex flex-col gap-[7px]">
+                      <div
+                        class="h-[5px] w-full rounded-sm bg-brand-dark/[0.11]"
+                      ></div>
+                      <div
+                        class="h-[5px] w-[88%] rounded-sm bg-brand-dark/[0.11]"
+                      ></div>
+                      <div
+                        class="h-[5px] w-[94%] rounded-sm bg-brand-dark/[0.11]"
+                      ></div>
+                      <div
+                        class="h-[5px] w-[60%] rounded-sm bg-brand-dark/[0.11]"
+                      ></div>
+                    </div>
                   </div>
                 </div>
                 <div
-                        class="h-10 w-full bg-brand-dark rounded-xl flex items-center justify-center text-white text-xs font-bold">
-                  Prendre rendez-vous
+                  class="p-[52px_56px] max-md:p-[40px_24px] flex flex-col gap-5"
+                >
+                  <span
+                    class="text-[10px] font-semibold tracking-[0.18em] uppercase text-brand-orange/70 font-sans"
+                    >01</span
+                  >
+                  <div class="w-7 h-[1.5px] bg-brand-orange/50"></div>
+                  <h3
+                    class="font-heading text-[clamp(1.45rem,2.4vw,2rem)] font-semibold tracking-[-0.02em] leading-[1.15] text-brand-dark"
+                  >
+                    Être compris<br />plus rapidement
+                  </h3>
+                  <p
+                    class="font-sans text-[0.935rem] font-light leading-[1.78] text-gray-600 max-w-[320px]"
+                  >
+                    En quelques secondes, un visiteur comprend ce que vous
+                    faites et à qui vous vous adressez.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="ex-item grid grid-cols-2 max-md:grid-cols-1 items-center min-h-[340px] border-b border-brand-dark/10 bg-[#FAF9F5] opacity-0 translate-y-8 transition-all duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+              >
+                <div
+                  class="ex-item__visual relative md:order-2 h-full min-h-[340px] max-md:min-h-[220px] flex items-center justify-center bg-brand-beige rounded"
+                >
+                  <div class="flex flex-col gap-[14px] w-[170px]">
+                    <div
+                      class="w-8 h-[3px] rounded-sm bg-brand-orange/70 mb-0.5"
+                    ></div>
+                    <div class="flex items-end gap-3 h-[88px]">
+                      <div
+                        class="flex-1 h-full rounded-[3px] bg-brand-orange/18"
+                      ></div>
+                      <div
+                        class="flex-1 h-[72%] rounded-[3px] bg-brand-dark/10"
+                      ></div>
+                      <div
+                        class="flex-1 h-[88%] rounded-[3px] bg-brand-dark/10"
+                      ></div>
+                    </div>
+                    <div
+                      class="w-full h-[1.5px] rounded-[1px] bg-brand-dark/15"
+                    ></div>
+                  </div>
+                </div>
+                <div
+                  class="md:order-1 p-[52px_56px] max-md:p-[40px_24px] flex flex-col gap-5"
+                >
+                  <span
+                    class="text-[10px] font-semibold tracking-[0.18em] uppercase text-brand-orange/70 font-sans"
+                    >02</span
+                  >
+                  <div class="w-7 h-[1.5px] bg-brand-orange/50"></div>
+                  <h3
+                    class="font-heading text-[clamp(1.45rem,2.4vw,2rem)] font-semibold tracking-[-0.02em] leading-[1.15] text-brand-dark"
+                  >
+                    Paraître plus<br />professionnel
+                  </h3>
+                  <p
+                    class="font-sans text-[0.935rem] font-light leading-[1.78] text-gray-600 max-w-[320px]"
+                  >
+                    Une structure claire et un ton maîtrisé renforcent votre
+                    crédibilité, même sans artifices.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="ex-item grid grid-cols-2 max-md:grid-cols-1 items-center min-h-[340px] bg-brand-cream opacity-0 translate-y-8 transition-all duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+              >
+                <div
+                  class="ex-item__visual relative h-full min-h-[340px] max-md:min-h-[220px] flex items-center justify-center bg-brand-beige rounded"
+                >
+                  <div class="flex flex-col gap-2.5 w-[180px]">
+                    <div
+                      class="h-9 w-[130px] self-start rounded-[14px_14px_14px_4px] bg-brand-dark/10"
+                    ></div>
+                    <div
+                      class="h-9 w-[110px] self-end rounded-[14px_14px_4px_14px] bg-brand-orange/18"
+                    ></div>
+                    <div
+                      class="h-6 w-20 self-start rounded-[14px_14px_14px_4px] bg-brand-dark/[0.07]"
+                    ></div>
+                  </div>
+                </div>
+                <div
+                  class="p-[52px_56px] max-md:p-[40px_24px] flex flex-col gap-5"
+                >
+                  <span
+                    class="text-[10px] font-semibold tracking-[0.18em] uppercase text-brand-orange/70 font-sans"
+                    >03</span
+                  >
+                  <div class="w-7 h-[1.5px] bg-brand-orange/50"></div>
+                  <h3
+                    class="font-heading text-[clamp(1.45rem,2.4vw,2rem)] font-semibold tracking-[-0.02em] leading-[1.15] text-brand-dark"
+                  >
+                    Simplifier la<br />prise de contact
+                  </h3>
+                  <p
+                    class="font-sans text-[0.935rem] font-light leading-[1.78] text-gray-600 max-w-[320px]"
+                  >
+                    Un site fluide et organisé facilite naturellement les
+                    échanges, sans pression ni complexité.
+                  </p>
                 </div>
               </div>
             </div>
-
-            <div
-                    class="absolute -right-12 -bottom-16 w-[140px] md:w-[160px] bg-brand-dark rounded-[2.5rem] p-2 shadow-xl border-4 border-gray-800">
-
-              <div class="bg-white rounded-[2rem] overflow-hidden aspect-[9/19.5]">
-                <img alt="Mobile"
-                     class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=400" />
-              </div>
-            </div>
           </div>
+        </section>
 
-          <div
-                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-orange/5 rounded-full blur-3xl -z-10">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-brand-dark text-white py-32 md:py-40 px-6 md:px-12 rounded-t-[3rem] md:rounded-t-[5rem] -mt-12 relative z-20" id="constat">
-      <div class="max-w-7xl mx-auto">
-        <div class="reveal text-center max-w-4xl mx-auto mb-24 md:mb-32">
-            <span
-                    class="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/10 text-xs font-semibold tracking-wider uppercase mb-6 text-gray-300">Le
-              constat</span>
-          <h2 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">
-            Beaucoup de sites existent.<br />
-            <span class="text-brand-orange">Peu sont vraiment clairs.</span>
-          </h2>
-          <p class="text-gray-400 text-xl md:text-2xl leading-relaxed font-light">
-            Beaucoup de professionnels compétents peinent à expliquer clairement ce qu’ils font sur leur site,
-            malgré une vraie expertise.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div
-                  class="!bg-[#262626] p-8 rounded-3xl hover:!bg-[#303030] transition-all duration-300 group border !border-white/5 hover:!border-white/10">
-            <div
-                    class="w-16 h-16 rounded-2xl bg-brand-dark border !border-[#374151] flex items-center justify-center text-brand-orange mb-8 group-hover:scale-105 transition-transform shadow-lg shadow-black/20">
-              <i data-lucide="message-circle-question" style="width:32px;height:32px"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-4 text-white">Un discours trop flou</h3>
-            <p class="text-gray-400 text-base leading-relaxed">Le visiteur ne comprend pas immédiatement ce que vous
-              proposez.</p>
-          </div>
-          <div
-                  class="!bg-[#262626] p-8 rounded-3xl hover:!bg-[#303030] transition-all duration-300 group border !border-white/5 hover:!border-white/10">
-            <div
-                    class="w-16 h-16 rounded-2xl bg-brand-dark border !border-[#374151] flex items-center justify-center text-brand-orange mb-8 group-hover:scale-105 transition-transform shadow-lg shadow-black/20">
-              <i data-lucide="layers" style="width:32px;height:32px"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-4 text-white">Une hiérarchie peu lisible</h3>
-            <p class="text-gray-400 text-base leading-relaxed">L’essentiel se perd dans le détail, faute de structure
-              claire.</p>
-          </div>
-          <div
-                  class="!bg-[#262626] p-8 rounded-3xl hover:!bg-[#303030] transition-all duration-300 group border !border-white/5 hover:!border-white/10">
-            <div
-                    class="w-16 h-16 rounded-2xl bg-brand-dark border !border-[#374151] flex items-center justify-center text-brand-orange mb-8 group-hover:scale-105 transition-transform shadow-lg shadow-black/20">
-              <i data-lucide="shield-off" style="width:32px;height:32px"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-4 text-white">Un site qui ne rassure pas</h3>
-            <p class="text-gray-400 text-base leading-relaxed">Même avec de bonnes informations, la crédibilité ne
-              passe pas.</p>
-          </div>
-          <div
-                  class="!bg-[#262626] p-8 rounded-3xl hover:!bg-[#303030] transition-all duration-300 group border !border-white/5 hover:!border-white/10">
-            <div
-                    class="w-16 h-16 rounded-2xl bg-brand-dark border !border-[#374151] flex items-center justify-center text-brand-orange mb-8 group-hover:scale-105 transition-transform shadow-lg shadow-black/20">
-              <i data-lucide="smartphone" style="width:32px;height:32px"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-4 text-white">Une expérience mobile négligée</h3>
-            <p class="text-gray-400 text-base leading-relaxed">Sur téléphone, la lecture devient difficile et
-              décourageante.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-brand-cream py-24 md:py-32 px-6 md:px-12" id="approche">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div class="reveal">
-              <span class="inline-block text-brand-green text-sm font-medium uppercase tracking-[0.05em] mb-6">Notre
-                approche</span>
-            <h2 class="text-4xl md:text-5xl font-semibold leading-tight text-brand-dark mb-8">Une approche
-              volontairement simple.</h2>
-            <p class="text-lg text-gray-600 leading-relaxed mb-6 max-w-xl">
-              Flowpage conçoit des pages et sites web avec une intention claire : rendre votre activité
-              compréhensible, crédible et facile à parcourir.
+        <section class="bg-brand-dark py-16 md:py-20 px-6" id="separation">
+          <div class="max-w-6xl mx-auto text-center">
+            <p class="reveal text-sm uppercase tracking-[0.4em] text-gray-400">
+              Clarté · Structure · Résultat
             </p>
-            <p class="text-lg text-gray-600 leading-relaxed max-w-xl">
-              Je ne cherche pas à impressionner avec des effets inutiles. Chaque choix de structure, de texte et de
-              design sert la lisibilité.
+          </div>
+        </section>
+
+        <section class="bg-white py-32 md:py-40 px-6 md:px-12" id="pourqui">
+          <div class="max-w-7xl mx-auto">
+            <p
+              class="reveal text-center text-gray-500 max-w-xl mx-auto mb-14 leading-relaxed"
+            >
+              Pour éviter toute confusion, voici à qui Flowpage s’adresse — et à
+              qui non.
+            </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+              <!-- POUR VOUS -->
+              <div
+                class="reveal delay-1 p-12 md:p-14 bg-white rounded-[2.5rem] border border-gray-200 shadow-sm"
+              >
+                <h3 class="text-3xl font-bold mb-10 text-brand-green">
+                  C’est fait pour vous si…
+                </h3>
+
+                <ul class="space-y-6">
+                  <li class="flex items-center gap-4">
+                    <span
+                      class="w-6 h-6 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center"
+                    >
+                      <i
+                        data-lucide="check"
+                        style="width: 16px; height: 16px; stroke-width: 3"
+                      ></i>
+                    </span>
+                    <span class="text-lg text-gray-700">
+                      Vous êtes indépendant ou freelance
+                    </span>
+                  </li>
+
+                  <li class="flex items-center gap-4">
+                    <span
+                      class="w-6 h-6 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center"
+                    >
+                      <i
+                        data-lucide="check"
+                        style="width: 16px; height: 16px; stroke-width: 3"
+                      ></i>
+                    </span>
+                    <span class="text-lg text-gray-700">
+                      Vous êtes un artisan local (plombier, menuisier…)
+                    </span>
+                  </li>
+
+                  <li class="flex items-center gap-4">
+                    <span
+                      class="w-6 h-6 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center"
+                    >
+                      <i
+                        data-lucide="check"
+                        style="width: 16px; height: 16px; stroke-width: 3"
+                      ></i>
+                    </span>
+                    <span class="text-lg text-gray-700">
+                      Vous proposez des services de soin ou d’accompagnement
+                    </span>
+                  </li>
+
+                  <li class="flex items-center gap-4">
+                    <span
+                      class="w-6 h-6 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center"
+                    >
+                      <i
+                        data-lucide="check"
+                        style="width: 16px; height: 16px; stroke-width: 3"
+                      ></i>
+                    </span>
+                    <span class="text-lg text-gray-700">
+                      Vous voulez des résultats sans complexité technique
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- PAS POUR VOUS -->
+              <div
+                class="reveal delay-2 p-12 md:p-14 bg-gray-50 rounded-[2.5rem] border border-gray-200 opacity-70"
+              >
+                <h3 class="text-3xl font-bold mb-10 text-gray-400">
+                  Ce n’est pas pour vous si…
+                </h3>
+
+                <ul class="space-y-6">
+                  <li class="flex items-center gap-4">
+                    <i
+                      class="text-gray-400"
+                      data-lucide="x"
+                      style="width: 18px; height: 18px"
+                    ></i>
+                    <span class="text-lg text-gray-500">
+                      Vous voulez lancer un gros site e-commerce
+                    </span>
+                  </li>
+
+                  <li class="flex items-center gap-4">
+                    <i
+                      class="text-gray-400"
+                      data-lucide="x"
+                      style="width: 18px; height: 18px"
+                    ></i>
+                    <span class="text-lg text-gray-500">
+                      Vous avez besoin d’une plateforme complexe
+                    </span>
+                  </li>
+
+                  <li class="flex items-center gap-4">
+                    <i
+                      class="text-gray-400"
+                      data-lucide="x"
+                      style="width: 18px; height: 18px"
+                    ></i>
+                    <span class="text-lg text-gray-500">
+                      Vous cherchez un site de 50 pages
+                    </span>
+                  </li>
+
+                  <li class="flex items-center gap-4">
+                    <i
+                      class="text-gray-400"
+                      data-lucide="x"
+                      style="width: 18px; height: 18px"
+                    ></i>
+                    <span class="text-lg text-gray-500">
+                      Vous préférez le blabla aux résultats
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="py-24 md:py-32 px-6 md:px-12 text-center border-t border-brand-cream"
+          id="apropos"
+        >
+          <div class="reveal max-w-4xl mx-auto flex flex-col items-center">
+            <div
+              class="mb-10 font-heading font-semibold text-2xl tracking-tight text-brand-dark"
+            >
+              Flowpage<span class="text-brand-orange">.</span>
+            </div>
+            <h2 class="text-3xl font-bold mb-10 text-brand-dark">
+              Une approche, portée par une personne.
+            </h2>
+            <div class="space-y-8">
+              <p
+                class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
+              >
+                Flowpage est un projet indépendant. Je travaille directement
+                avec vous, sans intermédiaire, sans structure complexe.
+              </p>
+              <div
+                class="w-16 h-1 bg-brand-orange mx-auto rounded-full opacity-30"
+              ></div>
+              <p
+                class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
+              >
+                Mon rôle est simple : clarifier votre message et construire une
+                présence web cohérente, utile et durable.
+              </p>
+              <p
+                class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
+              >
+                Je privilégie les échanges simples, les décisions claires et les
+                projets maîtrisés.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="bg-brand-dark py-24 md:py-32 px-6 md:px-12" id="faq">
+          <div class="max-w-5xl mx-auto">
+            <!-- Header -->
+            <div class="reveal text-center mb-20">
+              <span
+                class="inline-block py-1 px-4 rounded-full bg-white/10 border border-white/10 text-xs font-semibold tracking-wider uppercase mb-6 text-gray-300"
+              >
+                Questions fréquentes
+              </span>
+              <h2 class="text-4xl md:text-5xl font-bold text-brand-cream mb-6">
+                Vous vous posez peut-être ces questions
+              </h2>
+              <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                Voici des réponses claires, sans jargon ni promesses floues.
+              </p>
+            </div>
+
+            <!-- FAQ items -->
+            <div class="space-y-6">
+              <!-- Question 1 -->
+              <div
+                class="reveal delay-1 faq-item bg-[#262626] p-8 rounded-3xl border border-white/5 hover:bg-[#303030] hover:border-white/10 transition-all duration-300 group"
+              >
+                <button
+                  class="faq-toggle w-full flex items-center justify-between text-left"
+                >
+                  <h3 class="text-xl font-bold text-brand-cream">
+                    Est-ce que Flowpage se limite à une seule page ?
+                  </h3>
+                  <span
+                    class="faq-icon text-brand-orange text-2xl font-bold transition-transform duration-300"
+                  >
+                    +
+                  </span>
+                </button>
+
+                <div
+                  class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out"
+                >
+                  <p class="text-gray-400 mt-4 leading-relaxed">
+                    Non. Une page peut suffire dans certains cas, mais Flowpage
+                    s’adapte au besoin réel. Selon votre activité, il peut
+                    s’agir d’une page principale claire ou d’un site plus
+                    structuré, sans complexité inutile.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Question 2 -->
+              <div
+                class="reveal delay-2 faq-item bg-[#262626] p-8 rounded-3xl border border-white/5 hover:bg-[#303030] hover:border-white/10 transition-all duration-300 group"
+              >
+                <button
+                  class="faq-toggle w-full flex items-center justify-between text-left"
+                >
+                  <h3 class="text-xl font-bold text-brand-cream">
+                    Est-ce adapté si j’ai déjà un site web ?
+                  </h3>
+                  <span
+                    class="faq-icon text-brand-orange text-2xl font-bold transition-transform duration-300"
+                  >
+                    +
+                  </span>
+                </button>
+
+                <div
+                  class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out"
+                >
+                  <p class="text-gray-400 mt-4 leading-relaxed">
+                    Oui. Flowpage intervient souvent sur des sites existants
+                    devenus confus, trop chargés ou inefficaces. L’objectif
+                    n’est pas de tout refaire, mais de clarifier et améliorer ce
+                    qui compte vraiment.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Question 3 -->
+              <div
+                class="reveal delay-3 faq-item bg-[#262626] p-8 rounded-3xl border border-white/5 hover:bg-[#303030] hover:border-white/10 transition-all duration-300 group"
+              >
+                <button
+                  class="faq-toggle w-full flex items-center justify-between text-left"
+                >
+                  <h3 class="text-xl font-bold text-brand-cream">
+                    Comment se passe la collaboration concrètement ?
+                  </h3>
+                  <span
+                    class="faq-icon text-brand-orange text-2xl font-bold transition-transform duration-300"
+                  >
+                    +
+                  </span>
+                </button>
+
+                <div
+                  class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out"
+                >
+                  <p class="text-gray-400 mt-4 leading-relaxed">
+                    Les échanges sont simples et structurés. Je vous pose les
+                    bonnes questions, je fais le travail de réflexion et de
+                    conception, et je vous présente une solution claire. Vous
+                    n’avez pas à gérer la technique.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Question 4 -->
+              <div
+                class="reveal delay-4 faq-item bg-[#262626] p-8 rounded-3xl border border-white/5 hover:bg-[#303030] hover:border-white/10 transition-all duration-300 group"
+              >
+                <button
+                  class="faq-toggle w-full flex items-center justify-between text-left"
+                >
+                  <h3 class="text-xl font-bold text-brand-cream">
+                    Est-ce que je pourrai faire évoluer le site ensuite ?
+                  </h3>
+                  <span
+                    class="faq-icon text-brand-orange text-2xl font-bold transition-transform duration-300"
+                  >
+                    +
+                  </span>
+                </button>
+
+                <div
+                  class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out"
+                >
+                  <p class="text-gray-400 mt-4 leading-relaxed">
+                    Oui. Le site est conçu pour être propre, compréhensible et
+                    évolutif. Vous pouvez demander des ajustements, des ajouts
+                    ou une refonte partielle si votre activité évolue.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Question 5 -->
+              <div
+                class="reveal faq-item bg-[#262626] p-8 rounded-3xl border border-white/5 hover:bg-[#303030] hover:border-white/10 transition-all duration-300 group"
+              >
+                <button
+                  class="faq-toggle w-full flex items-center justify-between text-left"
+                >
+                  <h3 class="text-xl font-bold text-brand-cream">
+                    Combien ça coûte ?
+                  </h3>
+                  <span
+                    class="faq-icon text-brand-orange text-2xl font-bold transition-transform duration-300"
+                  >
+                    +
+                  </span>
+                </button>
+
+                <div
+                  class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out"
+                >
+                  <p class="text-gray-400 mt-4 leading-relaxed">
+                    Il n’y a pas de tarif standard. Chaque projet est différent.
+                    Après un premier échange, je vous dis clairement si Flowpage
+                    est pertinent pour vous et je vous propose une solution
+                    adaptée, sans surprise.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="bg-brand-cream py-24 md:py-32 px-6 md:px-12"
+          id="contact"
+        >
+          <div class="max-w-7xl mx-auto">
+            <div
+              class="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center"
+            >
+              <div class="reveal order-2 lg:order-1">
+                <h2
+                  class="text-4xl md:text-5xl font-extrabold text-brand-dark mb-8 leading-[1.05]"
+                >
+                  Discutons simplement de votre
+                  <span class="text-brand-dark relative inline-block"
+                    >présence web
+                    <svg
+                      class="absolute w-full h-3 -bottom-1 left-0 text-brand-orange opacity-30"
+                      preserveAspectRatio="none"
+                      viewBox="0 0 100 10"
+                    >
+                      <path
+                        d="M0 5 Q 50 10 100 5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                      />
+                    </svg> </span
+                  >.
+                </h2>
+                <p
+                  class="text-gray-600 mb-6 text-xl md:text-2xl leading-relaxed"
+                >
+                  Vous pouvez m’expliquer votre situation, vos doutes ou votre
+                  besoin.<br /><br />Je vous répondrai honnêtement pour vous
+                  dire si Flowpage est pertinent pour vous — ou non.
+                </p>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  Premier échange gratuit.<br />Sans engagement.<br />Sans
+                  pression commerciale.
+                </p>
+              </div>
+              <div
+                class="reveal delay-1 order-1 lg:order-2 bg-white p-10 md:p-14 rounded-[2.5rem] shadow-2xl shadow-brand-orange/5 border border-white"
+              >
+                <form class="space-y-8">
+                  <div class="grid grid-cols-2 gap-6">
+                    <div class="space-y-3">
+                      <label
+                        class="text-sm font-bold text-brand-dark uppercase tracking-wide"
+                        >Nom complet</label
+                      ><input
+                        class="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 text-base focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all placeholder:text-gray-300"
+                        placeholder="Jean Dupont"
+                        type="text"
+                      />
+                    </div>
+                    <div class="space-y-3">
+                      <label
+                        class="text-sm font-bold text-brand-dark uppercase tracking-wide"
+                        >Email</label
+                      ><input
+                        class="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 text-base focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all placeholder:text-gray-300"
+                        placeholder="jean@email.com"
+                        type="email"
+                      />
+                    </div>
+                  </div>
+                  <div class="space-y-3">
+                    <label
+                      class="text-sm font-bold text-brand-dark uppercase tracking-wide"
+                      >Votre activité</label
+                    ><input
+                      class="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 text-base focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all placeholder:text-gray-300"
+                      placeholder="Ex: Thérapeute, Menuisier..."
+                      type="text"
+                    />
+                  </div>
+                  <div class="space-y-3">
+                    <label
+                      class="text-sm font-bold text-brand-dark uppercase tracking-wide"
+                      >Votre message</label
+                    ><textarea
+                      class="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 text-base focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all resize-none placeholder:text-gray-300"
+                      placeholder="Dites-moi en quelques mots ce dont vous avez besoin..."
+                      rows="4"
+                    ></textarea>
+                  </div>
+                  <button
+                    class="w-full bg-brand-orange text-white font-bold py-5 rounded-xl hover:bg-[#c56045] transition-all transform shadow-md shadow-brand-orange/10 hover:bg-[#c56045] flex items-center justify-center gap-3 text-lg"
+                    type="button"
+                  >
+                    Envoyer mon message
+                    <i
+                      data-lucide="arrow-right"
+                      style="width: 20px; height: 20px"
+                    ></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer
+        class="bg-brand-cream py-20 px-6 md:px-12 border-t border-gray-200"
+      >
+        <div
+          class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10 md:gap-0"
+        >
+          <div class="flex flex-col items-center md:items-start gap-4">
+            <div
+              class="flex items-center gap-3 font-extrabold text-2xl tracking-tight"
+            >
+              <div
+                class="w-8 h-8 rounded-full bg-brand-dark text-white flex items-center justify-center"
+              >
+                <i
+                  data-lucide="arrow-up-right"
+                  style="width: 18px; height: 18px"
+                ></i>
+              </div>
+              <span>Flowpage</span>
+            </div>
+            <p
+              class="text-xs font-medium text-gray-400 tracking-wide uppercase"
+            >
+              L'agence web qui parle aux indépendants.
             </p>
           </div>
-
-          <div class="reveal delay-1 flex flex-col">
-            <div class="py-8 border-t border-gray-200">
-                <span class="block text-xs font-semibold uppercase tracking-[0.05em] text-brand-orange mb-3">Pilier
-                  01</span>
-              <h3 class="text-2xl font-semibold text-brand-dark mb-3">Une structure pensée avant le design</h3>
-              <p class="text-base text-gray-600 leading-relaxed">
-                Avant de parler couleurs ou animations, le message est clarifié et organisé.
-              </p>
-            </div>
-            <div class="py-8 border-t border-gray-200">
-                <span class="block text-xs font-semibold uppercase tracking-[0.05em] text-brand-orange mb-3">Pilier
-                  02</span>
-              <h3 class="text-2xl font-semibold text-brand-dark mb-3">Un ton professionnel et rassurant</h3>
-              <p class="text-base text-gray-600 leading-relaxed">
-                Un site doit inspirer confiance. La simplicité et la cohérence priment.
-              </p>
-            </div>
-            <div class="py-8 border-t border-b border-gray-200">
-                <span class="block text-xs font-semibold uppercase tracking-[0.05em] text-brand-orange mb-3">Pilier
-                  03</span>
-              <h3 class="text-2xl font-semibold text-brand-dark mb-3">Une expérience fluide sur tous les écrans</h3>
-              <p class="text-base text-gray-600 leading-relaxed">
-                Lisible, rapide et confortable, sans surcharge inutile.
-              </p>
-            </div>
+          <div class="text-center md:text-right">
+            <a
+              class="text-xl md:text-2xl font-bold text-brand-dark hover:text-brand-orange transition-colors"
+              href="mailto:hello@flowpage.fr"
+              >hello@flowpage.fr</a
+            >
+            <p class="text-sm text-gray-400 mt-2 font-medium">
+              Tout commence par une simple discussion.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="bg-brand-lightdark py-24 md:py-32 px-6 md:px-12 border-t border-brand-dark/5" id="methode">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="reveal text-4xl md:text-5xl font-bold text-center mb-24 md:mb-32">Comment ça se passe, <span
-                class="text-brand-orange">concrètement ?</span></h2>
-        <div class="relative space-y-20 md:space-y-24">
-          <div class="absolute left-[34px] top-8 bottom-8 w-0.5 bg-gray-200 hidden md:block"></div>
-          <div class="reveal delay-1 relative flex flex-col md:flex-row gap-10 md:gap-16 items-start group">
-            <div
-                    class="flex-shrink-0 w-[72px] h-[72px] rounded-full flex items-center justify-center text-2xl font-bold z-10 border-[6px] border-brand-cream transition-transform duration-300 group-hover:scale-105 bg-white text-brand-orange shadow-md">
-              01</div>
-            <div class="pt-2 max-w-2xl">
-              <h3 class="text-3xl font-bold mb-4 text-brand-dark">Vous m'expliquez votre activité</h3>
-              <p class="text-gray-600 text-lg leading-relaxed">Vous me présentez votre activité, vos objectifs et vos
-                contraintes. À travers quelques échanges simples ou un questionnaire clair, je comprends ce qui doit
-                être expliqué — et surtout comment.</p>
-            </div>
-          </div>
-          <div class="reveal delay-2 relative flex flex-col md:flex-row gap-10 md:gap-16 items-start group">
-            <div
-                    class="flex-shrink-0 w-[72px] h-[72px] rounded-full flex items-center justify-center text-2xl font-bold z-10 border-[6px] border-brand-cream transition-transform duration-300 group-hover:scale-105 bg-white text-brand-orange shadow-md">
-              02</div>
-            <div class="pt-2 max-w-2xl">
-              <h3 class="text-3xl font-bold mb-4 text-brand-dark">Je structure et conçois votre site</h3>
-              <p class="text-gray-600 text-lg leading-relaxed">Je conçois la structure, les contenus et le design de
-                votre site. Chaque choix vise la clarté, la crédibilité et une lecture fluide, sans surcharge
-                inutile.</p>
-            </div>
-          </div>
-          <div class="reveal delay-3 relative flex flex-col md:flex-row gap-10 md:gap-16 items-start group">
-            <div
-                    class="flex-shrink-0 w-[72px] h-[72px] rounded-full flex items-center justify-center text-2xl font-bold z-10 border-[6px] border-brand-cream transition-transform duration-300 group-hover:scale-105 bg-brand-orange text-white shadow-xl shadow-brand-orange/30">
-              03</div>
-            <div class="pt-2 max-w-2xl">
-              <h3 class="text-3xl font-bold mb-4 text-brand-dark">Votre site est en ligne, prêt à servir</h3>
-              <p class="text-gray-600 text-lg leading-relaxed">Votre site est mis en ligne, clair et professionnel.
-                Il devient une base saine pour présenter votre activité, rassurer vos visiteurs et faciliter les
-                prises de contact.</p>
-            </div>
+        <div
+          class="max-w-7xl mx-auto mt-20 pt-10 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-medium"
+        >
+          <p>© 2024 Flowpage. Tous droits réservés.</p>
+          <div class="flex gap-8 mt-6 md:mt-0">
+            <a class="hover:text-brand-dark transition-colors" href="#"
+              >Mentions légales</a
+            >
+            <a class="hover:text-brand-dark transition-colors" href="#"
+              >Confidentialité</a
+            >
+            <a class="hover:text-brand-dark transition-colors" href="#">CGV</a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="bg-[#F3F1EC] border-y border-brand-dark/[0.08] py-24 md:py-32 px-6 md:px-12" id="impact">
-      <div aria-label="Ce que ça change pour vous" class="max-w-7xl mx-auto">
-        <div class="reveal text-center mb-24">
-            <span
-                    class="inline-block mb-6 text-xs font-semibold tracking-[0.18em] uppercase text-brand-orange font-sans">Votre
-              présence en ligne</span>
-          <h2 class="font-heading text-4xl md:text-5xl font-bold tracking-tight leading-tight text-brand-dark mb-6">
-            Ce que ça change pour vous.</h2>
-          <p class="font-sans text-lg leading-relaxed text-gray-600 max-w-2xl mx-auto">Une
-            présence web claire ne promet pas des miracles. Elle vous aide à être compris, pris au sérieux et
-            contacté plus facilement.</p>
-        </div>
-
-        <div class="flex flex-col border border-brand-dark/10 rounded-[6px] overflow-hidden">
-          <div
-                  class="ex-item grid grid-cols-2 max-md:grid-cols-1 items-center min-h-[340px] border-b border-brand-dark/10 bg-brand-cream opacity-0 translate-y-8 transition-all duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)]">
-            <div
-                    class="ex-item__visual relative h-full min-h-[340px] max-md:min-h-[220px] flex items-center justify-center bg-brand-beige rounded">
-              <div class="flex flex-col gap-3 w-[180px]">
-                <div class="flex flex-col gap-1.5 pb-[14px] border-b border-brand-dark/10">
-                  <div class="h-2.5 w-3/4 rounded-[3px] bg-brand-orange/85"></div>
-                  <div class="h-2.5 w-1/2 rounded-[3px] bg-brand-orange/25"></div>
-                </div>
-                <div class="flex flex-col gap-[7px]">
-                  <div class="h-[5px] w-full rounded-sm bg-brand-dark/[0.11]"></div>
-                  <div class="h-[5px] w-[88%] rounded-sm bg-brand-dark/[0.11]"></div>
-                  <div class="h-[5px] w-[94%] rounded-sm bg-brand-dark/[0.11]"></div>
-                  <div class="h-[5px] w-[60%] rounded-sm bg-brand-dark/[0.11]"></div>
-                </div>
-              </div>
-            </div>
-            <div class="p-[52px_56px] max-md:p-[40px_24px] flex flex-col gap-5">
-              <span class="text-[10px] font-semibold tracking-[0.18em] uppercase text-brand-orange/70 font-sans">01</span>
-              <div class="w-7 h-[1.5px] bg-brand-orange/50"></div>
-              <h3 class="font-heading text-[clamp(1.45rem,2.4vw,2rem)] font-semibold tracking-[-0.02em] leading-[1.15] text-brand-dark">
-                Être compris<br>plus rapidement</h3>
-              <p class="font-sans text-[0.935rem] font-light leading-[1.78] text-gray-600 max-w-[320px]">En quelques
-                secondes, un visiteur comprend ce que vous faites et à qui vous vous adressez.</p>
-            </div>
-          </div>
-
-          <div
-                  class="ex-item grid grid-cols-2 max-md:grid-cols-1 items-center min-h-[340px] border-b border-brand-dark/10 bg-[#FAF9F5] opacity-0 translate-y-8 transition-all duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)]">
-            <div
-                    class="ex-item__visual relative md:order-2 h-full min-h-[340px] max-md:min-h-[220px] flex items-center justify-center bg-brand-beige rounded">
-              <div class="flex flex-col gap-[14px] w-[170px]">
-                <div class="w-8 h-[3px] rounded-sm bg-brand-orange/70 mb-0.5"></div>
-                <div class="flex items-end gap-3 h-[88px]">
-                  <div class="flex-1 h-full rounded-[3px] bg-brand-orange/18"></div>
-                  <div class="flex-1 h-[72%] rounded-[3px] bg-brand-dark/10"></div>
-                  <div class="flex-1 h-[88%] rounded-[3px] bg-brand-dark/10"></div>
-                </div>
-                <div class="w-full h-[1.5px] rounded-[1px] bg-brand-dark/15"></div>
-              </div>
-            </div>
-            <div class="md:order-1 p-[52px_56px] max-md:p-[40px_24px] flex flex-col gap-5">
-              <span class="text-[10px] font-semibold tracking-[0.18em] uppercase text-brand-orange/70 font-sans">02</span>
-              <div class="w-7 h-[1.5px] bg-brand-orange/50"></div>
-              <h3 class="font-heading text-[clamp(1.45rem,2.4vw,2rem)] font-semibold tracking-[-0.02em] leading-[1.15] text-brand-dark">
-                Paraître plus<br>professionnel</h3>
-              <p class="font-sans text-[0.935rem] font-light leading-[1.78] text-gray-600 max-w-[320px]">Une
-                structure claire et un ton maîtrisé renforcent votre crédibilité, même sans artifices.</p>
-            </div>
-          </div>
-
-          <div
-                  class="ex-item grid grid-cols-2 max-md:grid-cols-1 items-center min-h-[340px] bg-brand-cream opacity-0 translate-y-8 transition-all duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)]">
-            <div
-                    class="ex-item__visual relative h-full min-h-[340px] max-md:min-h-[220px] flex items-center justify-center bg-brand-beige rounded">
-              <div class="flex flex-col gap-2.5 w-[180px]">
-                <div class="h-9 w-[130px] self-start rounded-[14px_14px_14px_4px] bg-brand-dark/10"></div>
-                <div class="h-9 w-[110px] self-end rounded-[14px_14px_4px_14px] bg-brand-orange/18"></div>
-                <div class="h-6 w-20 self-start rounded-[14px_14px_14px_4px] bg-brand-dark/[0.07]"></div>
-              </div>
-            </div>
-            <div class="p-[52px_56px] max-md:p-[40px_24px] flex flex-col gap-5">
-              <span class="text-[10px] font-semibold tracking-[0.18em] uppercase text-brand-orange/70 font-sans">03</span>
-              <div class="w-7 h-[1.5px] bg-brand-orange/50"></div>
-              <h3 class="font-heading text-[clamp(1.45rem,2.4vw,2rem)] font-semibold tracking-[-0.02em] leading-[1.15] text-brand-dark">
-                Simplifier la<br>prise de contact</h3>
-              <p class="font-sans text-[0.935rem] font-light leading-[1.78] text-gray-600 max-w-[320px]">Un site
-                fluide et organisé facilite naturellement les échanges, sans pression ni complexité.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-brand-dark py-16 md:py-20 px-6" id="separation">
-      <div class="max-w-6xl mx-auto text-center">
-        <p class="reveal text-sm uppercase tracking-[0.4em] text-gray-400">
-          Clarté · Structure · Résultat
-        </p>
-      </div>
-    </section>
-
-
-
-    <section class="bg-white py-32 md:py-40 px-6 md:px-12" id="pourqui">
-      <div class="max-w-7xl mx-auto">
-        <p class="reveal text-center text-gray-500 max-w-xl mx-auto mb-14 leading-relaxed">
-          Pour éviter toute confusion, voici à qui Flowpage s’adresse — et à qui non.
-        </p>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-
-          <!-- POUR VOUS -->
-          <div class="reveal delay-1 p-12 md:p-14 bg-white rounded-[2.5rem] border border-gray-200 shadow-sm">
-            <h3 class="text-3xl font-bold mb-10 text-brand-green">
-              C’est fait pour vous si…
-            </h3>
-
-            <ul class="space-y-6">
-              <li class="flex items-center gap-4">
-                  <span
-                          class="w-6 h-6 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center">
-                    <i data-lucide="check" style="width:16px;height:16px;stroke-width:3"></i>
-                  </span>
-                <span class="text-lg text-gray-700">
-                    Vous êtes indépendant ou freelance
-                  </span>
-              </li>
-
-              <li class="flex items-center gap-4">
-                  <span
-                          class="w-6 h-6 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center">
-                    <i data-lucide="check" style="width:16px;height:16px;stroke-width:3"></i>
-                  </span>
-                <span class="text-lg text-gray-700">
-                    Vous êtes un artisan local (plombier, menuisier…)
-                  </span>
-              </li>
-
-              <li class="flex items-center gap-4">
-                  <span
-                          class="w-6 h-6 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center">
-                    <i data-lucide="check" style="width:16px;height:16px;stroke-width:3"></i>
-                  </span>
-                <span class="text-lg text-gray-700">
-                    Vous proposez des services de soin ou d’accompagnement
-                  </span>
-              </li>
-
-              <li class="flex items-center gap-4">
-                  <span
-                          class="w-6 h-6 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center">
-                    <i data-lucide="check" style="width:16px;height:16px;stroke-width:3"></i>
-                  </span>
-                <span class="text-lg text-gray-700">
-                    Vous voulez des résultats sans complexité technique
-                  </span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- PAS POUR VOUS -->
-          <div class="reveal delay-2 p-12 md:p-14 bg-gray-50 rounded-[2.5rem] border border-gray-200 opacity-70">
-            <h3 class="text-3xl font-bold mb-10 text-gray-400">
-              Ce n’est pas pour vous si…
-            </h3>
-
-            <ul class="space-y-6">
-              <li class="flex items-center gap-4">
-                <i class="text-gray-400" data-lucide="x" style="width:18px;height:18px"></i>
-                <span class="text-lg text-gray-500">
-                    Vous voulez lancer un gros site e-commerce
-                  </span>
-              </li>
-
-              <li class="flex items-center gap-4">
-                <i class="text-gray-400" data-lucide="x" style="width:18px;height:18px"></i>
-                <span class="text-lg text-gray-500">
-                    Vous avez besoin d’une plateforme complexe
-                  </span>
-              </li>
-
-              <li class="flex items-center gap-4">
-                <i class="text-gray-400" data-lucide="x" style="width:18px;height:18px"></i>
-                <span class="text-lg text-gray-500">
-                    Vous cherchez un site de 50 pages
-                  </span>
-              </li>
-
-              <li class="flex items-center gap-4">
-                <i class="text-gray-400" data-lucide="x" style="width:18px;height:18px"></i>
-                <span class="text-lg text-gray-500">
-                    Vous préférez le blabla aux résultats
-                  </span>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <section class="py-24 md:py-32 px-6 md:px-12 text-center border-t border-brand-cream" id="apropos">
-      <div class="reveal max-w-4xl mx-auto flex flex-col items-center">
-        <div class="mb-10 font-heading font-semibold text-2xl tracking-tight text-brand-dark">Flowpage<span
-                class="text-brand-orange">.</span></div>
-        <h2 class="text-3xl font-bold mb-10 text-brand-dark">Une approche, portée par une personne.</h2>
-        <div class="space-y-8">
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">Flowpage est un projet indépendant.
-            Je travaille directement avec vous, sans intermédiaire, sans structure complexe.</p>
-          <div class="w-16 h-1 bg-brand-orange mx-auto rounded-full opacity-30"></div>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">Mon rôle est simple : clarifier votre
-            message et construire une présence web cohérente, utile et durable.</p>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">Je privilégie les échanges simples, les
-            décisions claires et les projets maîtrisés.</p>
-        </div>
-      </div>
-    </section>
-    <section class="bg-brand-dark py-24 md:py-32 px-6 md:px-12" id="faq">
-      <div class="max-w-5xl mx-auto">
-
-        <!-- Header -->
-        <div class="reveal text-center mb-20">
-            <span class="inline-block py-1 px-4 rounded-full bg-white/10 border border-white/10 
-                   text-xs font-semibold tracking-wider uppercase mb-6 text-gray-300">
-              Questions fréquentes
-            </span>
-          <h2 class="text-4xl md:text-5xl font-bold text-brand-cream mb-6">
-            Vous vous posez peut-être ces questions
-          </h2>
-          <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-            Voici des réponses claires, sans jargon ni promesses floues.
-          </p>
-        </div>
-
-        <!-- FAQ items -->
-        <div class="space-y-6">
-
-          <!-- Question 1 -->
-          <div class="reveal delay-1 faq-item bg-[#262626] p-8 rounded-3xl
-                  border border-white/5 
-                  hover:bg-[#303030] 
-                  hover:border-white/10 
-                  transition-all duration-300 group">
-            <button class="faq-toggle w-full flex items-center justify-between text-left">
-              <h3 class="text-xl font-bold text-brand-cream">
-                Est-ce que Flowpage se limite à une seule page ?
-              </h3>
-              <span class="faq-icon text-brand-orange text-2xl font-bold transition-transform duration-300">
-                  +
-                </span>
-            </button>
-
-            <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-              <p class="text-gray-400 mt-4 leading-relaxed">
-                Non. Une page peut suffire dans certains cas, mais Flowpage s’adapte au besoin réel.
-                Selon votre activité, il peut s’agir d’une page principale claire ou d’un site plus structuré, sans
-                complexité inutile.
-              </p>
-            </div>
-          </div>
-
-          <!-- Question 2 -->
-          <div class="reveal delay-2 faq-item bg-[#262626] p-8 rounded-3xl
-                  border border-white/5 
-                  hover:bg-[#303030] 
-                  hover:border-white/10 
-                  transition-all duration-300 group">
-            <button class="faq-toggle w-full flex items-center justify-between text-left">
-              <h3 class="text-xl font-bold text-brand-cream">
-                Est-ce adapté si j’ai déjà un site web ?
-              </h3>
-              <span class="faq-icon text-brand-orange text-2xl font-bold transition-transform duration-300">
-                  +
-                </span>
-            </button>
-
-            <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-              <p class="text-gray-400 mt-4 leading-relaxed">
-                Oui. Flowpage intervient souvent sur des sites existants devenus confus, trop chargés ou inefficaces.
-                L’objectif n’est pas de tout refaire, mais de clarifier et améliorer ce qui compte vraiment.
-              </p>
-            </div>
-          </div>
-
-          <!-- Question 3 -->
-          <div class="reveal delay-3 faq-item bg-[#262626] p-8 rounded-3xl
-                  border border-white/5 
-                  hover:bg-[#303030] 
-                  hover:border-white/10 
-                  transition-all duration-300 group">
-            <button class="faq-toggle w-full flex items-center justify-between text-left">
-              <h3 class="text-xl font-bold text-brand-cream">
-                Comment se passe la collaboration concrètement ?
-              </h3>
-              <span class="faq-icon text-brand-orange text-2xl font-bold transition-transform duration-300">
-                  +
-                </span>
-            </button>
-
-            <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-              <p class="text-gray-400 mt-4 leading-relaxed">
-                Les échanges sont simples et structurés.
-                Je vous pose les bonnes questions, je fais le travail de réflexion et de conception, et je vous
-                présente une solution claire.
-                Vous n’avez pas à gérer la technique.
-              </p>
-            </div>
-          </div>
-
-          <!-- Question 4 -->
-          <div class="reveal delay-4 faq-item bg-[#262626] p-8 rounded-3xl
-                  border border-white/5 
-                  hover:bg-[#303030] 
-                  hover:border-white/10 
-                  transition-all duration-300 group">
-            <button class="faq-toggle w-full flex items-center justify-between text-left">
-              <h3 class="text-xl font-bold text-brand-cream">
-                Est-ce que je pourrai faire évoluer le site ensuite ?
-              </h3>
-              <span class="faq-icon text-brand-orange text-2xl font-bold transition-transform duration-300">
-                  +
-                </span>
-            </button>
-
-            <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-              <p class="text-gray-400 mt-4 leading-relaxed">
-                Oui. Le site est conçu pour être propre, compréhensible et évolutif.
-                Vous pouvez demander des ajustements, des ajouts ou une refonte partielle si votre activité évolue.
-              </p>
-            </div>
-          </div>
-
-          <!-- Question 5 -->
-          <div class="reveal faq-item bg-[#262626] p-8 rounded-3xl
-                  border border-white/5 
-                  hover:bg-[#303030] 
-                  hover:border-white/10 
-                  transition-all duration-300 group">
-            <button class="faq-toggle w-full flex items-center justify-between text-left">
-              <h3 class="text-xl font-bold text-brand-cream">
-                Combien ça coûte ?
-              </h3>
-              <span class="faq-icon text-brand-orange text-2xl font-bold transition-transform duration-300">
-                  +
-                </span>
-            </button>
-
-            <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-              <p class="text-gray-400 mt-4 leading-relaxed">
-                Il n’y a pas de tarif standard.
-                Chaque projet est différent.
-                Après un premier échange, je vous dis clairement si Flowpage est pertinent pour vous et je vous
-                propose une solution adaptée, sans surprise.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-
-    <section class="bg-brand-cream py-24 md:py-32 px-6 md:px-12" id="contact">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
-          <div class="reveal order-2 lg:order-1">
-            <h2 class="text-4xl md:text-5xl  font-extrabold text-brand-dark mb-8 leading-[1.05]">Discutons simplement de votre <span
-                    class="text-brand-dark relative inline-block">présence web
-                  <svg class="absolute w-full h-3 -bottom-1 left-0 text-brand-orange opacity-30" preserveAspectRatio="none"
-                       viewBox="0 0 100 10">
-                    <path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" stroke-width="3" />
-                  </svg>
-                </span>.</h2>
-            <p class="text-gray-600 mb-6 text-xl md:text-2xl leading-relaxed">Vous pouvez m’expliquer votre situation, vos doutes ou votre besoin.<br><br>Je vous répondrai honnêtement pour vous dire si Flowpage est pertinent pour vous — ou non.</p>
-            <p class="text-sm text-gray-500 leading-relaxed">Premier échange gratuit.<br>Sans engagement.<br>Sans pression commerciale.</p>
-          </div>
-          <div
-                  class="reveal delay-1 order-1 lg:order-2 bg-white p-10 md:p-14 rounded-[2.5rem] shadow-2xl shadow-brand-orange/5 border border-white">
-            <form class="space-y-8">
-              <div class="grid grid-cols-2 gap-6">
-                <div class="space-y-3"><label class="text-sm font-bold text-brand-dark uppercase tracking-wide">Nom
-                  complet</label><input class="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 text-base focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all placeholder:text-gray-300" placeholder="Jean Dupont"
-                                        type="text" />
-                </div>
-                <div class="space-y-3"><label
-                        class="text-sm font-bold text-brand-dark uppercase tracking-wide">Email</label><input class="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 text-base focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all placeholder:text-gray-300"
-                                                                                                              placeholder="jean@email.com"
-                                                                                                              type="email" />
-                </div>
-              </div>
-              <div class="space-y-3"><label class="text-sm font-bold text-brand-dark uppercase tracking-wide">Votre
-                activité</label><input class="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 text-base focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all placeholder:text-gray-300" placeholder="Ex: Thérapeute, Menuisier..."
-                                       type="text" />
-              </div>
-              <div class="space-y-3"><label class="text-sm font-bold text-brand-dark uppercase tracking-wide">Votre
-                message</label><textarea class="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 text-base focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all resize-none placeholder:text-gray-300"
-                                         placeholder="Dites-moi en quelques mots ce dont vous avez besoin..."
-                                         rows="4"></textarea>
-              </div>
-              <button class="w-full bg-brand-orange text-white font-bold py-5 rounded-xl hover:bg-[#c56045] transition-all transform shadow-md shadow-brand-orange/10 hover:bg-[#c56045] flex items-center justify-center gap-3 text-lg"
-                      type="button">Envoyer
-                mon message <i data-lucide="arrow-right" style="width:20px;height:20px"></i></button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="bg-brand-cream py-20 px-6 md:px-12 border-t border-gray-200">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10 md:gap-0">
-      <div class="flex flex-col items-center md:items-start gap-4">
-        <div class="flex items-center gap-3 font-extrabold text-2xl tracking-tight">
-          <div class="w-8 h-8 rounded-full bg-brand-dark text-white flex items-center justify-center"><i
-                  data-lucide="arrow-up-right" style="width:18px;height:18px"></i></div><span>Flowpage</span>
-        </div>
-        <p class="text-xs font-medium text-gray-400 tracking-wide uppercase">L'agence web qui parle aux indépendants.
-        </p>
-      </div>
-      <div class="text-center md:text-right">
-        <a class="text-xl md:text-2xl font-bold text-brand-dark hover:text-brand-orange transition-colors"
-           href="mailto:hello@flowpage.fr">hello@flowpage.fr</a>
-        <p class="text-sm text-gray-400 mt-2 font-medium">Tout commence par une simple discussion.</p>
-      </div>
+      </footer>
     </div>
 
-    <div
-            class="max-w-7xl mx-auto mt-20 pt-10 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-medium">
-      <p>© 2024 Flowpage. Tous droits réservés.</p>
-      <div class="flex gap-8 mt-6 md:mt-0">
-        <a class="hover:text-brand-dark transition-colors" href="#">Mentions légales</a>
-        <a class="hover:text-brand-dark transition-colors" href="#">Confidentialité</a>
-        <a class="hover:text-brand-dark transition-colors" href="#">CGV</a>
-      </div>
-    </div>
-  </footer>
-</div>
-
-<script src="https://unpkg.com/lucide@latest"></script>
-<script src="/assets/js/main.js" type="module"></script>
-
-</body>
-
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="/assets/js/main.js" type="module"></script>
+  </body>
 </html>
