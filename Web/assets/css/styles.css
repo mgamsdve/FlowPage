@@ -49,7 +49,6 @@ a {
 }
 
 /* Scoped border/shadow normalization */
-header [class*="border"],
 main [class*="border"],
 footer [class*="border"] {
   @apply border-brand-soft-border;

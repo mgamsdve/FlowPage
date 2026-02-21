@@ -111,7 +111,7 @@ if (mainNav && navInner) {
       navInner.classList.add(
         "bg-brand-cream/80",
         "backdrop-blur-xl",
-        "border-brand-dark/5",
+        "border-brand-dark/10",
         "shadow-sm",
       );
     } else {
@@ -119,7 +119,7 @@ if (mainNav && navInner) {
       navInner.classList.remove(
         "bg-brand-cream/80",
         "backdrop-blur-xl",
-        "border-brand-dark/5",
+        "border-brand-dark/10",
         "shadow-sm",
       );
     }
