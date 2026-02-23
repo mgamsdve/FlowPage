@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Studio — Premium Web Design Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Neue+Montreal:wght@300;400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --off-white: #F5F2ED;
+    --warm-mid:  #EDE8DF;
+    --ink:       #1C1A17;
+    --ink-soft:  #4A4540;
+    --ink-muted: #9A9188;
+    --accent:    #C07A3A;
+    --accent-pale: rgba(192,122,58,0.12);
+    --line:      rgba(90,80,65,0.10);
+  }
+
+  html, body {
+    height: 100%;
+    background: var(--off-white);
+    color: var(--ink);
+    font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 52px;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 11.5px;
+    font-weight: 300;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* ── GRID LINES ── */
+  .grid-lines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .grid-lines::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      90deg,
+      var(--line) 0px,
+      var(--line) 0.6px,
+      transparent 0.6px,
+      transparent 80px
+    );
+  }
+  /* Single horizontal rule */
+  .grid-lines::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    top: 50%;
+    height: 0.5px;
+    background: var(--line);
+  }
+
+  /* ── FLOATING ABSTRACT ELEMENTS ── */
+  .floats {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .f {
+    position: absolute;
+    will-change: transform;
+  }
+
+  /* Left cluster */
+  .f-circ-lg {
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    border: 0.7px solid rgba(90,80,65,0.14);
+    top: 22%; left: 5%;
+    animation: floatA 18s ease-in-out infinite;
+  }
+  .f-circ-sm {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: rgba(192,122,58,0.07);
+    border: 0.6px solid rgba(192,122,58,0.25);
+    top: 38%; left: 13%;
+    animation: floatB 22s ease-in-out infinite;
+  }
+  .f-rect-v {
+    width: 1px; height: 120px;
+    background: linear-gradient(to bottom, transparent, rgba(90,80,65,0.18), transparent);
+    top: 30%; left: 22%;
+    animation: floatA 26s ease-in-out infinite;
+  }
+  .f-rect-thin {
+    width: 72px; height: 0.6px;
+    background: linear-gradient(to right, transparent, rgba(90,80,65,0.20), transparent);
+    top: 62%; left: 8%;
+    animation: floatC 20s ease-in-out infinite;
+  }
+  .f-dot-accent {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.75;
+    top: 55%; left: 19%;
+    animation: floatB 16s ease-in-out infinite;
+    box-shadow: 0 0 14px rgba(192,122,58,0.25);
+  }
+  .f-rect-box {
+    width: 52px; height: 52px;
+    border: 0.6px solid rgba(90,80,65,0.11);
+    top: 68%; left: 6%;
+    transform: rotate(22deg);
+    animation: floatD 28s ease-in-out infinite;
+  }
+  .f-circ-outline {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    border: 0.5px solid rgba(90,80,65,0.10);
+    top: 74%; left: 24%;
+    animation: floatA 24s ease-in-out infinite;
+  }
+  .f-line-diag {
+    width: 90px; height: 0.6px;
+    background: linear-gradient(to right, transparent, rgba(90,80,65,0.16), transparent);
+    top: 18%; left: 16%;
+    transform: rotate(-28deg);
+    animation: floatC 30s ease-in-out infinite;
+  }
+
+  /* Right cluster */
+  .f-circ-lg-r {
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    border: 0.7px solid rgba(90,80,65,0.11);
+    top: 58%; right: 7%;
+    animation: floatB 20s ease-in-out infinite;
+  }
+  .f-circ-ring {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    border: 1.2px solid rgba(90,80,65,0.08);
+    top: 20%; right: 12%;
+    animation: floatD 17s ease-in-out infinite;
+  }
+  .f-dot-sm-r {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--ink-muted);
+    opacity: 0.35;
+    top: 32%; right: 21%;
+    animation: floatA 23s ease-in-out infinite;
+  }
+  .f-rect-v-r {
+    width: 0.6px; height: 90px;
+    background: linear-gradient(to bottom, transparent, rgba(90,80,65,0.16), transparent);
+    top: 38%; right: 16%;
+    animation: floatC 19s ease-in-out infinite;
+  }
+  .f-rect-h-r {
+    width: 100px; height: 0.6px;
+    background: linear-gradient(to right, transparent, rgba(90,80,65,0.18), transparent);
+    top: 72%; right: 9%;
+    animation: floatB 25s ease-in-out infinite;
+  }
+  .f-box-r {
+    width: 38px; height: 38px;
+    border: 0.5px solid rgba(90,80,65,0.10);
+    top: 24%; right: 5%;
+    transform: rotate(14deg);
+    animation: floatA 32s ease-in-out infinite;
+  }
+  .f-arc {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    border: 0.6px solid rgba(90,80,65,0.09);
+    clip-path: inset(50% 0 0 0);
+    top: 46%; right: 22%;
+    animation: floatD 21s ease-in-out infinite;
+  }
+  .f-dot-accent-r {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.50;
+    top: 30%; right: 8%;
+    animation: floatC 18s ease-in-out infinite;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes floatA {
+    0%   { transform: translateY(0px) translateX(0px); }
+    30%  { transform: translateY(-9px) translateX(4px); }
+    60%  { transform: translateY(-4px) translateX(-5px); }
+    100% { transform: translateY(0px) translateX(0px); }
+  }
+  @keyframes floatB {
+    0%   { transform: translateY(0px) translateX(0px); }
+    25%  { transform: translateY(7px) translateX(-4px); }
+    70%  { transform: translateY(-5px) translateX(6px); }
+    100% { transform: translateY(0px) translateX(0px); }
+  }
+  @keyframes floatC {
+    0%   { transform: translateY(0px) rotate(0deg); }
+    40%  { transform: translateY(-6px) rotate(2deg); }
+    75%  { transform: translateY(4px) rotate(-1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  }
+  @keyframes floatD {
+    0%   { transform: translateY(0px) translateX(0px) rotate(22deg); }
+    35%  { transform: translateY(-8px) translateX(3px) rotate(24deg); }
+    65%  { transform: translateY(5px) translateX(-4px) rotate(20deg); }
+    100% { transform: translateY(0px) translateX(0px) rotate(22deg); }
+  }
+
+  /* ── CENTER CONTENT ── */
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 640px;
+    padding: 0 32px;
+    animation: fadeUp 1.4s cubic-bezier(0.16,1,0.3,1) both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 10.5px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 40px;
+    animation: fadeUp 1.4s 0.1s cubic-bezier(0.16,1,0.3,1) both;
+  }
+  .hero-eyebrow::before,
+  .hero-eyebrow::after {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 0.6px;
+    background: var(--accent);
+    opacity: 0.6;
+  }
+
+  .hero-headline {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    font-size: clamp(48px, 6vw, 80px);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 32px;
+    animation: fadeUp 1.4s 0.2s cubic-bezier(0.16,1,0.3,1) both;
+  }
+  .hero-headline em {
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+
+  .hero-sub {
+    font-size: 14.5px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--ink-muted);
+    letter-spacing: 0.01em;
+    max-width: 420px;
+    margin: 0 auto 52px;
+    animation: fadeUp 1.4s 0.32s cubic-bezier(0.16,1,0.3,1) both;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    animation: fadeUp 1.4s 0.44s cubic-bezier(0.16,1,0.3,1) both;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 36px;
+    background: var(--ink);
+    color: var(--off-white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11.5px;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.35s, color 0.35s, transform 0.35s;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::after {
+    content: '→';
+    font-size: 13px;
+    transition: transform 0.3s;
+    display: inline-block;
+  }
+  .btn-primary:hover {
+    background: var(--accent);
+    transform: translateY(-1px);
+  }
+  .btn-primary:hover::after { transform: translateX(3px); }
+
+  .btn-ghost {
+    font-size: 11.5px;
+    font-weight: 300;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-decoration: none;
+    border-bottom: 0.6px solid rgba(90,80,65,0.25);
+    padding-bottom: 2px;
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .btn-ghost:hover { color: var(--ink); border-color: var(--ink); }
+
+  /* ── SCROLL HINT ── */
+  .scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+    opacity: 0;
+    animation: fadeIn 1s 1.4s ease both;
+  }
+  @keyframes fadeIn { to { opacity: 1; } }
+  .scroll-hint span {
+    font-size: 9.5px;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    opacity: 0.6;
+  }
+  .scroll-line {
+    width: 0.6px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--ink-muted), transparent);
+    opacity: 0.35;
+    animation: scrollPulse 2.4s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%   { transform: scaleY(0); transform-origin: top; }
+    50%  { transform: scaleY(1); transform-origin: top; }
+    51%  { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Studio</div>
+  <ul class="nav-links">
+    <li><a href="#">Work</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <!-- Grid structure -->
+  <div class="grid-lines"></div>
+
+  <!-- Floating abstract elements -->
+  <div class="floats">
+    <!-- Left -->
+    <div class="f f-circ-lg"></div>
+    <div class="f f-circ-sm"></div>
+    <div class="f f-rect-v"></div>
+    <div class="f f-rect-thin"></div>
+    <div class="f f-dot-accent"></div>
+    <div class="f f-rect-box"></div>
+    <div class="f f-circ-outline"></div>
+    <div class="f f-line-diag"></div>
+    <!-- Right -->
+    <div class="f f-circ-lg-r"></div>
+    <div class="f f-circ-ring"></div>
+    <div class="f f-dot-sm-r"></div>
+    <div class="f f-rect-v-r"></div>
+    <div class="f f-rect-h-r"></div>
+    <div class="f f-box-r"></div>
+    <div class="f f-arc"></div>
+    <div class="f f-dot-accent-r"></div>
+  </div>
+
+  <!-- Center content -->
+  <div class="hero-content">
+    <div class="hero-eyebrow">Digital Design Studio</div>
+
+    <h1 class="hero-headline">
+      We craft <em>digital</em><br/>experiences that last.
+    </h1>
+
+    <p class="hero-sub">
+      A bespoke studio for brands that demand clarity, craft, and intention — from strategy through execution.
+    </p>
+
+    <div class="hero-cta-group">
+      <a href="#" class="btn-primary">View our work</a>
+      <a href="#" class="btn-ghost">Our approach</a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+
+</section>
+
+</body>
+</html>

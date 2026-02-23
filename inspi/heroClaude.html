@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agency Hero</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #f6f4f1;
+    --ink: #1a1816;
+    --ink-mid: #6b6560;
+    --ink-light: #b0a99f;
+    --accent: #c4703f;
+    --accent-soft: rgba(196, 112, 63, 0.12);
+  }
+
+  html, body {
+    width: 100%; height: 100%;
+    background: var(--bg);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── Canvas layer ── */
+  canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Hero wrapper ── */
+  .hero {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 clamp(24px, 6vw, 80px);
+    max-width: min(640px, 90vw);
+    gap: 0;
+  }
+
+  /* ── Eyebrow ── */
+  .eyebrow {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: clamp(9px, 1.1vw, 11px);
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: clamp(20px, 3.5vh, 32px);
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+  }
+
+  .eyebrow span {
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: var(--accent);
+    vertical-align: middle;
+    margin-right: 10px;
+    opacity: 0.7;
+  }
+
+  /* ── Headline ── */
+  h1 {
+    font-size: clamp(32px, 5.5vw, 72px);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin-bottom: clamp(20px, 3vh, 28px);
+    opacity: 0;
+    transform: translateY(14px);
+    animation: fadeUp 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--ink-mid);
+  }
+
+  /* ── Paragraph ── */
+  .sub {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: clamp(13px, 1.5vw, 16px);
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--ink-mid);
+    max-width: 420px;
+    margin-bottom: clamp(32px, 5vh, 48px);
+    opacity: 0;
+    transform: translateY(14px);
+    animation: fadeUp 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
+  }
+
+  /* ── CTA group ── */
+  .cta-group {
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 3vw, 32px);
+    opacity: 0;
+    transform: translateY(14px);
+    animation: fadeUp 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.95s forwards;
+  }
+
+  .btn-primary {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: clamp(11px, 1.2vw, 13px);
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--accent);
+    border: none;
+    padding: clamp(13px, 1.6vh, 16px) clamp(24px, 3vw, 36px);
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.82;
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: clamp(11px, 1.2vw, 13px);
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease, gap 0.3s ease;
+  }
+
+  .btn-ghost:hover {
+    color: var(--ink);
+    gap: 12px;
+  }
+
+  .btn-ghost::after {
+    content: '→';
+    font-size: 0.9em;
+  }
+
+  /* ── Divider dot ── */
+  .divider {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--ink-light);
+    opacity: 0.4;
+    flex-shrink: 0;
+  }
+
+  /* ── Scroll hint ── */
+  .scroll-hint {
+    position: fixed;
+    bottom: clamp(20px, 4vh, 36px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeUp 1.4s cubic-bezier(0.22, 1, 0.36, 1) 1.8s forwards;
+    z-index: 10;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: clamp(28px, 4vh, 40px);
+    background: linear-gradient(to bottom, transparent, var(--ink-light));
+    animation: scrollPulse 2.4s ease-in-out 2.2s infinite;
+  }
+
+  .scroll-label {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  /* ── Keyframes ── */
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50%       { opacity: 0.9; transform: scaleY(1.15); }
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 480px) {
+    .cta-group { flex-direction: column; gap: 16px; }
+    .divider { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="c"></canvas>
+
+<section class="hero">
+  <p class="eyebrow"><span></span>Digital Design Studio</p>
+  <h1>Where form<br>meets <em>intention</em></h1>
+  <p class="sub">We craft digital experiences that balance precision with elegance — built for brands that understand the difference.</p>
+  <div class="cta-group">
+    <a href="#" class="btn-primary">View Our Work</a>
+    <span class="divider"></span>
+    <a href="#" class="btn-ghost">Start a Project</a>
+  </div>
+</section>
+
+<div class="scroll-hint">
+  <span class="scroll-label">Scroll</span>
+  <div class="scroll-line"></div>
+</div>
+
+<script>
+const canvas = document.getElementById('c');
+const ctx    = canvas.getContext('2d');
+
+let W, H, t = 0;
+const elements = [];
+
+const ACCENT      = { r: 196, g: 112, b: 63 };
+const NEUTRAL     = { r: 160, g: 150, b: 138 };
+
+function rgba(col, a) {
+  return `rgba(${col.r},${col.g},${col.b},${a})`;
+}
+
+/* ─── Element definitions ─── */
+function buildElements() {
+  elements.length = 0;
+
+  const cx = W * 0.5;
+  const cy = H * 0.5;
+  const side = Math.min(W, H);
+
+  /* Helper: random in range */
+  const rnd = (a, b) => a + Math.random() * (b - a);
+
+  /* Left cluster */
+  const L = cx - side * 0.28;
+  const R = cx + side * 0.28;
+
+  const defs = [
+    // ── left side ──
+    { type: 'circle',    x: L - side*0.06, y: cy - side*0.14, r: side*0.018, col: NEUTRAL, baseA: 0.18, speed: 0.00031, amp: side*0.007, phase: 0.0 },
+    { type: 'circle',    x: L - side*0.02, y: cy + side*0.18, r: side*0.008, col: ACCENT,  baseA: 0.45, speed: 0.00025, amp: side*0.009, phase: 1.2 },
+    { type: 'circle',    x: L + side*0.05, y: cy - side*0.25, r: side*0.005, col: NEUTRAL, baseA: 0.22, speed: 0.00038, amp: side*0.006, phase: 2.5 },
+    { type: 'circle-ring', x: L + side*0.02, y: cy + side*0.06, r: side*0.032, col: NEUTRAL, baseA: 0.10, speed: 0.00022, amp: side*0.008, phase: 0.8 },
+    { type: 'circle-ring', x: L - side*0.08, y: cy + side*0.02, r: side*0.055, col: NEUTRAL, baseA: 0.06, speed: 0.00018, amp: side*0.010, phase: 3.1 },
+    { type: 'hline',     x: L - side*0.04, y: cy - side*0.04, w: side*0.10, col: NEUTRAL, baseA: 0.12, speed: 0.00020, amp: side*0.005, phase: 1.8 },
+    { type: 'hline',     x: L - side*0.01, y: cy + side*0.10, w: side*0.06, col: ACCENT,  baseA: 0.22, speed: 0.00028, amp: side*0.007, phase: 0.4 },
+    { type: 'vline',     x: L + side*0.04, y: cy - side*0.18, h: side*0.12, col: NEUTRAL, baseA: 0.09, speed: 0.00024, amp: side*0.006, phase: 2.1 },
+    { type: 'rect',      x: L - side*0.05, y: cy - side*0.08, w: side*0.055, h: side*0.022, col: NEUTRAL, baseA: 0.08, speed: 0.00016, amp: side*0.009, phase: 1.4 },
+    { type: 'cross',     x: L + side*0.01, y: cy + side*0.28, s: side*0.018, col: NEUTRAL, baseA: 0.14, speed: 0.00029, amp: side*0.007, phase: 3.5 },
+
+    // ── right side ──
+    { type: 'circle',    x: R + side*0.06, y: cy + side*0.12, r: side*0.016, col: NEUTRAL, baseA: 0.16, speed: 0.00027, amp: side*0.008, phase: 0.6 },
+    { type: 'circle',    x: R + side*0.02, y: cy - side*0.20, r: side*0.007, col: ACCENT,  baseA: 0.40, speed: 0.00033, amp: side*0.007, phase: 2.8 },
+    { type: 'circle',    x: R - side*0.04, y: cy + side*0.26, r: side*0.004, col: NEUTRAL, baseA: 0.20, speed: 0.00021, amp: side*0.005, phase: 4.2 },
+    { type: 'circle-ring', x: R - side*0.01, y: cy - side*0.05, r: side*0.040, col: NEUTRAL, baseA: 0.08, speed: 0.00019, amp: side*0.009, phase: 1.1 },
+    { type: 'circle-ring', x: R + side*0.07, y: cy - side*0.16, r: side*0.024, col: ACCENT,  baseA: 0.07, speed: 0.00026, amp: side*0.006, phase: 3.7 },
+    { type: 'hline',     x: R - side*0.06, y: cy + side*0.05, w: side*0.09, col: NEUTRAL, baseA: 0.11, speed: 0.00023, amp: side*0.008, phase: 0.9 },
+    { type: 'hline',     x: R + side*0.01, y: cy - side*0.12, w: side*0.05, col: NEUTRAL, baseA: 0.09, speed: 0.00031, amp: side*0.006, phase: 2.3 },
+    { type: 'vline',     x: R - side*0.02, y: cy + side*0.08, h: side*0.14, col: NEUTRAL, baseA: 0.08, speed: 0.00018, amp: side*0.010, phase: 1.6 },
+    { type: 'rect',      x: R + side*0.03, y: cy + side*0.00, w: side*0.042, h: side*0.016, col: NEUTRAL, baseA: 0.07, speed: 0.00017, amp: side*0.007, phase: 0.3 },
+    { type: 'cross',     x: R - side*0.05, y: cy - side*0.30, s: side*0.015, col: ACCENT,  baseA: 0.18, speed: 0.00030, amp: side*0.008, phase: 2.0 },
+
+    // ── very subtle far background dots ──
+    { type: 'circle', x: W*0.12, y: H*0.18, r: side*0.003, col: NEUTRAL, baseA: 0.14, speed: 0.00015, amp: side*0.012, phase: 5.1 },
+    { type: 'circle', x: W*0.88, y: H*0.82, r: side*0.003, col: NEUTRAL, baseA: 0.14, speed: 0.00015, amp: side*0.012, phase: 1.9 },
+    { type: 'circle', x: W*0.15, y: H*0.78, r: side*0.002, col: ACCENT,  baseA: 0.25, speed: 0.00012, amp: side*0.010, phase: 3.3 },
+    { type: 'circle', x: W*0.84, y: H*0.22, r: side*0.002, col: NEUTRAL, baseA: 0.15, speed: 0.00013, amp: side*0.011, phase: 4.8 },
+  ];
+
+  defs.forEach(d => elements.push(d));
+}
+
+function drawElement(el, time) {
+  const dy = Math.sin(time * el.speed * 1000 + el.phase) * el.amp;
+  const pulse = 0.5 + 0.5 * Math.sin(time * el.speed * 800 + el.phase + 1);
+  const alpha = el.baseA * (0.75 + 0.25 * pulse);
+  const y = el.y + dy;
+
+  ctx.save();
+
+  switch (el.type) {
+
+    case 'circle':
+      ctx.beginPath();
+      ctx.arc(el.x, y, el.r, 0, Math.PI * 2);
+      ctx.fillStyle = rgba(el.col, alpha);
+      ctx.fill();
+      break;
+
+    case 'circle-ring':
+      ctx.beginPath();
+      ctx.arc(el.x, y, el.r, 0, Math.PI * 2);
+      ctx.strokeStyle = rgba(el.col, alpha);
+      ctx.lineWidth = 0.6;
+      ctx.stroke();
+      break;
+
+    case 'hline':
+      ctx.beginPath();
+      ctx.moveTo(el.x, y);
+      ctx.lineTo(el.x + el.w, y);
+      ctx.strokeStyle = rgba(el.col, alpha);
+      ctx.lineWidth = 0.7;
+      ctx.stroke();
+      break;
+
+    case 'vline':
+      ctx.beginPath();
+      ctx.moveTo(el.x, y);
+      ctx.lineTo(el.x, y + el.h);
+      ctx.strokeStyle = rgba(el.col, alpha);
+      ctx.lineWidth = 0.7;
+      ctx.stroke();
+      break;
+
+    case 'rect':
+      ctx.strokeStyle = rgba(el.col, alpha);
+      ctx.lineWidth = 0.6;
+      ctx.strokeRect(el.x, y, el.w, el.h);
+      break;
+
+    case 'cross':
+      ctx.strokeStyle = rgba(el.col, alpha);
+      ctx.lineWidth = 0.7;
+      ctx.beginPath();
+      ctx.moveTo(el.x - el.s, y);
+      ctx.lineTo(el.x + el.s, y);
+      ctx.moveTo(el.x, y - el.s);
+      ctx.lineTo(el.x, y + el.s);
+      ctx.stroke();
+      break;
+  }
+
+  ctx.restore();
+}
+
+/* ─── Soft radial vignette / center focus ─── */
+function drawAtmosphere() {
+  const cx = W * 0.5, cy = H * 0.5;
+  const r  = Math.max(W, H) * 0.65;
+  const g  = ctx.createRadialGradient(cx, cy, r * 0.1, cx, cy, r);
+  g.addColorStop(0, 'rgba(246,244,241, 0)');
+  g.addColorStop(1, 'rgba(240,237,232, 0.30)');
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, W, H);
+}
+
+/* ─── Subtle grid (very light) ─── */
+function drawGrid() {
+  const cols = 16;
+  const colW = W / cols;
+  ctx.strokeStyle = 'rgba(155,145,132,0.045)';
+  ctx.lineWidth = 0.5;
+  for (let i = 1; i < cols; i++) {
+    ctx.beginPath();
+    ctx.moveTo(i * colW, 0);
+    ctx.lineTo(i * colW, H);
+    ctx.stroke();
+  }
+}
+
+/* ─── Render loop ─── */
+let startTime = null;
+function draw(ts) {
+  if (!startTime) startTime = ts;
+  t = (ts - startTime) * 0.001;
+
+  ctx.clearRect(0, 0, W, H);
+
+  drawGrid();
+
+  elements.forEach(el => drawElement(el, t));
+
+  drawAtmosphere();
+
+  requestAnimationFrame(draw);
+}
+
+/* ─── Resize ─── */
+function resize() {
+  W = canvas.width  = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+  buildElements();
+}
+
+window.addEventListener('resize', resize);
+resize();
+requestAnimationFrame(draw);
+</script>
+</body>
+</html>
