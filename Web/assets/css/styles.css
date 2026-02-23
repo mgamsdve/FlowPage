@@ -234,6 +234,122 @@ footer
   }
 }
 
+/* Hero ambient motion */
+.hero-drift-a,
+.hero-drift-b,
+.hero-drift-c,
+.hero-drift-d,
+.hero-drift-e,
+.hero-drift-f,
+.hero-breathe {
+  will-change: transform;
+}
+
+.hero-drift-a {
+  animation: hero-drift-a 24s ease-in-out infinite alternate;
+}
+
+.hero-drift-b {
+  animation: hero-drift-b 19s ease-in-out infinite alternate;
+}
+
+.hero-drift-c {
+  animation: hero-drift-c 30s ease-in-out infinite alternate;
+}
+
+.hero-drift-d {
+  animation: hero-drift-d 22s ease-in-out infinite alternate;
+}
+
+.hero-drift-e {
+  animation: hero-drift-e 26s ease-in-out infinite alternate-reverse;
+}
+
+.hero-drift-f {
+  animation: hero-drift-f 34s ease-in-out infinite alternate;
+}
+
+.hero-breathe {
+  animation: hero-breathe 17s ease-in-out infinite alternate;
+}
+
+@keyframes hero-drift-a {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(7px, -11px, 0) rotate(1.8deg);
+  }
+}
+
+@keyframes hero-drift-b {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes hero-drift-c {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-10px, -8px, 0);
+  }
+}
+
+@keyframes hero-drift-d {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(8px, -6px, 0);
+  }
+}
+
+@keyframes hero-drift-e {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-8px);
+  }
+}
+
+@keyframes hero-drift-f {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-49%, -51%) scale(1.03);
+  }
+}
+
+@keyframes hero-breathe {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.72;
+  }
+  100% {
+    transform: translateY(-5px) scale(1.12);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-drift-a,
+  .hero-drift-b,
+  .hero-drift-c,
+  .hero-drift-d,
+  .hero-drift-e,
+  .hero-drift-f,
+  .hero-breathe {
+    animation: none !important;
+  }
+}
+
 /* @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
