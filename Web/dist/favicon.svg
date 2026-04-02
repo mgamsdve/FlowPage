@@ -1,0 +1,18 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowpage">
+  <defs>
+    <linearGradient id="bg" x1="96" y1="88" x2="416" y2="424" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FAF9F6"/>
+      <stop offset="1" stop-color="#F5F0E8"/>
+    </linearGradient>
+    <filter id="shadow" x="72" y="72" width="368" height="368" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#2A2A2A" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <circle cx="256" cy="256" r="184" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="184" stroke="#E6E6E2" stroke-width="14"/>
+  <g filter="url(#shadow)">
+    <circle cx="256" cy="256" r="142" fill="#FDFCF8"/>
+  </g>
+  <path d="M180 169C180 161.268 186.268 155 194 155H320C327.732 155 334 161.268 334 169V182C334 189.732 327.732 196 320 196H224V245H296C303.732 245 310 251.268 310 259V272C310 279.732 303.732 286 296 286H224V344C224 351.732 217.732 358 210 358H194C186.268 358 180 351.732 180 344V169Z" fill="#2A2A2A"/>
+  <circle cx="342" cy="344" r="24" fill="#D46A4C"/>
+</svg>
