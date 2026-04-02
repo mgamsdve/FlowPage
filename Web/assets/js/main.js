@@ -1,42 +1,75 @@
 import "../css/styles.css";
 
-lucide.createIcons();
+const initLucideIcons = () => {
+  if (!globalThis.lucide?.createIcons) {
+    return false;
+  }
 
-const closeAllFaqItems = () => {
-  document.querySelectorAll(".faq-content").forEach((content) => {
-    content.style.maxHeight = null;
+  globalThis.lucide.createIcons({
+    attrs: {
+      "aria-hidden": "true",
+      focusable: "false",
+    },
   });
 
-  document.querySelectorAll(".faq-icon").forEach((icon) => {
+  return true;
+};
+
+if (!initLucideIcons()) {
+  window.addEventListener("load", initLucideIcons, { once: true });
+}
+
+const closeAllFaqItems = () => {
+  document.querySelectorAll(".faq-item").forEach((item) => {
+    const content = item.querySelector(".faq-content");
+    const icon = item.querySelector(".faq-icon");
+    const button = item.querySelector(".faq-toggle");
+
+    if (!content || !icon || !button) {
+      return;
+    }
+
+    content.style.maxHeight = null;
+    content.setAttribute("aria-hidden", "true");
     icon.textContent = "+";
+    button.setAttribute("aria-expanded", "false");
   });
 };
 
 const toggleFaqItem = (item) => {
   const content = item.querySelector(".faq-content");
   const icon = item.querySelector(".faq-icon");
+  const button = item.querySelector(".faq-toggle");
 
-  if (!content || !icon) {
+  if (!content || !icon || !button) {
     return;
   }
 
-  const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
+  const isOpen = button.getAttribute("aria-expanded") === "true";
 
   closeAllFaqItems();
 
   if (!isOpen) {
     content.style.maxHeight = `${content.scrollHeight}px`;
+    content.setAttribute("aria-hidden", "false");
     icon.textContent = "−";
+    button.setAttribute("aria-expanded", "true");
   }
 };
 
 document.querySelectorAll(".faq-item").forEach((item) => {
-  item.addEventListener("click", (event) => {
-    const interactiveTarget = event.target.closest(
-      "a, input, textarea, select, label",
-    );
+  const button = item.querySelector(".faq-toggle");
+  const content = item.querySelector(".faq-content");
 
-    if (interactiveTarget) {
+  if (!button || !content) {
+    return;
+  }
+
+  content.setAttribute("aria-hidden", "true");
+  button.setAttribute("aria-expanded", "false");
+
+  button.addEventListener("click", (event) => {
+    if (event.target.closest("a, input, textarea, select, label")) {
       return;
     }
 
@@ -105,7 +138,7 @@ const mainNav = document.getElementById("main-nav");
 const navInner = mainNav ? mainNav.querySelector("nav") : null;
 
 if (mainNav && navInner) {
-  window.addEventListener("scroll", () => {
+  const updateNavStyles = () => {
     if (window.scrollY > 50) {
       navInner.classList.remove("bg-transparent", "border-transparent");
       navInner.classList.add(
@@ -123,5 +156,21 @@ if (mainNav && navInner) {
         "shadow-sm",
       );
     }
-  });
+  };
+
+  let isTicking = false;
+  const onScroll = () => {
+    if (isTicking) {
+      return;
+    }
+
+    isTicking = true;
+    window.requestAnimationFrame(() => {
+      updateNavStyles();
+      isTicking = false;
+    });
+  };
+
+  updateNavStyles();
+  window.addEventListener("scroll", onScroll, { passive: true });
 }
