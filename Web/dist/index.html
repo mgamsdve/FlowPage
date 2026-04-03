@@ -157,8 +157,69 @@
                 ]
             }
         </script>
-      <script type="module" crossorigin src="/assets/index-CkJHDRTP.js"></script>
-      <link rel="stylesheet" crossorigin href="/assets/index-BPDY9wG5.css">
+        <style>
+            #mobile-menu.menu-open {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0);
+            }
+
+            #mobile-menu .mobile-nav-link {
+                opacity: 0;
+                transform: translateX(-12px);
+                transition:
+                    opacity 0.4s ease,
+                    transform 0.4s ease;
+            }
+
+            #mobile-menu.menu-open .mobile-nav-link:nth-child(1) {
+                opacity: 1;
+                transform: translateX(0);
+                transition-delay: 0.1s;
+            }
+
+            #mobile-menu.menu-open .mobile-nav-link:nth-child(2) {
+                opacity: 1;
+                transform: translateX(0);
+                transition-delay: 0.15s;
+            }
+
+            #mobile-menu.menu-open .mobile-nav-link:nth-child(3) {
+                opacity: 1;
+                transform: translateX(0);
+                transition-delay: 0.2s;
+            }
+
+            #mobile-menu.menu-open .mobile-nav-link:nth-child(4) {
+                opacity: 1;
+                transform: translateX(0);
+                transition-delay: 0.25s;
+            }
+
+            #main-nav {
+                transition: opacity 0.2s ease;
+            }
+
+            #hamburger-btn.is-open #ham-line-1 {
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            #hamburger-btn.is-open #ham-line-2 {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+
+            #hamburger-btn.is-open #ham-line-3 {
+                transform: translateY(-7px) rotate(-45deg);
+                width: 1.5rem;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+        </style>
+      <script type="module" crossorigin src="/assets/index-CC4i5Cx9.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/styles-6nPENybi.css">
     </head>
 
     <body>
@@ -172,59 +233,146 @@
         >
             <header
                 id="main-nav"
-                class="fixed top-0 left-0 right-0 z-[100] flex justify-center w-full pointer-events-none py-2 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                class="fixed top-0 left-0 right-0 z-[100] flex justify-center w-full pointer-events-none py-0 md:py-2 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
             >
                 <nav
                     aria-label="Navigation principale"
-                    class="pointer-events-auto flex items-center justify-between px-8 py-4 w-full max-w-7xl mx-auto rounded-3xl transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] bg-transparent text-brand-dark border border-transparent"
+                    class="pointer-events-auto flex items-center justify-between px-6 py-4 w-full max-w-7xl mx-auto rounded-3xl transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] bg-transparent text-brand-dark border border-transparent"
                 >
-                    <!-- Logo Area -->
                     <a
-                        class="font-heading font-semibold text-2xl tracking-tight text-brand-dark"
-                        href="#hero"
+                        class="font-heading font-semibold text-2xl tracking-tight text-brand-dark z-[110] relative"
+                        href="/"
                     >
                         Flowpage<span class="text-brand-orange">.</span>
                     </a>
 
-                    <!-- Links Area -->
                     <div
                         class="hidden md:flex items-center gap-10 font-medium text-sm text-gray-600"
                     >
                         <a
-                            class="hover:text-brand-dark transition-colors"
-                            href="#approche"
-                            >Notre approche</a
+                            class="text-brand-orange font-semibold hover:text-brand-orange transition-colors"
+                            href="/"
+                            >Accueil</a
                         >
                         <a
                             class="hover:text-brand-dark transition-colors"
-                            href="#methode"
-                            >Méthode</a
+                            href="/services"
+                            >Services</a
                         >
                         <a
                             class="hover:text-brand-dark transition-colors"
-                            href="#impact"
-                            >Impact</a
-                        >
-                        <a
-                            class="hover:text-brand-dark transition-colors"
-                            href="#apropos"
+                            href="/a-propos"
                             >À propos</a
                         >
                     </div>
 
-                    <!-- CTA Area -->
                     <a
-                        class="flex items-center gap-2 text-sm font-semibold text-brand-dark hover:text-brand-orange transition-colors"
-                        href="#contact"
+                        class="hidden md:flex items-center gap-2 text-sm font-semibold text-brand-dark hover:text-brand-orange transition-colors"
+                        href="/contact"
+                    >
+                        Me contacter
+                    </a>
+
+                    <button
+                        id="hamburger-btn"
+                        aria-controls="mobile-menu"
+                        aria-expanded="false"
+                        aria-label="Ouvrir le menu"
+                        class="relative z-[110] flex h-10 w-10 flex-col items-center justify-center gap-[5px] md:hidden focus:outline-none"
+                    >
+                        <span
+                            id="ham-line-1"
+                            class="block h-[2px] w-6 bg-brand-dark rounded-full origin-center transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                        ></span>
+                        <span
+                            id="ham-line-2"
+                            class="block h-[2px] w-6 bg-brand-dark rounded-full origin-center transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                        ></span>
+                        <span
+                            id="ham-line-3"
+                            class="block h-[2px] w-4 bg-brand-dark rounded-full origin-center transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                        ></span>
+                    </button>
+                </nav>
+            </header>
+
+            <div
+                id="mobile-menu"
+                aria-hidden="true"
+                class="fixed inset-0 z-[200] flex h-[100dvh] flex-col justify-between bg-brand-cream px-6 py-4 opacity-0 pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden"
+            >
+                <div class="flex items-center justify-between">
+                    <a
+                        href="/"
+                        class="font-heading font-semibold text-2xl tracking-tight text-brand-dark"
+                    >
+                        Flowpage<span class="text-brand-orange">.</span>
+                    </a>
+                    <button
+                        id="close-menu-btn"
+                        aria-label="Fermer le menu"
+                        class="flex items-center justify-center w-10 h-10 focus:outline-none cursor-pointer"
+                        type="button"
+                    >
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#2A2A2A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+
+                <nav class="flex flex-col gap-2 flex-1 justify-center">
+                    <a
+                        href="/"
+                        class="mobile-nav-link font-heading text-4xl font-bold text-brand-orange py-4 border-b border-brand-soft-border hover:text-brand-orange transition-colors duration-200"
+                    >
+                        Accueil
+                    </a>
+                    <a
+                        href="/services"
+                        class="mobile-nav-link font-heading text-4xl font-bold text-brand-dark py-4 border-b border-brand-soft-border hover:text-brand-orange transition-colors duration-200"
+                    >
+                        Services
+                    </a>
+                    <a
+                        href="/a-propos"
+                        class="mobile-nav-link font-heading text-4xl font-bold text-brand-dark py-4 border-b border-brand-soft-border hover:text-brand-orange transition-colors duration-200"
+                    >
+                        À propos
+                    </a>
+                    <a
+                        href="/contact"
+                        class="mobile-nav-link font-heading text-4xl font-bold text-brand-orange py-4 hover:opacity-80 transition-opacity duration-200"
                     >
                         Me contacter
                     </a>
                 </nav>
-            </header>
 
-            <main class="flex-grow pt-24" id="main-content">
+                <div class="pb-4">
+                    <p class="text-xs text-gray-400 mb-1 uppercase tracking-[0.2em] font-medium">
+                        Contact
+                    </p>
+                    <a
+                        href="mailto:hello@flowpage.tech"
+                        class="text-sm font-semibold text-brand-dark hover:text-brand-orange transition-colors"
+                    >
+                        hello@flowpage.tech
+                    </a>
+                </div>
+            </div>
+
+            <main class="flex-grow pt-[60px] md:pt-24" id="main-content">
                 <section
-                    class="relative isolate flex min-h-[calc(100vh-6rem)] items-center justify-center overflow-hidden px-6 py-24 md:px-12 md:py-32"
+                    class="relative isolate flex min-h-[calc(100vh-6rem)] items-center justify-center overflow-hidden px-6 py-16 md:px-12 md:py-24 lg:py-32"
                     id="hero"
                 >
                     <div class="pointer-events-none absolute inset-0 -z-10">
@@ -237,9 +385,6 @@
                         ></div>
                         <div
                             class="hero-drift-b absolute bottom-[18%] left-[8%] h-44 w-px bg-brand-dark/10 md:left-[20%] md:h-56"
-                        ></div>
-                        <div
-                            class="hero-breathe absolute top-[44%] left-[16%] h-3.5 w-3.5 rounded-full bg-brand-orange/80"
                         ></div>
 
                         <div
@@ -297,31 +442,22 @@
                 </section>
 
                 <section
-                    class="bg-brand-dark text-white py-32 md:py-40 px-6 md:px-12 rounded-t-[3rem] md:rounded-t-[5rem] -mt-14 md:-mt-16 relative z-20 animate-constat-up"
+                    class="bg-brand-dark text-white py-16 md:py-32 lg:py-40 px-6 md:px-12 rounded-t-[3rem] md:rounded-t-[5rem] -mt-14 md:-mt-16 relative z-20 animate-constat-up"
                     id="constat"
                 >
                     <div
-                        aria-hidden="true"
-                        class="pointer-events-none absolute left-1/2 top-5 z-30 -translate-x-1/2"
+                        id="scroll-indicator"
+                        class="absolute top-4 left-0 right-0 flex justify-center transition-opacity duration-500"
                     >
-                        <div
-                            class="flex flex-col items-center gap-2 opacity-70"
-                        >
-                            <div
-                                class="flex h-8 w-5 justify-center rounded-full border border-white/25 bg-white/[0.03] pt-1.5"
-                            >
-                                <span
-                                    class="h-1.5 w-1.5 rounded-full bg-brand-orange/75 animate-pulse"
-                                ></span>
-                            </div>
-                            <span
-                                class="h-px w-10 bg-gradient-to-r from-transparent via-white/25 to-transparent"
-                            ></span>
-                        </div>
+                        <i
+                            data-lucide="chevron-down"
+                            class="text-gray-400 animate-scroll-bounce-strong"
+                            style="width:28px;height:28px"
+                        ></i>
                     </div>
                     <div class="max-w-7xl mx-auto">
                         <div
-                            class="reveal text-center max-w-4xl mx-auto mb-24 md:mb-32"
+                            class="reveal text-center max-w-4xl mx-auto mb-12 md:mb-24 lg:mb-32"
                         >
                             <span
                                 class="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/10 text-xs font-semibold tracking-wider uppercase mb-6 text-gray-300"
@@ -436,12 +572,12 @@
                 </section>
 
                 <section
-                    class="bg-brand-cream py-24 md:py-32 px-6 md:px-12"
+                    class="bg-brand-cream py-16 md:py-24 lg:py-32 px-6 md:px-12"
                     id="approche"
                 >
                     <div class="max-w-7xl mx-auto">
                         <div
-                            class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+                            class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 items-center"
                         >
                             <div class="reveal">
                                 <span
@@ -531,12 +667,12 @@
                 </section>
 
                 <section
-                    class="bg-brand-lightdark py-24 md:py-32 px-6 md:px-12 border-t border-brand-dark/5"
+                    class="bg-brand-lightdark py-16 md:py-24 lg:py-32 px-6 md:px-12 border-t border-brand-dark/5"
                     id="methode"
                 >
                     <div class="max-w-5xl mx-auto">
                         <h2
-                            class="reveal text-4xl md:text-5xl font-bold text-center mb-24 md:mb-32"
+                            class="reveal text-4xl md:text-5xl font-bold text-center mb-12 md:mb-24 lg:mb-32"
                         >
                             Comment ça se passe,
                             <span class="text-brand-orange"
@@ -548,7 +684,7 @@
                                 class="absolute left-[34px] top-8 bottom-8 w-0.5 bg-gray-200 hidden md:block"
                             ></div>
                             <div
-                                class="reveal delay-1 relative flex flex-col md:flex-row gap-10 md:gap-16 items-start group"
+                                class="reveal delay-1 relative flex flex-col md:flex-row gap-10 md:gap-16 items-center md:items-start group"
                             >
                                 <div
                                     class="flex-shrink-0 w-[72px] h-[72px] rounded-full flex items-center justify-center text-2xl font-bold z-10 border-[6px] border-brand-cream transition-transform duration-300 group-hover:scale-105 bg-white text-brand-orange shadow-md"
@@ -573,7 +709,7 @@
                                 </div>
                             </div>
                             <div
-                                class="reveal delay-2 relative flex flex-col md:flex-row gap-10 md:gap-16 items-start group"
+                                class="reveal delay-2 relative flex flex-col md:flex-row gap-10 md:gap-16 items-center md:items-start group"
                             >
                                 <div
                                     class="flex-shrink-0 w-[72px] h-[72px] rounded-full flex items-center justify-center text-2xl font-bold z-10 border-[6px] border-brand-cream transition-transform duration-300 group-hover:scale-105 bg-white text-brand-orange shadow-md"
@@ -597,7 +733,7 @@
                                 </div>
                             </div>
                             <div
-                                class="reveal delay-3 relative flex flex-col md:flex-row gap-10 md:gap-16 items-start group"
+                                class="reveal delay-3 relative flex flex-col md:flex-row gap-10 md:gap-16 items-center md:items-start group"
                             >
                                 <div
                                     class="flex-shrink-0 w-[72px] h-[72px] rounded-full flex items-center justify-center text-2xl font-bold z-10 border-[6px] border-brand-cream transition-transform duration-300 group-hover:scale-105 bg-brand-orange text-white shadow-xl shadow-brand-orange/30"
@@ -626,7 +762,7 @@
                 </section>
 
                 <section
-                    class="bg-[#F3F1EC] border-y border-brand-dark/[0.08] py-24 md:py-32 px-6 md:px-12"
+                    class="bg-[#F3F1EC] border-y border-brand-dark/[0.08] py-16 md:py-24 lg:py-32 px-6 md:px-12"
                     id="impact"
                 >
                     <div
@@ -830,7 +966,7 @@
                 </section>
 
                 <section
-                    class="bg-white py-32 md:py-40 px-6 md:px-12"
+                    class="bg-white py-16 md:py-32 lg:py-40 px-6 md:px-12"
                     id="pourqui"
                 >
                     <div class="max-w-7xl mx-auto">
@@ -843,7 +979,7 @@
                             Pour éviter toute confusion, voici à qui Flowpage
                             s’adresse — et à qui non.
                         </p>
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
                             <!-- POUR VOUS -->
                             <div
                                 class="reveal delay-1 p-12 md:p-14 bg-white rounded-[2.5rem] border border-gray-200 shadow-sm"
@@ -996,7 +1132,7 @@
                 </section>
 
                 <section
-                    class="py-24 md:py-32 px-6 md:px-12 text-center border-t border-brand-cream"
+                    class="py-16 md:py-24 lg:py-32 px-6 md:px-12 text-center border-t border-brand-cream"
                     id="apropos"
                 >
                     <div
@@ -1038,7 +1174,7 @@
                     </div>
                 </section>
                 <section
-                    class="bg-brand-dark py-24 md:py-32 px-6 md:px-12"
+                    class="bg-brand-dark py-16 md:py-24 lg:py-32 px-6 md:px-12"
                     id="faq"
                 >
                     <div class="max-w-5xl mx-auto">
@@ -1267,14 +1403,14 @@
                 </section>
 
                 <section
-                    class="bg-brand-cream py-24 md:py-32 px-6 md:px-12"
+                    class="bg-brand-cream py-16 md:py-24 lg:py-32 px-6 md:px-12"
                     id="contact"
                 >
                     <div class="max-w-7xl mx-auto">
                         <div
-                            class="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center"
+                            class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 lg:gap-32 items-center"
                         >
-                            <div class="reveal order-2 lg:order-1">
+                            <div class="reveal">
                                 <h2
                                     class="text-4xl md:text-5xl font-extrabold text-brand-dark mb-8 leading-[1.05]"
                                 >
@@ -1312,80 +1448,87 @@
                                 </p>
                             </div>
                             <div
-                                class="reveal delay-1 order-1 lg:order-2 bg-white p-10 md:p-14 rounded-[2.5rem] shadow-2xl shadow-brand-orange/5 border border-white"
+                                class="reveal delay-1 bg-white rounded-[1.5rem] border border-brand-soft-border p-8 md:p-10"
                             >
-                                <form class="space-y-8">
-                                    <div class="grid grid-cols-2 gap-6">
-                                        <div class="space-y-3">
-                                            <label
-                                                for="contact-name"
-                                                class="text-sm font-bold text-brand-dark uppercase tracking-wide"
-                                                >Nom complet</label
-                                            ><input
-                                                autocomplete="name"
-                                                class="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 text-base focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all placeholder:text-gray-300"
-                                                id="contact-name"
-                                                name="name"
-                                                placeholder="Jean Dupont"
-                                                required
-                                                type="text"
-                                            />
-                                        </div>
-                                        <div class="space-y-3">
-                                            <label
-                                                for="contact-email"
-                                                class="text-sm font-bold text-brand-dark uppercase tracking-wide"
-                                                >Email</label
-                                            ><input
-                                                autocomplete="email"
-                                                class="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 text-base focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all placeholder:text-gray-300"
-                                                id="contact-email"
-                                                inputmode="email"
-                                                name="email"
-                                                placeholder="jean@email.com"
-                                                required
-                                                type="email"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div class="space-y-3">
+                                <form action="#" method="POST">
+                                    <div class="mb-6">
                                         <label
-                                            for="contact-activity"
-                                            class="text-sm font-bold text-brand-dark uppercase tracking-wide"
-                                            >Votre activité</label
-                                        ><input
-                                            autocomplete="organization-title"
-                                            class="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 text-base focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all placeholder:text-gray-300"
-                                            id="contact-activity"
-                                            name="activity"
-                                            placeholder="Ex: Thérapeute, Menuisier..."
+                                            class="block text-sm font-semibold text-brand-dark mb-2"
+                                            for="contact-name"
+                                            >Votre nom</label
+                                        >
+                                        <input
                                             type="text"
+                                            id="contact-name"
+                                            name="name"
+                                            required
+                                            placeholder="Votre nom"
+                                            class="w-full px-4 py-3 rounded-xl border border-brand-soft-border bg-brand-cream text-brand-dark text-base placeholder:text-gray-400 focus:outline-none focus:border-brand-orange transition-colors"
                                         />
                                     </div>
-                                    <div class="space-y-3">
+
+                                    <div class="mb-6">
                                         <label
+                                            class="block text-sm font-semibold text-brand-dark mb-2"
+                                            for="contact-email"
+                                            >Votre email</label
+                                        >
+                                        <input
+                                            type="email"
+                                            id="contact-email"
+                                            name="email"
+                                            required
+                                            placeholder="votre@email.com"
+                                            class="w-full px-4 py-3 rounded-xl border border-brand-soft-border bg-brand-cream text-brand-dark text-base placeholder:text-gray-400 focus:outline-none focus:border-brand-orange transition-colors"
+                                        />
+                                    </div>
+
+                                    <div class="mb-6">
+                                        <label
+                                            class="block text-sm font-semibold text-brand-dark mb-2"
+                                            for="contact-activity"
+                                            >Votre activité</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="contact-activity"
+                                            name="activity"
+                                            placeholder="Ex : photographe, consultant, coach…"
+                                            class="w-full px-4 py-3 rounded-xl border border-brand-soft-border bg-brand-cream text-brand-dark text-base placeholder:text-gray-400 focus:outline-none focus:border-brand-orange transition-colors"
+                                        />
+                                    </div>
+
+                                    <div class="mb-8">
+                                        <label
+                                            class="block text-sm font-semibold text-brand-dark mb-2"
                                             for="contact-message"
-                                            class="text-sm font-bold text-brand-dark uppercase tracking-wide"
                                             >Votre message</label
-                                        ><textarea
-                                            class="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 text-base focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all resize-none placeholder:text-gray-300"
+                                        >
+                                        <textarea
                                             id="contact-message"
                                             name="message"
-                                            placeholder="Dites-moi en quelques mots ce dont vous avez besoin..."
+                                            rows="5"
                                             required
-                                            rows="4"
+                                            placeholder="Décrivez brièvement votre activité et ce que vous cherchez."
+                                            class="w-full px-4 py-3 rounded-xl border border-brand-soft-border bg-brand-cream text-brand-dark text-base placeholder:text-gray-400 focus:outline-none focus:border-brand-orange transition-colors resize-none"
                                         ></textarea>
                                     </div>
+
                                     <button
-                                        class="w-full bg-brand-orange text-white font-bold py-5 rounded-xl hover:bg-[#c56045] transition-all transform shadow-md shadow-brand-orange/10 hover:bg-[#c56045] flex items-center justify-center gap-3 text-lg"
-                                        type="button"
+                                        type="submit"
+                                        class="w-full inline-flex items-center justify-center gap-3 bg-brand-orange text-white font-semibold text-base px-6 py-4 rounded-full hover:bg-[#c56045] transition-all duration-300"
                                     >
                                         Envoyer mon message
                                         <i
                                             data-lucide="arrow-right"
-                                            style="width: 20px; height: 20px"
+                                            style="width:18px;height:18px"
                                         ></i>
                                     </button>
+
+                                    <p class="text-xs text-gray-400 text-center mt-4">
+                                        Échange simple, sans engagement. Je
+                                        réponds sous 48h.
+                                    </p>
                                 </form>
                             </div>
                         </div>
@@ -1440,17 +1583,17 @@
                     <div class="flex gap-8 mt-6 md:mt-0">
                         <a
                             class="hover:text-brand-dark transition-colors"
-                            href="/mentions-legales.html"
+                            href="/mentions-legales"
                             >Mentions légales</a
                         >
                         <a
                             class="hover:text-brand-dark transition-colors"
-                            href="/confidentialite.html"
+                            href="/confidentialite"
                             >Confidentialité</a
                         >
                         <a
                             class="hover:text-brand-dark transition-colors"
-                            href="/cgv.html"
+                            href="/cgv"
                             >CGV</a
                         >
                     </div>

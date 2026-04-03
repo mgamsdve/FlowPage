@@ -1,6 +1,9 @@
 export default {
   content: [
     "./index.html",
+    "./services.html",
+    "./contact.html",
+    "./a-propos.html",
     "./assets/**/*.{js,html}",
   ],
   theme: {

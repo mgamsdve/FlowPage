@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta
+            name="description"
+            content="Flowpage, c'est un binôme complémentaire : conception & développement web d'un côté, relation client et coordination de l'autre. Une approche humaine, rigoureuse et efficace."
+        />
+        <meta
+            name="robots"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+        <meta name="theme-color" content="#FDFCF8" />
+        <meta
+            name="google-site-verification"
+            content="mg-duFqkJC9FdYQIJ7vQTpP4ASnGtDrlgYe-Ix4yCwM"
+        />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+        <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="canonical" href="https://flowpage.tech/a-propos" />
+        <title>Flowpage | À propos — Qui sommes-nous ?</title>
+        <meta
+            property="og:title"
+            content="Flowpage | À propos — Qui sommes-nous ?"
+        />
+        <meta
+            property="og:description"
+            content="Flowpage, c'est un binôme complémentaire : conception & développement web d'un côté, relation client et coordination de l'autre. Une approche humaine, rigoureuse et efficace."
+        />
+        <meta property="og:url" content="https://flowpage.tech/a-propos" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Flowpage" />
+        <meta property="og:locale" content="fr_FR" />
+        <meta
+            property="og:image"
+            content="https://flowpage.tech/assets/img/mockupV2.png"
+        />
+        <meta
+            property="og:image:alt"
+            content="Aperçu d'une landing page Flowpage claire et structurée pour indépendants."
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Flowpage | Création de pages web claires pour indépendants"
+        />
+        <meta
+            name="twitter:description"
+            content="Flowpage conçoit des pages web claires pour indépendants et petits business : message net, design sobre et site crédible pour être compris et contacté."
+        />
+        <meta
+            name="twitter:image"
+            content="https://flowpage.tech/assets/img/mockupV2.png"
+        />
+        <meta
+            name="twitter:image:alt"
+            content="Aperçu d'une landing page Flowpage claire et structurée pour indépendants."
+        />
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+        <link
+            href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@600,700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/assets/css/styles.css" />
+        <style>
+            .reveal {
+                opacity: 0;
+                transform: translateY(24px);
+                transition:
+                    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .reveal.revealed {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .reveal.delay-1 {
+                transition-delay: 0.1s;
+            }
+            .reveal.delay-2 {
+                transition-delay: 0.2s;
+            }
+            .reveal.delay-3 {
+                transition-delay: 0.3s;
+            }
+            .load-reveal {
+                opacity: 0;
+                transform: translateY(20px);
+                transition:
+                    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .load-reveal.load-delay-1 {
+                transition-delay: 0.15s;
+            }
+            .load-reveal.load-delay-2 {
+                transition-delay: 0.3s;
+            }
+            .load-reveal.revealed {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            @keyframes scrollBounce {
+                0%,
+                100% {
+                    transform: translateY(0);
+                    opacity: 0.5;
+                }
+                50% {
+                    transform: translateY(6px);
+                    opacity: 1;
+                }
+            }
+            .animate-scroll-bounce {
+                animation: scrollBounce 2s ease-in-out infinite;
+            }
+            #mobile-menu.menu-open {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0);
+            }
+            #mobile-menu .mobile-nav-link {
+                opacity: 0;
+                transform: translateX(-12px);
+                transition:
+                    opacity 0.4s ease,
+                    transform 0.4s ease;
+            }
+            #mobile-menu.menu-open .mobile-nav-link:nth-child(1) {
+                opacity: 1;
+                transform: translateX(0);
+                transition-delay: 0.1s;
+            }
+            #mobile-menu.menu-open .mobile-nav-link:nth-child(2) {
+                opacity: 1;
+                transform: translateX(0);
+                transition-delay: 0.15s;
+            }
+            #mobile-menu.menu-open .mobile-nav-link:nth-child(3) {
+                opacity: 1;
+                transform: translateX(0);
+                transition-delay: 0.2s;
+            }
+            #mobile-menu.menu-open .mobile-nav-link:nth-child(4) {
+                opacity: 1;
+                transform: translateX(0);
+                transition-delay: 0.25s;
+            }
+            #hamburger-btn.is-open #ham-line-1 {
+                transform: translateY(7px) rotate(45deg);
+            }
+            #hamburger-btn.is-open #ham-line-2 {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+            #hamburger-btn.is-open #ham-line-3 {
+                transform: translateY(-7px) rotate(-45deg);
+                width: 1.5rem;
+            }
+            #main-nav {
+                transition: opacity 0.2s ease;
+            }
+            body.menu-open {
+                overflow: hidden;
+            }
+        </style>
+        <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    </head>
+    <body>
+        <a
+            class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[1000] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-brand-dark focus:shadow-lg"
+            href="#main-content"
+            >Aller au contenu principal</a
+        >
+        <div
+            class="min-h-screen flex flex-col font-sans antialiased text-gray-900 overflow-x-hidden"
+        >
+            <header
+                id="main-nav"
+                class="fixed top-0 left-0 right-0 z-[100] flex justify-center w-full pointer-events-none py-0 md:py-2 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
+            >
+                <nav
+                    aria-label="Navigation principale"
+                    class="pointer-events-auto flex items-center justify-between px-6 py-4 w-full max-w-7xl mx-auto rounded-3xl transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] bg-transparent text-brand-dark border border-transparent"
+                >
+                    <a
+                        class="font-heading font-semibold text-2xl tracking-tight text-brand-dark z-[110] relative"
+                        href="/"
+                    >
+                        Flowpage<span class="text-brand-orange">.</span>
+                    </a>
+
+                    <div
+                        class="hidden md:flex items-center gap-10 font-medium text-sm text-gray-600"
+                    >
+                        <a
+                            class="hover:text-brand-dark transition-colors"
+                            href="/"
+                            >Accueil</a
+                        >
+                        <a
+                            class="hover:text-brand-dark transition-colors"
+                            href="/services"
+                            >Services</a
+                        >
+                        <a
+                            class="text-brand-orange font-semibold hover:text-brand-orange transition-colors"
+                            href="/a-propos"
+                            >À propos</a
+                        >
+                    </div>
+
+                    <a
+                        class="hidden md:flex items-center gap-2 text-sm font-semibold text-brand-dark hover:text-brand-orange transition-colors"
+                        href="/contact"
+                    >
+                        Me contacter
+                    </a>
+
+                    <button
+                        id="hamburger-btn"
+                        aria-controls="mobile-menu"
+                        aria-expanded="false"
+                        aria-label="Ouvrir le menu"
+                        class="relative z-[110] flex h-10 w-10 flex-col items-center justify-center gap-[5px] md:hidden focus:outline-none"
+                    >
+                        <span
+                            id="ham-line-1"
+                            class="block h-[2px] w-6 bg-brand-dark rounded-full origin-center transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                        ></span>
+                        <span
+                            id="ham-line-2"
+                            class="block h-[2px] w-6 bg-brand-dark rounded-full origin-center transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                        ></span>
+                        <span
+                            id="ham-line-3"
+                            class="block h-[2px] w-4 bg-brand-dark rounded-full origin-center transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                        ></span>
+                    </button>
+                </nav>
+            </header>
+
+            <div
+                id="mobile-menu"
+                    aria-hidden="true"
+                    class="fixed inset-0 z-[200] flex h-[100dvh] flex-col justify-between bg-brand-cream px-6 py-4 opacity-0 pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden"
+                >
+                    <div class="flex items-center justify-between">
+                        <a
+                            href="/"
+                            class="font-heading font-semibold text-2xl tracking-tight text-brand-dark"
+                        >
+                            Flowpage<span class="text-brand-orange">.</span>
+                        </a>
+                        <button
+                            id="close-menu-btn"
+                            aria-label="Fermer le menu"
+                            class="flex items-center justify-center w-10 h-10 focus:outline-none cursor-pointer"
+                            type="button"
+                        >
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#2A2A2A"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <nav class="flex flex-1 flex-col justify-center gap-2">
+                        <a
+                            href="/"
+                            class="mobile-nav-link font-heading text-4xl font-bold text-brand-dark py-4 border-b border-brand-soft-border hover:text-brand-orange transition-colors duration-200"
+                        >
+                            Accueil
+                        </a>
+                        <a
+                            href="/services"
+                            class="mobile-nav-link font-heading text-4xl font-bold text-brand-dark py-4 border-b border-brand-soft-border hover:text-brand-orange transition-colors duration-200"
+                        >
+                            Services
+                        </a>
+                        <a
+                            href="/a-propos"
+                            class="mobile-nav-link font-heading text-4xl font-bold text-brand-orange py-4 border-b border-brand-soft-border hover:text-brand-orange transition-colors duration-200"
+                        >
+                            À propos
+                        </a>
+                        <a
+                            href="/contact"
+                            class="mobile-nav-link font-heading text-4xl font-bold text-brand-orange py-4 hover:opacity-80 transition-opacity duration-200"
+                        >
+                            Me contacter
+                        </a>
+                    </nav>
+
+                    <div class="pb-4">
+                        <p
+                            class="mb-1 text-xs font-medium uppercase tracking-[0.2em] text-gray-400"
+                        >
+                            Contact
+                        </p>
+                        <a
+                            href="mailto:hello@flowpage.tech"
+                            class="text-sm font-semibold text-brand-dark transition-colors hover:text-brand-orange"
+                        >
+                            hello@flowpage.tech
+                        </a>
+                    </div>
+                </div>
+
+            <main class="flex-grow pt-[60px] md:pt-24" id="main-content">
+                <section
+                    id="hero"
+                    class="relative bg-brand-cream py-20 md:py-28 lg:py-36 px-6"
+                >
+                    <div class="max-w-3xl mx-auto text-center">
+                        <span
+                            class="inline-block text-xs font-semibold uppercase tracking-[0.3em] text-brand-green mb-6 load-reveal"
+                        >
+                            À propos
+                        </span>
+                        <h1
+                            class="load-reveal mx-auto max-w-3xl text-balance text-5xl font-extrabold leading-[1.04] tracking-tight text-brand-dark sm:text-6xl md:text-7xl lg:text-[5rem]"
+                        >
+                            Derrière Flowpage,
+                            <br />
+                            des <span class="text-brand-orange">personnes</span> réelles.
+                        </h1>
+                        <p
+                            class="load-reveal load-delay-1 mx-auto mt-8 max-w-xl text-lg md:text-xl text-gray-500 leading-relaxed"
+                        >
+                            Flowpage n'est pas une agence anonyme.
+                            <br />
+                            C'est un projet porté par deux personnes, avec une
+                            vision claire : rendre le web utile, lisible et
+                            honnête.
+                        </p>
+                        <div
+                            class="w-12 h-px bg-brand-soft-border mx-auto mt-16"
+                        ></div>
+                        <div
+                            id="scroll-indicator"
+                            class="absolute bottom-8 left-0 right-0 flex justify-center transition-opacity duration-500"
+                        >
+                            <i
+                                data-lucide="chevron-down"
+                                class="text-gray-400 animate-scroll-bounce"
+                                style="width:28px;height:28px"
+                            ></i>
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    id="origine"
+                    class="bg-brand-cream py-16 md:py-24 lg:py-32 px-6"
+                >
+                    <div class="max-w-3xl mx-auto text-center">
+                        <h2
+                            class="reveal font-heading text-4xl md:text-5xl font-bold text-brand-dark mb-8 leading-tight"
+                        >
+                            Trop de sites existent.
+                            <br />
+                            Pas assez sont utiles.
+                        </h2>
+                        <div class="reveal text-lg md:text-xl text-gray-600 leading-relaxed">
+                            <p class="mb-6">
+                                Des sites trop chargés, des messages flous, des
+                                visiteurs perdus. Pourtant, derrière chaque site
+                                mal structuré, il y a souvent une activité
+                                sérieuse qui mérite d'être comprise
+                                immédiatement.
+                            </p>
+                            <p class="mb-6">
+                                Flowpage est né de ce constat : la plupart des
+                                indépendants et petits business n'ont pas besoin
+                                de plus — ils ont besoin de mieux.
+                            </p>
+                            <p class="mb-6">
+                                Moins de bruit, plus de clarté. Moins de
+                                complexité, plus de crédibilité.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="equipe" class="bg-brand-dark">
+                    <div class="max-w-6xl mx-auto py-12 md:py-20 lg:py-24 px-6">
+                        <span
+                            class="reveal block text-xs font-semibold uppercase tracking-[0.3em] text-brand-green mb-6 text-center"
+                        >
+                            L'équipe
+                        </span>
+                        <h2
+                            class="reveal font-heading text-4xl md:text-5xl font-bold text-white text-center mb-20 leading-tight"
+                        >
+                            Deux rôles, une même exigence.
+                        </h2>
+
+                        <div
+                            class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+                        >
+                            <article
+                                class="reveal delay-1 !bg-[#262626] p-8 rounded-3xl hover:!bg-[#303030] transition-all duration-300 group border !border-white/5 hover:!border-white/10"
+                            >
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-brand-dark border !border-[#374151] flex items-center justify-center text-brand-orange mb-8 group-hover:scale-105 transition-transform shadow-lg shadow-black/20"
+                                >
+                                    <span
+                                        class="font-heading font-bold text-lg"
+                                        >VP</span
+                                    >
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-white">
+                                    Valérie Poty
+                                </h3>
+                                <p
+                                    class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-green mb-4"
+                                >
+                                    Relation client & Coordination
+                                </p>
+                                <p
+                                    class="text-gray-400 text-base leading-relaxed"
+                                >
+                                    Valérie est l'interlocutrice principale des
+                                    clients. Elle cadre les projets, assure le
+                                    suivi et garantit que chaque collaboration
+                                    reste claire, humaine et bien menée de bout
+                                    en bout.
+                                </p>
+                            </article>
+
+                            <article
+                                class="reveal delay-2 !bg-[#262626] p-8 rounded-3xl hover:!bg-[#303030] transition-all duration-300 group border !border-white/5 hover:!border-white/10"
+                            >
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-brand-dark border !border-[#374151] flex items-center justify-center text-brand-orange mb-8 group-hover:scale-105 transition-transform shadow-lg shadow-black/20"
+                                >
+                                    <span
+                                        class="font-heading font-bold text-lg"
+                                        >MD</span
+                                    >
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-white">
+                                    Mael Dayani Poty
+                                </h3>
+                                <p
+                                    class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-green mb-4"
+                                >
+                                    Conception & Développement
+                                </p>
+                                <p
+                                    class="text-gray-400 text-base leading-relaxed"
+                                >
+                                    Mael conçoit et développe chaque site. De
+                                    la structure de l'information au design
+                                    final, il s'assure que chaque projet est
+                                    lisible, cohérent et pensé pour être compris
+                                    immédiatement.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    id="valeurs"
+                    class="bg-brand-cream py-16 md:py-24 lg:py-32 px-6"
+                >
+                    <div class="max-w-5xl mx-auto">
+                        <h2
+                            class="reveal font-heading text-4xl md:text-5xl font-bold text-brand-dark text-center mb-20 leading-tight"
+                        >
+                            Ce qui guide notre travail.
+                        </h2>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <article
+                                class="reveal delay-1 bg-white rounded-[1.5rem] border border-brand-soft-border p-8"
+                            >
+                                <i
+                                    data-lucide="shield-check"
+                                    class="text-brand-orange mb-6"
+                                    style="width: 28px; height: 28px"
+                                ></i>
+                                <h3
+                                    class="font-heading text-xl font-bold text-brand-dark mb-3"
+                                >
+                                    Rigoureux
+                                </h3>
+                                <p
+                                    class="text-base text-gray-600 leading-relaxed"
+                                >
+                                    Chaque projet est pensé, structuré et livré
+                                    avec soin. Rien n'est laissé au hasard — ni
+                                    la hiérarchie de l'information, ni la
+                                    cohérence visuelle.
+                                </p>
+                            </article>
+
+                            <article
+                                class="reveal delay-2 bg-white rounded-[1.5rem] border border-brand-soft-border p-8"
+                            >
+                                <i
+                                    data-lucide="zap"
+                                    class="text-brand-orange mb-6"
+                                    style="width: 28px; height: 28px"
+                                ></i>
+                                <h3
+                                    class="font-heading text-xl font-bold text-brand-dark mb-3"
+                                >
+                                    Passionné
+                                </h3>
+                                <p
+                                    class="text-base text-gray-600 leading-relaxed"
+                                >
+                                    Le web bien fait nous intéresse vraiment.
+                                    Pas pour l'esthétique seule, mais parce
+                                    qu'un site clair change concrètement la
+                                    perception d'une activité.
+                                </p>
+                            </article>
+
+                            <article
+                                class="reveal delay-3 bg-white rounded-[1.5rem] border border-brand-soft-border p-8"
+                            >
+                                <i
+                                    data-lucide="target"
+                                    class="text-brand-orange mb-6"
+                                    style="width: 28px; height: 28px"
+                                ></i>
+                                <h3
+                                    class="font-heading text-xl font-bold text-brand-dark mb-3"
+                                >
+                                    Efficace
+                                </h3>
+                                <p
+                                    class="text-base text-gray-600 leading-relaxed"
+                                >
+                                    Pas de complexité inutile, pas de délais qui
+                                    s'étirent. Un processus simple, un résultat
+                                    livré dans les temps, une collaboration qui
+                                    ne complique pas la vie du client.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="positionnement" class="bg-[#FAF9F6]">
+                    <div class="max-w-3xl mx-auto text-center py-12 md:py-20 lg:py-24 px-6">
+                        <h2
+                            class="reveal font-heading text-3xl md:text-4xl font-bold text-brand-dark mb-8 leading-tight"
+                        >
+                            Flowpage n'est pas une agence classique.
+                        </h2>
+                        <div class="reveal text-lg text-gray-600 leading-relaxed">
+                            <p class="mb-6">
+                                Pas d'équipe de 20 personnes, pas de promesses
+                                irréalistes, pas de jargon marketing. Flowpage
+                                est un projet indépendant, construit sur la
+                                clarté et l'honnêteté.
+                            </p>
+                            <p class="mb-6">
+                                On préfère refuser un projet qui ne nous
+                                correspond pas plutôt que livrer quelque chose
+                                d'inutile.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="cta" class="bg-brand-dark">
+                    <div class="max-w-2xl mx-auto text-center py-20 md:py-28 lg:py-36 px-6">
+                        <h2
+                            class="reveal font-heading text-4xl md:text-5xl font-bold text-white leading-tight mb-6"
+                        >
+                            Un projet en tête ?
+                            <br />
+                            Parlons-en.
+                        </h2>
+                        <p
+                            class="reveal font-sans text-lg text-gray-400 leading-relaxed mb-12"
+                        >
+                            Un échange simple suffit pour voir si Flowpage
+                            correspond à ce que vous cherchez.
+                        </p>
+                        <a
+                            href="/contact"
+                            class="reveal delay-1 inline-flex items-center gap-3 bg-brand-orange text-white font-semibold text-sm px-6 py-4 rounded-full hover:bg-[#c56045] transition-all duration-300"
+                        >
+                            Discuter de mon projet
+                            <i data-lucide="arrow-right" style="width:18px;height:18px"></i>
+                        </a>
+                        <p class="reveal delay-2 text-sm text-gray-500 mt-5">
+                            Échange simple, sans engagement.
+                        </p>
+                    </div>
+                </section>
+            </main>
+
+            <footer
+                class="bg-brand-cream py-20 px-6 md:px-12 border-t border-gray-200"
+            >
+                <div
+                    class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10 md:gap-0"
+                >
+                    <div
+                        class="flex flex-col items-center md:items-start gap-4"
+                    >
+                        <div
+                            class="flex items-center gap-3 font-extrabold text-2xl tracking-tight"
+                        >
+                            <div
+                                class="w-8 h-8 rounded-full bg-brand-dark text-white flex items-center justify-center"
+                            >
+                                <i
+                                    data-lucide="arrow-up-right"
+                                    style="width: 18px; height: 18px"
+                                ></i>
+                            </div>
+                            <span>Flowpage</span>
+                        </div>
+                        <p
+                            class="text-xs font-medium text-gray-400 tracking-wide uppercase"
+                        >
+                            L'agence web qui parle aux indépendants.
+                        </p>
+                    </div>
+                    <div class="text-center md:text-right">
+                        <a
+                            class="text-xl md:text-2xl font-bold text-brand-dark hover:text-brand-orange transition-colors"
+                            href="mailto:hello@flowpage.tech"
+                            >hello@flowpage.tech</a
+                        >
+                        <p class="text-sm text-gray-400 mt-2 font-medium">
+                            Tout commence par une simple discussion.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="max-w-7xl mx-auto mt-20 pt-10 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-medium"
+                >
+                    <p>© 2024 Flowpage. Tous droits réservés.</p>
+                    <div class="flex gap-8 mt-6 md:mt-0">
+                        <a
+                            class="hover:text-brand-dark transition-colors"
+                            href="/mentions-legales"
+                            >Mentions légales</a
+                        >
+                        <a
+                            class="hover:text-brand-dark transition-colors"
+                            href="/confidentialite"
+                            >Confidentialité</a
+                        >
+                        <a
+                            class="hover:text-brand-dark transition-colors"
+                            href="/cgv"
+                            >CGV</a
+                        >
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script>
+            const nav = document.querySelector('#main-nav nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    nav.classList.add('bg-brand-cream', 'border-brand-soft-border', 'shadow-sm');
+                    nav.classList.remove('bg-transparent', 'border-transparent');
+                    if (window.innerWidth < 768) {
+                        nav.classList.remove('rounded-3xl');
+                        nav.classList.add('rounded-none');
+                    }
+                } else {
+                    nav.classList.remove('bg-brand-cream', 'border-brand-soft-border', 'shadow-sm', 'rounded-none');
+                    nav.classList.add('bg-transparent', 'border-transparent', 'rounded-3xl');
+                }
+            }, { passive: true });
+
+            const scrollIndicator = document.getElementById('scroll-indicator');
+            if (scrollIndicator) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        scrollIndicator.style.opacity = '0';
+                        scrollIndicator.style.pointerEvents = 'none';
+                    } else {
+                        scrollIndicator.style.opacity = '1';
+                    }
+                }, { passive: true });
+            }
+
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mainHeader = document.getElementById('main-nav');
+
+            function openMenu() {
+                if (!hamburgerBtn || !mobileMenu) {
+                    return;
+                }
+
+                mobileMenu.classList.add('menu-open');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                hamburgerBtn.classList.add('is-open');
+                hamburgerBtn.setAttribute('aria-expanded', 'true');
+                document.body.classList.add('menu-open');
+                if (mainHeader) mainHeader.style.opacity = '0';
+                if (mainHeader) mainHeader.style.pointerEvents = 'none';
+            }
+
+            function closeMenu() {
+                if (!hamburgerBtn || !mobileMenu) {
+                    return;
+                }
+
+                mobileMenu.classList.remove('menu-open');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                hamburgerBtn.classList.remove('is-open');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
+                if (mainHeader) mainHeader.style.opacity = '1';
+                if (mainHeader) mainHeader.style.pointerEvents = '';
+            }
+
+            if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMenu);
+            if (closeMenuBtn) {
+                closeMenuBtn.addEventListener('click', closeMenu);
+                closeMenuBtn.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    closeMenu();
+                });
+            }
+
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    closeMenu();
+                }
+            });
+
+            const revealEls = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(el => {
+                    if (el.isIntersecting) {
+                        el.target.classList.add('revealed');
+                        observer.unobserve(el.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            revealEls.forEach(el => observer.observe(el));
+
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelectorAll('.load-reveal').forEach(el => {
+                    el.classList.add('revealed');
+                });
+            });
+
+            lucide.createIcons();
+        </script>
+    </body>
+</html>

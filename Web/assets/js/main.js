@@ -133,28 +133,50 @@ if (finalTextarea) {
   finalTextarea.addEventListener("input", resizeTextarea);
 }
 
-// Navbar Scroll Logic
+const scrollIndicator = document.getElementById("scroll-indicator");
+
+if (scrollIndicator) {
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (window.scrollY > 50) {
+        scrollIndicator.style.opacity = "0";
+        scrollIndicator.style.pointerEvents = "none";
+      } else {
+        scrollIndicator.style.opacity = "1";
+      }
+    },
+    { passive: true },
+  );
+}
+
 const mainNav = document.getElementById("main-nav");
 const navInner = mainNav ? mainNav.querySelector("nav") : null;
+const hamburgerBtn = document.getElementById("hamburger-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+const closeMenuBtn = document.getElementById("close-menu-btn");
 
 if (mainNav && navInner) {
   const updateNavStyles = () => {
-    if (window.scrollY > 50) {
-      navInner.classList.remove("bg-transparent", "border-transparent");
+    if (window.scrollY > 20) {
       navInner.classList.add(
-        "bg-brand-cream/80",
-        "backdrop-blur-xl",
-        "border-brand-dark/10",
+        "bg-brand-cream",
+        "border-brand-soft-border",
         "shadow-sm",
       );
+      navInner.classList.remove("bg-transparent", "border-transparent");
+      if (window.innerWidth < 768) {
+        navInner.classList.remove("rounded-3xl");
+        navInner.classList.add("rounded-none");
+      }
     } else {
-      navInner.classList.add("bg-transparent", "border-transparent");
       navInner.classList.remove(
-        "bg-brand-cream/80",
-        "backdrop-blur-xl",
-        "border-brand-dark/10",
+        "bg-brand-cream",
+        "border-brand-soft-border",
         "shadow-sm",
+        "rounded-none",
       );
+      navInner.classList.add("bg-transparent", "border-transparent", "rounded-3xl");
     }
   };
 
@@ -174,3 +196,50 @@ if (mainNav && navInner) {
   updateNavStyles();
   window.addEventListener("scroll", onScroll, { passive: true });
 }
+
+function openMenu() {
+  if (!hamburgerBtn || !mobileMenu) {
+    return;
+  }
+
+  mobileMenu.classList.add("menu-open");
+  mobileMenu.setAttribute("aria-hidden", "false");
+  hamburgerBtn.classList.add("is-open");
+  hamburgerBtn.setAttribute("aria-expanded", "true");
+  document.body.classList.add("menu-open");
+  if (mainNav) mainNav.style.opacity = "0";
+  if (mainNav) mainNav.style.pointerEvents = "none";
+}
+
+function closeMenu() {
+  if (!hamburgerBtn || !mobileMenu) {
+    return;
+  }
+
+  mobileMenu.classList.remove("menu-open");
+  mobileMenu.setAttribute("aria-hidden", "true");
+  hamburgerBtn.classList.remove("is-open");
+  hamburgerBtn.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("menu-open");
+  if (mainNav) mainNav.style.opacity = "1";
+  if (mainNav) mainNav.style.pointerEvents = "";
+}
+
+if (hamburgerBtn) hamburgerBtn.addEventListener("click", openMenu);
+if (closeMenuBtn) {
+  closeMenuBtn.addEventListener("click", closeMenu);
+  closeMenuBtn.addEventListener("touchend", (event) => {
+    event.preventDefault();
+    closeMenu();
+  });
+}
+
+document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+  link.addEventListener("click", closeMenu);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMenu();
+  }
+});
