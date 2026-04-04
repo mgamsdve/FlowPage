@@ -243,3 +243,31 @@ document.addEventListener("keydown", (event) => {
     closeMenu();
   }
 });
+
+const contactForm = document.getElementById("contact-form");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const data = new FormData(contactForm);
+
+    const response = await fetch(contactForm.action, {
+      method: contactForm.method,
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (response.ok) {
+      contactForm.reset();
+      const successMessage = document.getElementById("form-success");
+      if (successMessage) {
+        successMessage.classList.remove("hidden");
+      }
+    } else {
+      alert("Une erreur s'est produite.");
+    }
+  });
+}
