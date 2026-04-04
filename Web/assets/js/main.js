@@ -123,9 +123,21 @@ if (exempleItems.length) {
 const finalTextarea = document.querySelector("#contact textarea");
 
 if (finalTextarea) {
-  const resizeTextarea = () => {
+  const MAX_CONTACT_MESSAGE_HEIGHT = 240;
+
+  const resizeContactTextarea = () => {
     finalTextarea.style.height = "auto";
-    finalTextarea.style.height = `${finalTextarea.scrollHeight}px`;
+    const nextHeight = Math.min(
+      finalTextarea.scrollHeight,
+      MAX_CONTACT_MESSAGE_HEIGHT,
+    );
+    finalTextarea.style.height = `${nextHeight}px`;
+    finalTextarea.style.overflowY =
+      finalTextarea.scrollHeight > MAX_CONTACT_MESSAGE_HEIGHT ? "auto" : "hidden";
+  };
+
+  const resizeTextarea = () => {
+    resizeContactTextarea();
   };
 
   finalTextarea.style.overflowY = "hidden";
@@ -247,6 +259,28 @@ document.addEventListener("keydown", (event) => {
 const contactForm = document.getElementById("contact-form");
 
 if (contactForm) {
+  const contactMessage = document.getElementById("contact-message");
+
+  const resizeContactMessage = () => {
+    if (!contactMessage) {
+      return;
+    }
+
+    contactMessage.style.height = "auto";
+    const nextHeight = Math.min(
+      contactMessage.scrollHeight,
+      240,
+    );
+    contactMessage.style.height = `${nextHeight}px`;
+    contactMessage.style.overflowY =
+      contactMessage.scrollHeight > 240 ? "auto" : "hidden";
+  };
+
+  if (contactMessage) {
+    resizeContactMessage();
+    contactMessage.addEventListener("input", resizeContactMessage);
+  }
+
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -266,6 +300,7 @@ if (contactForm) {
       if (successMessage) {
         successMessage.classList.remove("hidden");
       }
+      resizeContactMessage();
     } else {
       alert("Une erreur s'est produite.");
     }

@@ -725,10 +725,17 @@ Message envoyé avec succès !
 
             const textarea = document.querySelector('#contact-message');
             if (textarea) {
-                textarea.addEventListener('input', function() {
-                    this.style.height = 'auto';
-                    this.style.height = this.scrollHeight + 'px';
-                });
+                const MAX_MESSAGE_HEIGHT = 240;
+
+                const resizeTextarea = () => {
+                    textarea.style.height = 'auto';
+                    const nextHeight = Math.min(textarea.scrollHeight, MAX_MESSAGE_HEIGHT);
+                    textarea.style.height = nextHeight + 'px';
+                    textarea.style.overflowY = textarea.scrollHeight > MAX_MESSAGE_HEIGHT ? 'auto' : 'hidden';
+                };
+
+                resizeTextarea();
+                textarea.addEventListener('input', resizeTextarea);
             }
 
             lucide.createIcons();
@@ -750,6 +757,10 @@ Message envoyé avec succès !
 
             if (response.ok) {
                 form.reset(); // ← vide tous les champs
+                if (textarea) {
+                    textarea.style.height = 'auto';
+                    textarea.style.overflowY = 'hidden';
+                }
                 document.getElementById("form-success").classList.remove("hidden");
             } else {
                 alert("Une erreur s'est produite.");
