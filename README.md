@@ -266,7 +266,7 @@ The built files in `dist/` can be deployed to:
 ### Environment-Specific Configs
 
 Current project uses:
-- **Email contact**: `hello@flowpage.fr` (hardcoded in HTML footer)
+- **Email contact**: `contact@flowpage.tech` (hardcoded in HTML footer)
 - **No environment variables** currently used
 - Static site - no backend required
 
