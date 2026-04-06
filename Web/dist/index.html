@@ -218,7 +218,7 @@
                 overflow: hidden;
             }
         </style>
-      <script type="module" crossorigin src="/assets/index-BZ18V614.js"></script>
+      <script type="module" crossorigin src="/assets/index-BTX2Wx79.js"></script>
       <link rel="stylesheet" crossorigin href="/assets/styles-DEbloLbW.css">
     </head>
 
@@ -1612,53 +1612,5 @@
         </div>
 
         <script src="https://unpkg.com/lucide@latest"></script>
-        <script>
-            const textarea = document.querySelector('#contact-message');
-            if (textarea) {
-                const MAX_MESSAGE_HEIGHT = 240;
-
-                const resizeTextarea = () => {
-                    textarea.style.height = 'auto';
-                    const nextHeight = Math.min(textarea.scrollHeight, MAX_MESSAGE_HEIGHT);
-                    textarea.style.height = nextHeight + 'px';
-                    textarea.style.overflowY = textarea.scrollHeight > MAX_MESSAGE_HEIGHT ? 'auto' : 'hidden';
-                };
-
-                resizeTextarea();
-                textarea.addEventListener('input', resizeTextarea);
-            }
-
-            const form = document.getElementById("contact-form");
-
-            if (form) {
-                form.addEventListener("submit", async function (event) {
-                    event.preventDefault();
-
-                    const data = new FormData(form);
-
-                    const response = await fetch(form.action, {
-                        method: form.method,
-                        body: data,
-                        headers: {
-                            Accept: "application/json"
-                        }
-                    });
-
-                    if (response.ok) {
-                        form.reset();
-                        if (textarea) {
-                            textarea.style.height = 'auto';
-                            textarea.style.overflowY = 'hidden';
-                        }
-                        const successMessage = document.getElementById("form-success");
-                        if (successMessage) {
-                            successMessage.classList.remove("hidden");
-                        }
-                    } else {
-                        alert("Une erreur s'est produite.");
-                    }
-                });
-            }
-        </script>
     </body>
 </html>
