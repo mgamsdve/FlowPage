@@ -1,18 +1,10 @@
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowpage">
-  <defs>
-    <linearGradient id="bg" x1="96" y1="88" x2="416" y2="424" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FAF9F6"/>
-      <stop offset="1" stop-color="#F5F0E8"/>
-    </linearGradient>
-    <filter id="shadow" x="72" y="72" width="368" height="368" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#2A2A2A" flood-opacity="0.12"/>
-    </filter>
-  </defs>
-  <circle cx="256" cy="256" r="184" fill="url(#bg)"/>
-  <circle cx="256" cy="256" r="184" stroke="#E6E6E2" stroke-width="14"/>
-  <g filter="url(#shadow)">
-    <circle cx="256" cy="256" r="142" fill="#FDFCF8"/>
-  </g>
-  <path d="M180 169C180 161.268 186.268 155 194 155H320C327.732 155 334 161.268 334 169V182C334 189.732 327.732 196 320 196H224V245H296C303.732 245 310 251.268 310 259V272C310 279.732 303.732 286 296 286H224V344C224 351.732 217.732 358 210 358H194C186.268 358 180 351.732 180 344V169Z" fill="#2A2A2A"/>
-  <circle cx="342" cy="344" r="24" fill="#D46A4C"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512">
+<path d="M0 0 C168.96 0 337.92 0 512 0 C512 168.96 512 337.92 512 512 C343.04 512 174.08 512 0 512 C0 343.04 0 174.08 0 0 Z " fill="#2A2A2A" transform="translate(0,0)"/>
+<path d="M0 0 C87.12 0 174.24 0 264 0 C264 23.76 264 47.52 264 72 C203.28 72 142.56 72 80 72 C80 105.33 80 138.66 80 173 C136.1 173 192.2 173 250 173 C250 196.76 250 220.52 250 245 C193.57 245 137.14 245 79 245 C79 302.75 79 360.5 79 420 C52.93 420 26.86 420 0 420 C0 281.4 0 142.8 0 0 Z " fill="#FEFEFE" transform="translate(109,44)"/>
+<path d="M0 0 C25.41 0 50.82 0 77 0 C77 25.41 77 50.82 77 77 C51.59 77 26.18 77 0 77 C0 51.59 0 26.18 0 0 Z " fill="#D46A4C" transform="translate(332,387)"/>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 3.3 1 6.6 1 10 C-1.97 10 -4.94 10 -8 10 C-7.236875 9.278125 -6.47375 8.55625 -5.6875 7.8125 C-3.28715765 5.30051382 -1.70928296 2.99124519 0 0 Z " fill="#000000" transform="translate(511,502)"/>
+<path d="M0 0 C1.0828125 1.11375 1.0828125 1.11375 2.1875 2.25 C4.68592573 4.69290515 7.23643202 6.8681047 10 9 C6.7 9 3.4 9 0 9 C0 6.03 0 3.06 0 0 Z " fill="#000000" transform="translate(0,503)"/>
+<path d="M0 0 C3.3 0 6.6 0 10 0 C10 2.97 10 5.94 10 9 C9.278125 8.2575 8.55625 7.515 7.8125 6.75 C5.31407427 4.30709485 2.76356798 2.1318953 0 0 Z " fill="#000000" transform="translate(502,0)"/>
+<path d="M0 0 C2.97 0 5.94 0 9 0 C8.2575 0.721875 7.515 1.44375 6.75 2.1875 C4.30709485 4.68592573 2.1318953 7.23643202 0 10 C0 6.7 0 3.4 0 0 Z " fill="#000000" transform="translate(0,0)"/>
 </svg>
