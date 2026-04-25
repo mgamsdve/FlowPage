@@ -16,7 +16,7 @@ Idéal pour les indépendants qui démarrent ou qui veulent une page claire et d
 ## 2. Présence complète
 Un site vitrine structuré sur plusieurs pages. Pour les activités qui ont besoin de plus d'espace pour expliquer leur offre, leur fonctionnement ou leur univers.
 
-- Tout ce qui est inclus dans Page essentielle
+- Tout ce qui est inclus dans le Site essentiel
 - Architecture multi-pages pensée pour la clarté
 - Navigation simple et logique
 - Cohérence visuelle et éditoriale sur toutes les pages
@@ -29,7 +29,7 @@ Pour ceux qui ont plusieurs offres, services ou informations à présenter clair
 ## 3. Site autonome
 Un site vitrine complet avec un CMS intégré (Sanity). Vous pouvez modifier vos contenus vous-même, sans toucher au code ni casser le design.
 
-- Tout ce qui est inclus dans Présence complète
+- Tout ce qui est inclus dans le Site structuré
 - Intégration Sanity CMS
 - Interface d'édition simple et guidée
 - Formation à l'utilisation du CMS
