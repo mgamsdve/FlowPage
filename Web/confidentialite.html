@@ -45,6 +45,36 @@
                 font-weight: 700;
                 text-decoration: none;
             }
+            footer {
+                border-top: 1px solid #e6e2d8;
+                padding: 1.25rem;
+                display: flex;
+                justify-content: center;
+            }
+            .footer-instagram-link {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .footer-instagram-icon {
+                width: 1.25rem;
+                height: 1.25rem;
+                display: inline-block;
+                background-color: #9ca3af;
+                transition: background-color 280ms ease;
+                -webkit-mask: url("/instagram-svgrepo-com.svg") center / contain
+                    no-repeat;
+                mask: url("/instagram-svgrepo-com.svg") center / contain no-repeat;
+            }
+            .footer-instagram-link:hover .footer-instagram-icon,
+            .footer-instagram-link:focus-visible .footer-instagram-icon {
+                background-color: #d46a4c;
+            }
+            .footer-instagram-link:focus-visible {
+                outline: 2px solid #d46a4c;
+                outline-offset: 4px;
+                border-radius: 9999px;
+            }
         </style>
     </head>
     <body>
@@ -81,5 +111,16 @@
 
             <a class="back-link" href="/">Retour à l’accueil</a>
         </main>
+        <footer>
+            <a
+                class="footer-instagram-link"
+                href="https://www.instagram.com/flowpage.tech/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram Flowpage"
+            >
+                <span class="footer-instagram-icon" aria-hidden="true"></span>
+            </a>
+        </footer>
     </body>
 </html>

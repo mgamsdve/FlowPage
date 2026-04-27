@@ -129,6 +129,27 @@ footer
   @apply text-brand-orange;
 }
 
+.footer-instagram-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: inline-block;
+  background-color: #9ca3af;
+  transition: background-color 280ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  -webkit-mask: url("/instagram-svgrepo-com.svg") center / contain no-repeat;
+  mask: url("/instagram-svgrepo-com.svg") center / contain no-repeat;
+}
+
+.footer-instagram-link:hover .footer-instagram-icon,
+.footer-instagram-link:focus-visible .footer-instagram-icon {
+  background-color: #d46a4c;
+}
+
+.footer-instagram-link:focus-visible {
+  outline: 2px solid #d46a4c;
+  outline-offset: 4px;
+  border-radius: 9999px;
+}
+
 /* Utilities */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
