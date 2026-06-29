@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "generate:seo": "node scripts/generate-seo-pages.mjs",
     "dev": "vite",
-    "build": "vite build",
+    "build": "pnpm run generate:seo && vite build",
     "preview": "vite preview"
   },
   "keywords": [],
