@@ -297,6 +297,16 @@ const jsonLd = (data) =>
 
 const areaPhrase = (area) => (area === 'Belgique' ? 'en Belgique' : `à ${area}`)
 
+const googleTag = `        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GEZRH8CH6X"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-GEZRH8CH6X');
+        </script>`
+
 const baseBusinessSchema = {
   '@type': ['ProfessionalService', 'LocalBusiness'],
   '@id': `${siteUrl}/#service`,
@@ -330,6 +340,7 @@ const baseBusinessSchema = {
 const head = ({ title, description, slug, schema }) => {
   const canonical = urlFor(slug)
   return `    <head>
+${googleTag}
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="${escapeHtml(description)}" />
