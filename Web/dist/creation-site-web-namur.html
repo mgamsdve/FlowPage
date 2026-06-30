@@ -161,12 +161,12 @@
     }
   ]
 }</script>
-      <script type="module" crossorigin src="/assets/main-ChgRgBYY.js"></script>
-      <link rel="stylesheet" crossorigin href="/assets/styles-2_TeMgU1.css">
+      <script type="module" crossorigin src="/assets/main-DTOeKE2n.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/styles-Cqmaic9F.css">
     </head>
     <body class="bg-brand-cream font-sans text-brand-dark antialiased">
         <a class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[1000] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-brand-dark focus:shadow-lg" href="#main-content">Aller au contenu principal</a>
-        <header class="sticky top-0 z-50 border-b border-brand-soft-border bg-brand-cream/95 backdrop-blur">
+        <header id="main-nav" class="sticky top-0 z-50 border-b border-brand-soft-border bg-brand-cream/95 backdrop-blur">
             <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4" aria-label="Navigation principale">
                 <a class="font-heading text-2xl font-semibold tracking-tight text-brand-dark" href="/">Flowpage<span class="text-brand-orange">.</span></a>
                 <div class="hidden items-center gap-8 text-sm font-semibold text-gray-600 md:flex">
@@ -175,9 +175,43 @@
                     <a class="transition-colors hover:text-brand-dark" href="/creation-site-web-belgique">Création site web</a>
                     <a class="transition-colors hover:text-brand-dark" href="/referencement-local-belgique">SEO local</a>
                 </div>
-                <a class="inline-flex rounded-full bg-brand-dark px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-brand-orange" href="/contact">Contact</a>
+                <a class="hidden rounded-full bg-brand-dark px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-brand-orange md:inline-flex" href="/contact">Contact</a>
+                <button
+                    id="hamburger-btn"
+                    aria-controls="mobile-menu"
+                    aria-expanded="false"
+                    aria-label="Ouvrir le menu"
+                    class="relative z-[110] flex h-10 w-10 flex-col items-center justify-center gap-[5px] md:hidden focus:outline-none"
+                    type="button"
+                >
+                    <span id="ham-line-1" class="block h-[2px] w-6 origin-center rounded-full bg-brand-dark transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"></span>
+                    <span id="ham-line-2" class="block h-[2px] w-6 origin-center rounded-full bg-brand-dark transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"></span>
+                    <span id="ham-line-3" class="block h-[2px] w-4 origin-center rounded-full bg-brand-dark transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"></span>
+                </button>
             </nav>
         </header>
+        <div id="mobile-menu" aria-hidden="true" class="fixed inset-0 z-[200] flex h-[100dvh] flex-col justify-between bg-brand-cream px-6 py-4 opacity-0 pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden">
+                <div class="flex items-center justify-between">
+                    <a class="font-heading text-2xl font-semibold tracking-tight text-brand-dark" href="/">Flowpage<span class="text-brand-orange">.</span></a>
+                    <button id="close-menu-btn" aria-label="Fermer le menu" class="flex h-10 w-10 items-center justify-center focus:outline-none" type="button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="flex flex-1 flex-col justify-center gap-2">
+                    <a class="mobile-nav-link border-b border-brand-soft-border py-4 font-heading text-3xl font-bold text-brand-dark transition-colors duration-200 hover:text-brand-orange" href="/services">Services</a>
+                    <a class="mobile-nav-link border-b border-brand-soft-border py-4 font-heading text-3xl font-bold text-brand-dark transition-colors duration-200 hover:text-brand-orange" href="/agence-web-belgique">Agence web Belgique</a>
+                    <a class="mobile-nav-link border-b border-brand-soft-border py-4 font-heading text-3xl font-bold text-brand-dark transition-colors duration-200 hover:text-brand-orange" href="/creation-site-web-belgique">Création site web</a>
+                    <a class="mobile-nav-link border-b border-brand-soft-border py-4 font-heading text-3xl font-bold text-brand-dark transition-colors duration-200 hover:text-brand-orange" href="/referencement-local-belgique">SEO local</a>
+                    <a class="mobile-nav-link py-4 font-heading text-3xl font-bold text-brand-orange transition-opacity duration-200 hover:opacity-80" href="/contact">Me contacter</a>
+                </nav>
+                <div class="pb-4">
+                    <p class="mb-1 text-xs font-medium uppercase tracking-[0.2em] text-gray-400">Contact</p>
+                    <a class="text-sm font-semibold text-brand-dark transition-colors hover:text-brand-orange" href="mailto:valerie@flowpage.tech">valerie@flowpage.tech</a>
+                </div>
+        </div>
         <main id="main-content">
             <section class="px-6 py-20 md:py-28">
                 <div class="mx-auto max-w-5xl">
@@ -259,7 +293,7 @@
             <div class="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.2fr_1fr_1fr_1fr]">
                 <div>
                     <a class="font-heading text-2xl font-semibold tracking-tight text-brand-dark" href="/">Flowpage<span class="text-brand-orange">.</span></a>
-                    <p class="mt-4 max-w-sm text-sm leading-7 text-gray-600">Agence web en Belgique pour indépendants, artisans, consultants et petites entreprises à Namur, Bruxelles, Woluwe et en Wallonie.</p>
+                    <p class="mt-4 max-w-sm text-sm leading-7 text-gray-600">Agence web en Belgique pour indépendants, artisans, consultants et petites entreprises à Namur, Bruxelles et en Wallonie.</p>
                     <a class="mt-4 inline-flex text-sm font-bold text-brand-orange" href="mailto:valerie@flowpage.tech">valerie@flowpage.tech</a>
                 </div>
                 <div>
@@ -277,10 +311,19 @@
             </div>
             <div class="mx-auto mt-12 flex max-w-7xl flex-col gap-4 border-t border-brand-soft-border pt-8 text-xs text-gray-400 md:flex-row md:items-center md:justify-between">
                 <p>© 2026 Flowpage. Tous droits réservés.</p>
-                <div class="flex gap-6">
+                <div class="flex flex-wrap items-center gap-6">
                     <a class="hover:text-brand-dark" href="/mentions-legales">Mentions légales</a>
                     <a class="hover:text-brand-dark" href="/confidentialite">Confidentialité</a>
                     <a class="hover:text-brand-dark" href="/cgv">CGV</a>
+                    <a class="footer-social-link inline-flex items-center justify-center" href="https://www.instagram.com/flowpage.tech/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Flowpage">
+                        <span class="footer-instagram-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="footer-social-link inline-flex items-center justify-center" href="https://www.facebook.com/profile.php?id=61588993198185" target="_blank" rel="noopener noreferrer" aria-label="Facebook Flowpage">
+                        <span class="footer-facebook-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="footer-social-link inline-flex items-center justify-center" href="https://g.page/r/CVofAMcjJG7CEBM/review" target="_blank" rel="noopener noreferrer" aria-label="Donner un avis sur Flowpage">
+                        <span class="footer-review-icon" aria-hidden="true"></span>
+                    </a>
                 </div>
             </div>
         </footer>

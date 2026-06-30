@@ -20,11 +20,11 @@ Activité simple, message clair, peu d’informations à structurer. Quelques pa
 - Structure et hiérarchie de l’information
 - Design lisible et professionnel
 - Expérience mobile soignée
-- Mise en ligne incluse
+- Mise en ligne initiale sur une adresse technique gratuite
 
 Pour un thérapeute, un artisan ou un consultant avec une offre définie et un message direct à transmettre.
 
-350 – 450 €
+350 – 500 €
 Tarif indicatif, ajusté selon le projet.
 
 ### Site structuré
@@ -34,11 +34,11 @@ Activité plus riche, plusieurs offres ou beaucoup d’informations à hiérarch
 - Architecture multi-pages pensée pour la clarté
 - Navigation simple et logique
 - Cohérence visuelle et éditoriale sur toutes les pages
-- Mise en ligne et configuration technique
+- Mise en ligne initiale sur une adresse technique gratuite
 
 Pour ceux qui ont plusieurs services, plusieurs publics, ou une activité qui demande plus d’espace pour être bien comprise.
 
-600 – 900 €
+600 – 950 €
 Tarif indicatif, ajusté selon le projet.
 
 ### Site autonome
@@ -49,30 +49,37 @@ Même profondeur que le Site structuré, avec en plus un CMS intégré pour modi
 - Interface d’édition simple et guidée
 - Formation à l’utilisation du CMS
 - Autonomie totale sur vos contenus
+- Mise en ligne initiale sur une adresse technique gratuite
 
 Pour ceux dont les contenus évoluent régulièrement — agenda, offres, actualités — et qui veulent garder la main dessus.
 
-900 – 1 400 €
+1 000 – 1 700 €
 Tarif indicatif, ajusté selon le projet.
 
-## Vous avez déjà un site, mais il ne vous représente plus vraiment ?
-Je peux restructurer ce qui existe — sans tout reconstruire.
+## La suite du projet
+Hébergement, domaine et suivi technique.
 
-En discuter →
+Une fois votre site conçu, il a besoin d’un nom de domaine personnalisé, d’un hébergement professionnel et d’un suivi technique régulier pour rester en ligne dans de bonnes conditions.
 
-## Votre site reste entre de bonnes mains.
-Une fois votre site en ligne, je reste disponible pour assurer la maintenance technique, les correctifs et les petits ajustements.
+Cette formule mensuelle prend tout en charge : vous avez une adresse à votre nom, un site stable, et quelqu’un de disponible si un problème survient.
 
-Vous n’avez rien à gérer.
-
-- Hébergement inclus
+- Nom de domaine personnalisé (.fr, .be, .com ou équivalent)
+- Hébergement professionnel rapide et stable
+- Configuration technique et DNS
 - Mises à jour techniques régulières
 - Correctifs rapides si besoin
 - Ajustements mineurs sur demande
 - Disponibilité par message
 
-20 € / mois
-Facturé par trimestre. Sans engagement. Résiliable à tout moment.
+30 € / mois
+Facturation trimestrielle. Tout est inclus, sans frais cachés.
+
+Sans cette formule, votre site peut rester en ligne sur une adresse technique gratuite (type votre-site.pages.dev), mais sans nom de domaine personnalisé ni suivi technique. Si vous décidez d’arrêter la formule, le site bascule sur une adresse gratuite ou peut être récupéré sur demande.
+
+## Vous avez déjà un site, mais il ne vous représente plus vraiment ?
+Je peux restructurer ce qui existe — sans tout reconstruire.
+
+En discuter →
 
 ## Simple du premier échange à la mise en ligne.
 Vous m’expliquez votre activité
