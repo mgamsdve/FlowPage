@@ -24,7 +24,7 @@ Activité simple, message clair, peu d’informations à structurer. Quelques pa
 
 Pour un thérapeute, un artisan ou un consultant avec une offre définie et un message direct à transmettre.
 
-350 – 500 €
+1 000 – 1 400 €
 Tarif indicatif, ajusté selon le projet.
 
 ### Site structuré
@@ -38,7 +38,7 @@ Activité plus riche, plusieurs offres ou beaucoup d’informations à hiérarch
 
 Pour ceux qui ont plusieurs services, plusieurs publics, ou une activité qui demande plus d’espace pour être bien comprise.
 
-600 – 950 €
+1 600 – 2 400 €
 Tarif indicatif, ajusté selon le projet.
 
 ### Site autonome
@@ -53,7 +53,7 @@ Même profondeur que le Site structuré, avec en plus un CMS intégré pour modi
 
 Pour ceux dont les contenus évoluent régulièrement — agenda, offres, actualités — et qui veulent garder la main dessus.
 
-1 000 – 1 700 €
+2 500 – 3 500 €
 Tarif indicatif, ajusté selon le projet.
 
 ## La suite du projet
@@ -71,7 +71,7 @@ Cette formule mensuelle prend tout en charge : vous avez une adresse à votre no
 - Ajustements mineurs sur demande
 - Disponibilité par message
 
-30 € / mois
+50 € / mois
 Facturation trimestrielle. Tout est inclus, sans frais cachés.
 
 Sans cette formule, votre site peut rester en ligne sur une adresse technique gratuite (type votre-site.pages.dev), mais sans nom de domaine personnalisé ni suivi technique. Si vous décidez d’arrêter la formule, le site bascule sur une adresse gratuite ou peut être récupéré sur demande.
