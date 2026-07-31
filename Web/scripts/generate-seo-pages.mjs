@@ -4,18 +4,16 @@ import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const rootDir = resolve(__dirname, '..')
-const today = '2026-06-29'
+const today = '2026-07-31'
 const siteUrl = 'https://flowpage.tech'
 const email = 'valerie@flowpage.tech'
+const googleBusinessMap = 'https://maps.app.goo.gl/xL1TRHXthBAquNBv9'
 
 const corePages = [
   { slug: '', priority: '1.0', changefreq: 'weekly' },
   { slug: 'services', priority: '0.9', changefreq: 'monthly' },
   { slug: 'a-propos', priority: '0.7', changefreq: 'monthly' },
   { slug: 'contact', priority: '0.8', changefreq: 'monthly' },
-  { slug: 'mentions-legales', priority: '0.2', changefreq: 'yearly' },
-  { slug: 'confidentialite', priority: '0.2', changefreq: 'yearly' },
-  { slug: 'cgv', priority: '0.2', changefreq: 'yearly' },
 ]
 
 const localPages = [
@@ -64,16 +62,16 @@ const localPages = [
   {
     slug: 'creation-site-web-namur',
     keyword: 'Création site web Namur',
-    title: 'Création site web Namur | Sites vitrines pour pros',
+    title: 'Création site web Namur | SEO local & sur mesure',
     description:
-      'Création de site web à Namur pour indépendants, artisans, consultants et professions de service. Une structure claire, mobile et orientée contact.',
-    h1: 'Création de site web à Namur, simple et professionnelle',
+      'Création et refonte de site web à Namur : site vitrine, SEO local et développement sur mesure pour indépendants et PME.',
+    h1: 'Création de site web à Namur, avec SEO local et sur mesure',
     area: 'Namur',
     nearby: ['Jambes', 'Wépion', 'Gembloux', 'Andenne', 'Wallonie'],
     intent:
-      'Cette page répond aux professionnels namurois qui veulent un site vitrine clair pour présenter leur activité sans jargon technique.',
+      'Flowpage accompagne les professionnels à Namur pour créer ou refondre un site web clair, développer leur visibilité locale ou concevoir un outil vraiment adapté à leur activité.',
     localAngle:
-      'Un site local efficace à Namur doit aider le visiteur à vérifier rapidement la pertinence : métier, zone de déplacement, type de client, services proposés et sérieux de l’approche.',
+      'Un site local efficace à Namur doit aider le visiteur à vérifier rapidement la pertinence : métier, zone de déplacement, type de client, services proposés et sérieux de l’approche. Si le projet va plus loin, il peut aussi devenir une application web ou un outil métier sur mesure.',
   },
   {
     slug: 'agence-web-woluwe',
@@ -92,16 +90,16 @@ const localPages = [
   {
     slug: 'creation-site-web-woluwe',
     keyword: 'Création site web Woluwe',
-    title: 'Création site web Woluwe | Flowpage',
+    title: 'Création site web Woluwe | SEO local & sur mesure',
     description:
-      'Création de site web à Woluwe pour indépendants et petites entreprises. Site vitrine lisible, responsive, crédible et orienté prise de contact.',
-    h1: 'Création de site web à Woluwe pour être compris vite',
+      'Création et refonte de site web à Woluwe : site vitrine, SEO local et développement sur mesure pour indépendants et PME.',
+    h1: 'Création de site web à Woluwe, claire et pensée pour être trouvée',
     area: 'Woluwe',
     nearby: ['Woluwe-Saint-Lambert', 'Woluwe-Saint-Pierre', 'Bruxelles', 'Etterbeek', 'Auderghem'],
     intent:
-      'Vous avez besoin d’un site web à Woluwe qui explique clairement votre activité, sans surcharge ni discours marketing artificiel.',
+      'Vous avez besoin d’un site web à Woluwe qui explique clairement votre activité, facilite le contact et pose des bases solides pour le référencement local.',
     localAngle:
-      'Un site pensé pour Woluwe doit être précis et rassurant : activité, services, public cible, coordonnées, formulaire et informations utiles pour une clientèle bruxelloise locale.',
+      'Un site pensé pour Woluwe doit être précis et rassurant : activité, services, public cible, coordonnées, formulaire et informations utiles pour une clientèle bruxelloise locale. Flowpage peut aussi développer les fonctionnalités ou outils sur mesure dont votre activité a réellement besoin.',
   },
   {
     slug: 'agence-web-bruxelles',
@@ -218,23 +216,27 @@ const servicePages = [
       ['Une crédibilité professionnelle', 'Le site met en avant votre sérieux par la structure, le ton, les preuves disponibles et un parcours de contact sans friction.'],
     ],
   },
+  {
+    slug: 'developpement-logiciel-namur',
+    keyword: 'Développement logiciel Namur',
+    title: 'Développement logiciel Namur | Applications & CRM',
+    description:
+      'Développement logiciel à Namur : applications web, CRM, portails et outils métier sur mesure pour indépendants et PME en Belgique.',
+    h1: 'Développement logiciel à Namur : applications et outils sur mesure',
+    audience: 'PME, indépendants et équipes qui ont besoin d’un outil métier, d’une application web, d’un CRM ou d’une application mobile',
+    intro:
+      'Flowpage conçoit des applications web, outils métier, CRM, portails et applications mobiles lorsque les outils génériques ne correspondent plus à votre manière de travailler.',
+    secondaryHref: '/contact',
+    secondaryLabel: 'Parler de mon besoin',
+    sections: [
+      ['Partir du problème métier', 'Avant de parler de technologie, le projet commence par les tâches à simplifier, les informations à centraliser et les personnes qui utiliseront l’outil. Cela évite de développer des fonctions sans utilité réelle.'],
+      ['Application web, CRM ou portail', 'Selon le besoin, la solution peut être un CRM adapté, un portail client, un outil de suivi, une application web interne ou une interface métier connectée à vos processus existants.'],
+      ['Une évolution progressive', 'Le périmètre est défini étape par étape : une première version utile, puis des améliorations basées sur l’usage. Cette méthode garde le projet lisible, maîtrisé et réellement exploitable.'],
+    ],
+  },
 ]
 
 const guidePages = [
-  {
-    slug: 'prix-site-web-belgique',
-    title: 'Combien coûte un site web en Belgique ?',
-    description:
-      'Repères de prix pour créer un site web en Belgique : site vitrine, site structuré, CMS, domaine, hébergement et maintenance.',
-    h1: 'Combien coûte un site web en Belgique ?',
-    category: 'Guide belge',
-    paragraphs: [
-      'Le prix d’un site web en Belgique dépend surtout du niveau de clarté à construire, du nombre de pages, du contenu à organiser, du besoin de mise à jour et de l’accompagnement attendu.',
-      'Pour un indépendant ou une petite entreprise, le plus important est d’éviter deux extrêmes : un site trop pauvre qui ne rassure pas, ou un projet trop lourd qui coûte cher sans améliorer la compréhension.',
-      'Chez Flowpage, les formats restent volontairement lisibles : un site essentiel pour une activité simple, un site structuré pour plusieurs services, puis un site autonome avec CMS si les contenus changent régulièrement.',
-      'Il faut aussi prévoir la suite : nom de domaine, hébergement, configuration DNS, petites corrections et suivi technique. Ces éléments ne sont pas visibles sur la maquette, mais ils déterminent la stabilité du site dans le temps.',
-    ],
-  },
   {
     slug: 'agence-web-ou-freelance-belgique',
     title: 'Agence web ou freelance en Belgique : que choisir ?',
@@ -316,7 +318,7 @@ const baseBusinessSchema = {
   image: `${siteUrl}/assets/img/mockupV2.png`,
   logo: `${siteUrl}/favicon.svg`,
   description:
-    'Agence web en Belgique spécialisée dans la création de sites web clairs, sites vitrines, refontes simples et présences web structurées pour indépendants et petites entreprises.',
+    'Agence web en Belgique spécialisée dans la création et la refonte de sites, le référencement local et le développement d’applications web, logiciels et outils métier sur mesure.',
   areaServed: [
     { '@type': 'Country', name: 'Belgique' },
     { '@type': 'AdministrativeArea', name: 'Wallonie' },
@@ -333,8 +335,12 @@ const baseBusinessSchema = {
     'Création de landing page',
     'Référencement local',
     'Maintenance de site web',
+    'Développement logiciel sur mesure',
+    'Développement d’application web',
+    'Développement d’application mobile',
   ],
   sameAs: ['https://www.instagram.com/flowpage.tech/'],
+  hasMap: googleBusinessMap,
 }
 
 const head = ({ title, description, slug, schema }) => {
@@ -427,7 +433,7 @@ const footer = () => `        <footer class="border-t border-brand-soft-border b
                 <div>
                     <h2 class="text-sm font-bold uppercase tracking-wide text-brand-dark">Services</h2>
                     <ul class="mt-4 space-y-3 text-sm text-gray-600">${serviceLinks
-                      .slice(0, 6)
+                      .slice(0, 7)
                       .map((link) => `<li><a class="hover:text-brand-orange" href="${link.href}">${link.label}</a></li>`)
                       .join('')}</ul>
                 </div>
@@ -515,7 +521,7 @@ const localPage = (page) => {
   const faq = [
     {
       q: `Flowpage travaille-t-il avec des clients ${areaPhrase(page.area)} ?`,
-      a: `Oui. Flowpage accompagne les indépendants et petites entreprises ${areaPhrase(page.area)}, avec une méthode adaptée aux projets simples, aux sites vitrines et aux refontes claires.`,
+      a: `Oui. Flowpage accompagne les indépendants et petites entreprises ${areaPhrase(page.area)}, pour des sites vitrines, des refontes, du référencement local ou des projets sur mesure selon le besoin.`,
     },
     {
       q: 'Est-ce que le référencement local est inclus ?',
@@ -523,7 +529,7 @@ const localPage = (page) => {
     },
     {
       q: 'Quel type de site est le plus adapté ?',
-      a: 'Cela dépend du nombre de services, de la quantité d’informations et du besoin d’autonomie. Le format peut aller d’un site essentiel à un site structuré avec pages locales et CMS.',
+      a: 'Cela dépend du nombre de services, de la quantité d’informations et du besoin d’autonomie. Le format peut aller d’un site essentiel à un site structuré avec pages locales et CMS, ou à une application sur mesure lorsque le projet l’exige.',
     },
   ]
   const schema = {
@@ -600,12 +606,12 @@ const localPage = (page) => {
                             <p class="mt-4 leading-7 text-gray-600">Une présence web simple pour présenter votre activité, vos services et votre zone de travail.</p>
                         </article>
                         <article class="rounded-xl bg-white p-7 shadow-sm ring-1 ring-brand-soft-border">
-                            <h3 class="font-heading text-2xl font-bold">Pages locales</h3>
-                            <p class="mt-4 leading-7 text-gray-600">Des pages pensées pour les recherches comme ${page.keyword}, création site web, site vitrine et services locaux.</p>
+                            <h3 class="font-heading text-2xl font-bold">Référencement local</h3>
+                            <p class="mt-4 leading-7 text-gray-600">Une structure et des contenus utiles pour les recherches comme ${page.keyword}, création de site web, site vitrine et services locaux.</p>
                         </article>
                         <article class="rounded-xl bg-white p-7 shadow-sm ring-1 ring-brand-soft-border">
-                            <h3 class="font-heading text-2xl font-bold">Refonte structurée</h3>
-                            <p class="mt-4 leading-7 text-gray-600">Une amélioration d’un site existant lorsque le message, les pages ou le référencement sont devenus flous.</p>
+                            <h3 class="font-heading text-2xl font-bold">Outil sur mesure</h3>
+                            <p class="mt-4 leading-7 text-gray-600">Une application web, un portail ou un outil métier quand votre besoin dépasse le site vitrine. <a class="font-semibold text-brand-orange hover:underline" href="/developpement-logiciel-namur">Découvrir le développement sur mesure</a>.</p>
                         </article>
                     </div>
                 </div>
@@ -614,7 +620,7 @@ const localPage = (page) => {
                 <div class="mx-auto max-w-6xl">
                     <h2 class="font-heading text-4xl font-bold text-brand-dark">Professionnels concernés ${areaPhrase(page.area)}</h2>
                     <div class="mt-8 grid gap-5 md:grid-cols-2">
-                        ${['Indépendants qui veulent une présence crédible', 'Artisans qui ont besoin de demandes locales', 'Thérapeutes et accompagnants qui doivent rassurer', 'Consultants dont l’offre doit être mieux structurée'].map((item) => `<div class="rounded-xl bg-white p-6 text-lg font-semibold text-brand-dark ring-1 ring-brand-soft-border">${item}</div>`).join('')}
+                        ${['Indépendants qui veulent une présence crédible', 'Artisans qui ont besoin de demandes locales', 'PME qui ont besoin d’un outil adapté à leur activité', 'Consultants dont l’offre doit être mieux structurée'].map((item) => `<div class="rounded-xl bg-white p-6 text-lg font-semibold text-brand-dark ring-1 ring-brand-soft-border">${item}</div>`).join('')}
                     </div>
                     <div class="mt-10 flex flex-wrap gap-3">${relatedLocal}</div>
                 </div>
@@ -682,10 +688,10 @@ const servicePage = (page) => {
                 <div class="mx-auto max-w-5xl">
                     <p class="text-sm font-bold uppercase tracking-[0.18em] text-brand-orange">${page.keyword}</p>
                     <h1 class="mt-5 max-w-4xl font-heading text-5xl font-extrabold leading-tight text-brand-dark md:text-7xl">${page.h1}</h1>
-                    <p class="mt-8 max-w-3xl text-xl leading-9 text-gray-600">Flowpage accompagne les ${page.audience} en Belgique avec une approche centrée sur la clarté, la lisibilité mobile, le message et la prise de contact.</p>
+                    <p class="mt-8 max-w-3xl text-xl leading-9 text-gray-600">${page.intro || `Flowpage accompagne les ${page.audience} en Belgique avec une approche centrée sur la clarté, la lisibilité mobile, le message et la prise de contact.`}</p>
                     <div class="mt-10 flex flex-col gap-4 sm:flex-row">
                         <a class="inline-flex justify-center rounded-full bg-brand-orange px-8 py-4 text-sm font-bold text-white transition-colors hover:bg-[#c56045]" href="/contact">Demander un échange</a>
-                        <a class="inline-flex justify-center rounded-full border border-brand-soft-border px-8 py-4 text-sm font-bold text-brand-dark transition-colors hover:border-brand-orange hover:text-brand-orange" href="/prix-site-web-belgique">Voir les repères de prix</a>
+                        <a class="inline-flex justify-center rounded-full border border-brand-soft-border px-8 py-4 text-sm font-bold text-brand-dark transition-colors hover:border-brand-orange hover:text-brand-orange" href="${page.secondaryHref || '/services'}">${page.secondaryLabel || 'Voir les services'}</a>
                     </div>
                 </div>
             </section>

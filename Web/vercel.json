@@ -1,4 +1,7 @@
 {
+  "redirects": [
+    { "source": "/prix-site-web-belgique", "destination": "/services", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/services", "destination": "/services.html" },
     { "source": "/a-propos", "destination": "/a-propos.html" },
@@ -17,7 +20,7 @@
     { "source": "/site-web-artisan", "destination": "/site-web-artisan.html" },
     { "source": "/site-web-therapeute", "destination": "/site-web-therapeute.html" },
     { "source": "/site-web-consultant", "destination": "/site-web-consultant.html" },
-    { "source": "/prix-site-web-belgique", "destination": "/prix-site-web-belgique.html" },
+    { "source": "/developpement-logiciel-namur", "destination": "/developpement-logiciel-namur.html" },
     { "source": "/agence-web-ou-freelance-belgique", "destination": "/agence-web-ou-freelance-belgique.html" },
     { "source": "/site-web-independant-namur", "destination": "/site-web-independant-namur.html" },
     { "source": "/referencement-local-belgique", "destination": "/referencement-local-belgique.html" },
