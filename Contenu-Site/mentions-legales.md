@@ -1,11 +1,14 @@
 # mentions-legales.html
 
 ## Mentions légales
-Dernière mise à jour : 2 avril 2026
+Dernière mise à jour : 29 août 2026
 
 ## Éditeur du site
-Flowpage
+Flowpage — Valérie Poty
+Numéro d’entreprise et de TVA : BE 0766.670.578
 Contact : valerie@flowpage.tech
+
+Régime particulier de franchise de taxe pour les petites entreprises (chiffre d’affaires annuel n’excédant pas 25 000 € hors TVA) : TVA non facturée.
 
 ## Hébergement
 Le site est hébergé par un prestataire technique tiers. Les informations détaillées d’hébergement peuvent être communiquées sur demande à l’adresse de contact ci-dessus.
